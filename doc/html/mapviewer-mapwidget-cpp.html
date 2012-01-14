@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt Mobility 1.1: mapwidget.cpp Example File (mapviewer/mapwidget.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<h1 class="title">mapwidget.cpp Example File</h1>
+<span class="small-subtitle">mapviewer/mapwidget.cpp</span>
+<div class="descr"/>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:LGPL$
+ ** Commercial Usage
+ ** Licensees holding valid Qt Commercial licenses may use this file in
+ ** accordance with the Qt Commercial License Agreement provided with
+ ** the Software or, alternatively, in accordance with the terms
+ ** contained in a written agreement between you and Nokia.
+ **
+ ** GNU Lesser General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU Lesser
+ ** General Public License version 2.1 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.LGPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU Lesser General Public License version 2.1 requirements
+ ** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+ **
+ ** In addition, as a special exception, Nokia gives you certain additional
+ ** rights.  These rights are described in the Nokia Qt LGPL Exception
+ ** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+ **
+ ** GNU General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU
+ ** General Public License version 3.0 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.GPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU General Public License version 3.0 requirements will be
+ ** met: http://www.gnu.org/copyleft/gpl.html.
+ **
+ ** If you are unsure which license is appropriate for your use, please
+ ** contact the sales department at qt-sales@nokia.com.
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;mapwidget.h&quot;
+
+ #include &lt;QTimer&gt;
+ #include &lt;cmath&gt;
+
+ QTM_USE_NAMESPACE
+
+<span class="comment"> // TODO: Some of these could be exposed in a GUI and should probably be put elsewhere in that case (and made non-const)</span>
+ #if defined(Q_OS_SYMBIAN) || defined(Q_OS_WINCE_WM) || defined(Q_WS_MAEMO_5) || defined(Q_WS_MAEMO_6)
+ static const bool enableKineticPanning = true;
+ static const qreal kineticPanningHalflife = 200.0; <span class="comment">// time until kinetic panning speed slows down to 50%, in msec</span>
+ static const qreal panSpeedNormal = 0.3; <span class="comment">// keyboard panning speed without modifiers, in pixels/msec</span>
+ static const qreal panSpeedFast = 1.0; <span class="comment">// keyboard panning speed with shift, in pixels/msec</span>
+ static const qreal kineticPanSpeedThreshold = 0.02; <span class="comment">// minimum panning speed, in pixels/msec</span>
+ static const int kineticPanningResolution = 75; <span class="comment">// temporal resolution. Smaller values take more CPU but improve visual quality</span>
+ static const int holdTimeThreshold = 200; <span class="comment">// maximum time between last mouse move and mouse release for kinetic panning to kick in</span>
+ #else
+ static const bool enableKineticPanning = true;
+ static const qreal kineticPanningHalflife = 300.0; <span class="comment">// time until kinetic panning speed slows down to 50%, in msec</span>
+ static const qreal panSpeedNormal = 0.3; <span class="comment">// keyboard panning speed without modifiers, in pixels/msec</span>
+ static const qreal panSpeedFast = 1.0; <span class="comment">// keyboard panning speed with shift, in pixels/msec</span>
+ static const qreal kineticPanSpeedThreshold = 0.005; <span class="comment">// minimum panning speed, in pixels/msec</span>
+ static const int kineticPanningResolution = 30; <span class="comment">// temporal resolution. Smaller values take more CPU but improve visual quality</span>
+ static const int holdTimeThreshold = 100; <span class="comment">// maximum time between last mouse move and mouse release for kinetic panning to kick in</span>
+ #endif
+
+ MapWidget::MapWidget(QGeoMappingManager *manager) :
+         QGraphicsGeoMap(manager),
+         coordQueryState(false),
+         panActive(false),
+         kineticTimer(new QTimer),
+         lastCircle(0)
+ {
+     for (int i = 0; i &lt; 5; ++i) mouseHistory.append(MouseHistoryEntry());
+
+     connect(kineticTimer, SIGNAL(timeout()), this, SLOT(kineticTimerEvent()));
+     kineticTimer-&gt;setInterval(kineticPanningResolution);
+ }
+
+ MapWidget::~MapWidget() {}
+
+ void MapWidget::setMouseClickCoordQuery(bool state)
+ {
+     coordQueryState = state;
+ }
+
+ void MapWidget::mousePressEvent(QGraphicsSceneMouseEvent* event)
+ {
+     setFocus();
+     if (event-&gt;button() == Qt::LeftButton) {
+         if (event-&gt;modifiers() &amp; Qt::ControlModifier) {
+         } else {
+             if (coordQueryState) {
+                 emit coordQueryResult(screenPositionToCoordinate(event-&gt;lastPos()));
+                 return;
+             }
+
+             panActive = true;
+
+             <span class="comment">// When pressing, stop the timer and stop all current kinetic panning</span>
+             kineticTimer-&gt;stop();
+             kineticPanSpeed = QPointF();
+
+             lastMoveTime = QTime::currentTime();
+         }
+     }
+
+     event-&gt;accept();
+ }
+
+ void MapWidget::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
+ {
+     if (event-&gt;button() == Qt::LeftButton) {
+         if (panActive) {
+             panActive = false;
+
+             if (!enableKineticPanning || lastMoveTime.msecsTo(QTime::currentTime()) &gt; holdTimeThreshold) {
+                 return;
+             }
+
+             kineticPanSpeed = QPointF();
+             int entries_considered = 0;
+
+             QTime currentTime = QTime::currentTime();
+             foreach(MouseHistoryEntry entry, mouseHistory) {
+                 <span class="comment">// first=speed, second=time</span>
+                 int deltaTime = entry.second.msecsTo(currentTime);
+                 if (deltaTime &lt; holdTimeThreshold) {
+                     kineticPanSpeed += entry.first;
+                     entries_considered++;
+                 }
+             }
+             if (entries_considered &gt; 0) kineticPanSpeed /= entries_considered;
+             lastMoveTime = currentTime;
+
+             <span class="comment">// When releasing the mouse button/finger while moving, start the kinetic panning timer</span>
+             kineticTimer-&gt;start();
+             panDecellerate = true;
+         }
+     }
+
+     event-&gt;accept();
+ }
+
+ void MapWidget::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+ {
+     if (event-&gt;modifiers() &amp; Qt::ControlModifier) {
+         if (lastCircle)
+             lastCircle-&gt;setCenter(this-&gt;screenPositionToCoordinate(event-&gt;pos()));
+     } else if (panActive) {
+         <span class="comment">// Calculate time delta</span>
+         QTime currentTime = QTime::currentTime();
+         int deltaTime = lastMoveTime.msecsTo(currentTime);
+         lastMoveTime = currentTime;
+
+         <span class="comment">// Calculate position delta</span>
+         QPointF delta = event-&gt;lastPos() - event-&gt;pos();
+
+         <span class="comment">// Calculate and set speed</span>
+         if (deltaTime &gt; 0) {
+             kineticPanSpeed = delta / deltaTime;
+
+             mouseHistory.push_back(MouseHistoryEntry(kineticPanSpeed, currentTime));
+             mouseHistory.pop_front();
+         }
+
+         <span class="comment">// Pan map</span>
+         panFloatWrapper(delta);
+     }
+
+     event-&gt;accept();
+ }
+
+ void MapWidget::kineticTimerEvent()
+ {
+     QTime currentTime = QTime::currentTime();
+     int deltaTime = lastMoveTime.msecsTo(currentTime);
+     lastMoveTime = currentTime;
+
+     if (panDecellerate)
+         kineticPanSpeed *= pow(qreal(0.5), qreal(deltaTime / kineticPanningHalflife));
+
+     QPointF scaledSpeed = kineticPanSpeed * deltaTime;
+
+     if (kineticPanSpeed.manhattanLength() &lt; kineticPanSpeedThreshold) {
+         <span class="comment">// Kinetic panning is almost halted -&gt; stop it.</span>
+         kineticTimer-&gt;stop();
+         return;
+     }
+     panFloatWrapper(scaledSpeed);
+ }
+
+<span class="comment"> // Wraps the pan(int, int) method to achieve floating point accuracy, which is needed to scroll smoothly.</span>
+ void MapWidget::panFloatWrapper(const QPointF&amp; delta)
+ {
+     <span class="comment">// Add to previously stored panning distance</span>
+     remainingPan += delta;
+
+     <span class="comment">// Convert to integers</span>
+     QPoint move = remainingPan.toPoint();
+
+     <span class="comment">// Commit mouse movement</span>
+     pan(move.x(), move.y());
+
+     <span class="comment">// Store committed mouse movement</span>
+     remainingPan -= move;
+
+ }
+
+ void MapWidget::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
+ {
+     setFocus();
+
+     pan(event-&gt;lastPos().x() -  size().width() / 2.0, event-&gt;lastPos().y() - size().height() / 2.0);
+     if (zoomLevel() &lt; maximumZoomLevel())
+         setZoomLevel(zoomLevel() + 1);
+
+     event-&gt;accept();
+ }
+
+ void MapWidget::keyPressEvent(QKeyEvent *event)
+ {
+     switch (event-&gt;key()) {
+         case Qt::Key_Minus:
+ #ifdef Q_OS_SYMBIAN
+         case Qt::Key_VolumeDown:
+ #endif
+             if (zoomLevel() &gt; minimumZoomLevel()) {
+                 setZoomLevel(zoomLevel() - 1);
+             }
+             break;
+
+         case Qt::Key_Plus:
+ #ifdef Q_OS_SYMBIAN
+         case Qt::Key_VolumeUp:
+ #endif
+             if (zoomLevel() &lt; maximumZoomLevel()) {
+                 setZoomLevel(zoomLevel() + 1);
+             }
+             break;
+
+         case Qt::Key_T:
+             if (mapType() == QGraphicsGeoMap::StreetMap)
+                 setMapType(QGraphicsGeoMap::SatelliteMapDay);
+             else if (mapType() == QGraphicsGeoMap::SatelliteMapDay)
+                 setMapType(QGraphicsGeoMap::StreetMap);
+             break;
+
+         case Qt::Key_Shift:
+             <span class="comment">// If there's no current movement, we don't need to handle shift.</span>
+             if (panDir.manhattanLength() == 0) break;
+         case Qt::Key_Left:
+         case Qt::Key_Right:
+         case Qt::Key_Up:
+         case Qt::Key_Down:
+             if (!event-&gt;isAutoRepeat()) {
+                 switch (event-&gt;key()) {
+                     case Qt::Key_Left:
+                         panDir.setX(-1);
+                         break;
+
+                     case Qt::Key_Right:
+                         panDir.setX(1);
+                         break;
+
+                     case Qt::Key_Up:
+                         panDir.setY(-1);
+                         break;
+
+                     case Qt::Key_Down:
+                         panDir.setY(1);
+                         break;
+                 }
+
+                 lastMoveTime = QTime::currentTime();
+                 kineticTimer-&gt;start();
+                 panDecellerate = false;
+
+                 applyPan(event-&gt;modifiers());
+             }
+             break;
+     }
+
+     event-&gt;accept();
+ }
+
+ void MapWidget::keyReleaseEvent(QKeyEvent* event)
+ {
+     event-&gt;accept();
+
+     <span class="comment">// Qt seems to have auto-repeated release events too...</span>
+     if (event-&gt;isAutoRepeat()) return;
+
+     switch (event-&gt;key()) {
+         case Qt::Key_Left:
+         case Qt::Key_Right:
+             panDir.setX(0);
+             break;
+
+         case Qt::Key_Up:
+         case Qt::Key_Down:
+             panDir.setY(0);
+             break;
+
+         case Qt::Key_Shift:
+             if (panDir.manhattanLength() == 0) return;
+             break;
+
+         default:
+             return;
+     }
+
+     applyPan(event-&gt;modifiers());
+ }
+
+<span class="comment"> // Evaluates the panDir field and sets kineticPanSpeed accordingly. Used in MapWidget::keyPressEvent and MapWidget::keyReleaseEvent</span>
+ void MapWidget::applyPan(const Qt::KeyboardModifiers&amp; modifiers)
+ {
+     Q_ASSERT(panDir.manhattanLength() &lt;= 2);
+
+     if (panDir.manhattanLength() == 0) {
+         <span class="comment">// If no more direction keys are held down, decellerate</span>
+         panDecellerate = true;
+     } else {
+         <span class="comment">// Otherwise, set new direction</span>
+         qreal panspeed = (modifiers &amp; Qt::ShiftModifier) ? panSpeedFast : panSpeedNormal;
+
+         if (panDir.manhattanLength() == 2) {
+             <span class="comment">// If 2 keys are held down, adjust speed to achieve the same speed in all 8 possible directions</span>
+             panspeed *= sqrt(0.5);
+         }
+
+         <span class="comment">// Finally set the current panning speed</span>
+         kineticPanSpeed = QPointF(panDir) * panspeed;
+     }
+ }
+
+ void MapWidget::wheelEvent(QGraphicsSceneWheelEvent* event)
+ {
+     qreal panx = event-&gt;pos().x() - size().width() / 2.0;
+     qreal pany = event-&gt;pos().y() - size().height() / 2.0;
+     pan(panx, pany);
+     if (event-&gt;delta() &gt; 0) { <span class="comment">//zoom in</span>
+         if (zoomLevel() &lt; maximumZoomLevel()) {
+             setZoomLevel(zoomLevel() + 1);
+         }
+     } else { <span class="comment">//zoom out</span>
+         if (zoomLevel() &gt; minimumZoomLevel()) {
+             setZoomLevel(zoomLevel() - 1);
+         }
+     }
+     pan(-panx, -pany);
+     event-&gt;accept();
+ }</pre>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

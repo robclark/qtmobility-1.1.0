@@ -1,0 +1,107 @@
+/****************************************************************************
+**
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the Qt Mobility Components.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in 
+** accordance with the Qt Commercial License Agreement provided with
+** the Software or, alternatively, in accordance with the terms
+** contained in a written agreement between you and Nokia.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain additional
+** rights.  These rights are described in the Nokia Qt LGPL Exception
+** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** If you are unsure which license is appropriate for your use, please
+** contact the sales department at qt-sales@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \example battery-charge
+    \title Accessing Publish and Subscribe from QML
+
+    This examples shows how to access published context values from within QML.  The example
+    consists of two programs.  The first, battery-publisher, is a standard Qt GUI application that
+    is used to emulate a battery for the sole purpose of demonstrating the second program.  It
+    publishes the keys
+
+    \code
+        /power/battery/charge
+        /power/battery/charging
+    \endcode
+
+    and provides controls for modifying their values.
+
+    \image battery-publisher.png
+
+    The second program, battery-subscriber, is implemented in QML with some C++ code to display the
+    QML and makes QValueSpaceSubscriber available from within QML.
+
+    The user interface of the battery subscriber program is described in QML.  It has the following
+    features: A rectangular area representing the percent charge of the battery.  It indicates a
+    low battery state by changing the color to red, it is green otherwise.  An animation is shown
+    to indicate that the battery is being recharged.
+
+    \image battery-subscriber.png
+
+    \section2 Battery Subscriber
+
+    The QValueSpaceSubscriber class is available from within QML through the use of a plugin which
+    is parsed by the QML engine. This means that simply using the QML element 'ValueSpaceSubscriber'
+    allows access to the valuespace, which is demonstrated below.
+
+
+    \section3 QML
+
+    Firstly, import the plugin library that provides the ValueSpaceSubscriber QML element.
+
+    \snippet battery-charge/battery-subscriber/battery-subscriber.qml 4
+
+    Two ValueSpaceSubscriber instances are created, one for each of the battery values.  We give
+    each object a unique id so that we can reference it from elsewhere in the QML.  We set the
+    \i path properties to the Value Space path of the keys.  Finally we set the \i notify
+    properties to true to enable the emission of change notification signals.
+
+    \snippet battery-charge/battery-subscriber/battery-subscriber.qml 0
+
+    The default state of the rectangle used to visualize the battery charge uses the \i charge
+    property of our BatteryCharge class in the expression for its height.
+
+    \snippet battery-charge/battery-subscriber/battery-subscriber.qml 1
+
+    When the battery charge changes the height of the rectangle will automatically change.
+
+    Next we define two additional states.  The \i low state is entered when the battery charge
+    drops below 25% and the battery is not being recharged.  When in this state the color is set to
+    red.
+
+    \snippet battery-charge/battery-subscriber/battery-subscriber.qml 2
+
+    The \i charging state is entered when the battery is being recharged.  When in this state a
+    particle effect animation is enabled.
+
+    \snippet battery-charge/battery-subscriber/battery-subscriber.qml 3
+*/

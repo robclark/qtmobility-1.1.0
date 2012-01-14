@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgeomaneuver.cpp -->
+  <title>Qt Mobility 1.1: QGeoManeuver Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtlocation.html">QtLocation</a></li>
+              <li>QGeoManeuver</li>
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGeoManeuver Class Reference</h1>
+<p>The QGeoManeuver class represents the information relevant to the point at which two QGeoRouteSegments meet. <a href="#details">More...</a></p>
+<pre class="highlightedCode brush: cpp"> #include &lt;QGeoManeuver&gt;</pre><ul>
+<li><a href="qgeomaneuver-members.html">List of all members, including inherited members</a></li>
+</ul>
+<hr />
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#InstructionDirection-enum">InstructionDirection</a></b> { NoDirection, DirectionForward, DirectionBearRight, DirectionLightRight, ..., DirectionBearLeft }</td></tr>
+</table>
+<hr />
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#QGeoManeuver">QGeoManeuver</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#QGeoManeuver-2">QGeoManeuver</a></b> ( const QGeoManeuver &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#dtor.QGeoManeuver">~QGeoManeuver</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> InstructionDirection </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#direction">direction</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#distanceToNextInstruction">distanceToNextInstruction</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#instructionText">instructionText</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#isValid">isValid</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#position">position</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#setDirection">setDirection</a></b> ( InstructionDirection <i>direction</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#setDistanceToNextInstruction">setDistanceToNextInstruction</a></b> ( qreal <i>distance</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#setInstructionText">setInstructionText</a></b> ( const QString &amp; <i>instructionText</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#setPosition">setPosition</a></b> ( const QGeoCoordinate &amp; <i>position</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#setTimeToNextInstruction">setTimeToNextInstruction</a></b> ( int <i>secs</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#setWaypoint">setWaypoint</a></b> ( const QGeoCoordinate &amp; <i>coordinate</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#timeToNextInstruction">timeToNextInstruction</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#waypoint">waypoint</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#operator-not-eq">operator!=</a></b> ( const QGeoManeuver &amp; <i>other</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoManeuver &amp; </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#operator-eq">operator=</a></b> ( const QGeoManeuver &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgeomaneuver.html#operator-eq-eq">operator==</a></b> ( const QGeoManeuver &amp; <i>other</i> ) const</td></tr>
+</table>
+<a name="details"></a>
+<hr />
+<div class="descr"/>
+<h2>Detailed Description</h2>
+<p>The QGeoManeuver class represents the information relevant to the point at which two QGeoRouteSegments meet.</p>
+<p><a href="qgeoroutesegment.html">QGeoRouteSegment</a> instances can be thought of as edges on a routing graph, with QGeoManeuver instances as optional labels attached to the vertices of the graph.</p>
+<p>The most interesting information help in a QGeoManeuver instance is normally the textual navigation to provide and the position at which to provide it, accessible by <a href="qgeomaneuver.html#instructionText">instructionText</a>() and <a href="qgeomaneuver.html#position">position</a>() respectively.</p>
+<p>It is also possible to determine if a routing waypoint has been passed by checking if <a href="qgeomaneuver.html#waypoint">waypoint</a>() returns a valid <a href="qgeocoordinate.html">QGeoCoordinate</a>.</p>
+</div>
+<hr />
+<div class="types"/>
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="InstructionDirection-enum"></a>enum QGeoManeuver::InstructionDirection</h3>
+<p>Describes the change in direction associated with the instruction text that is associated with a QGeoManaeuver.</p>
+<table class="valuelist"><tr class="odd"><tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::NoDirection</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">There is no direction associated with the instruction text.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionForward</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The instruction indicates that the direction of travel does not need to change.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionBearRight</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">The instruction indicates that the direction of travel should bear to the right.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionLightRight</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">The instruction indicates that a light turn to the right is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionRight</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">The instruction indicates that a turn to the right is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionHardRight</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">The instruction indicates that a hard turn to the right is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionUTurnRight</tt></td><td class=" topAlign"><tt>6</tt></td><td  class="topAlign">The instruction indicates that a u-turn to the right is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionUTurnLeft</tt></td><td class=" topAlign"><tt>7</tt></td><td  class="topAlign">The instruction indicates that a u-turn to the left is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionHardLeft</tt></td><td class=" topAlign"><tt>8</tt></td><td  class="topAlign">The instruction indicates that a hard turn to the left is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionLeft</tt></td><td class=" topAlign"><tt>9</tt></td><td  class="topAlign">The instruction indicates that a turn to the left is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionLightLeft</tt></td><td class=" topAlign"><tt>10</tt></td><td  class="topAlign">The instruction indicates that a light turn to the left is required.</td></tr>
+<tr><td  class="topAlign"><tt>QGeoManeuver::DirectionBearLeft</tt></td><td class=" topAlign"><tt>11</tt></td><td  class="topAlign">The instruction indicates that the direction of travel should bear to the left.</td></tr>
+</table>
+</div>
+<hr />
+<div class="func"/>
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGeoManeuver"></a>QGeoManeuver::QGeoManeuver ()</h3>
+<p>Constructs a invalid maneuver object.</p>
+<p>The maneuver will remain invalid until one of <a href="qgeomaneuver.html#setPosition">setPosition</a>(), <a href="qgeomaneuver.html#setInstructionText">setInstructionText</a>(), <a href="qgeomaneuver.html#setDirection">setDirection</a>(), <a href="qgeomaneuver.html#setTimeToNextInstruction">setTimeToNextInstruction</a>(), <a href="qgeomaneuver.html#setDistanceToNextInstruction">setDistanceToNextInstruction</a>() or <a href="qgeomaneuver.html#setWaypoint">setWaypoint</a>() is called.</p>
+<h3 class="fn"><a name="QGeoManeuver-2"></a>QGeoManeuver::QGeoManeuver ( const QGeoManeuver &amp; <i>other</i> )</h3>
+<p>Constructs a maneuver object from the contents of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QGeoManeuver"></a>QGeoManeuver::~QGeoManeuver ()</h3>
+<p>Destroys this manevuer object.</p>
+<h3 class="fn"><a name="direction"></a><a href="qgeomaneuver.html#InstructionDirection-enum">InstructionDirection</a> QGeoManeuver::direction () const</h3>
+<p>Returns the direction associated with the associated instruction.</p>
+<p>See also <a href="qgeomaneuver.html#setDirection">setDirection</a>().</p>
+<h3 class="fn"><a name="distanceToNextInstruction"></a><a href="http://qt.nokia.com/doc/4.6/qtglobal.html#qreal-typedef">qreal</a> QGeoManeuver::distanceToNextInstruction () const</h3>
+<p>Returns the distance, in metres, between the point at which the associated instruction was issued and the point that the next instruction should be issued.</p>
+<p>See also <a href="qgeomaneuver.html#setDistanceToNextInstruction">setDistanceToNextInstruction</a>().</p>
+<h3 class="fn"><a name="instructionText"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QGeoManeuver::instructionText () const</h3>
+<p>Returns the textual navigation instructions.</p>
+<p>See also <a href="qgeomaneuver.html#setInstructionText">setInstructionText</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QGeoManeuver::isValid () const</h3>
+<p>Returns whether this maneuver is valid or not.</p>
+<p>Invalid maneuvers are used when there is no information that needs to be attached to the endpoint of a <a href="qgeoroutesegment.html">QGeoRouteSegment</a> instance.</p>
+<h3 class="fn"><a name="position"></a><a href="qgeocoordinate.html">QGeoCoordinate</a> QGeoManeuver::position () const</h3>
+<p>Returns the position where <a href="qgeomaneuver.html#instructionText">instructionText</a>() should be displayed.</p>
+<p>See also <a href="qgeomaneuver.html#setPosition">setPosition</a>().</p>
+<h3 class="fn"><a name="setDirection"></a>void QGeoManeuver::setDirection ( <a href="qgeomaneuver.html#InstructionDirection-enum">InstructionDirection</a> <i>direction</i> )</h3>
+<p>Sets the direction associated with the associated instruction to <i>direction</i>.</p>
+<p>See also <a href="qgeomaneuver.html#direction">direction</a>().</p>
+<h3 class="fn"><a name="setDistanceToNextInstruction"></a>void QGeoManeuver::setDistanceToNextInstruction ( <a href="http://qt.nokia.com/doc/4.6/qtglobal.html#qreal-typedef">qreal</a> <i>distance</i> )</h3>
+<p>Sets the distance, in metres, between the point at which the associated instruction was issued and the point that the next instruction should be issued to <i>distance</i>.</p>
+<p>See also <a href="qgeomaneuver.html#distanceToNextInstruction">distanceToNextInstruction</a>().</p>
+<h3 class="fn"><a name="setInstructionText"></a>void QGeoManeuver::setInstructionText ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>instructionText</i> )</h3>
+<p>Sets the textual navigation instructions to <i>instructionText</i>.</p>
+<p>See also <a href="qgeomaneuver.html#instructionText">instructionText</a>().</p>
+<h3 class="fn"><a name="setPosition"></a>void QGeoManeuver::setPosition ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>position</i> )</h3>
+<p>Sets the position where <a href="qgeomaneuver.html#instructionText">instructionText</a>() should be displayed to <i>position</i>.</p>
+<p>See also <a href="qgeomaneuver.html#position">position</a>().</p>
+<h3 class="fn"><a name="setTimeToNextInstruction"></a>void QGeoManeuver::setTimeToNextInstruction ( int <i>secs</i> )</h3>
+<p>Sets the estimated time it will take to travel from the point at which the associated instruction was issued and the point that the next instruction should be issued, in seconds, to <i>secs</i>.</p>
+<p>See also <a href="qgeomaneuver.html#timeToNextInstruction">timeToNextInstruction</a>().</p>
+<h3 class="fn"><a name="setWaypoint"></a>void QGeoManeuver::setWaypoint ( const <a href="qgeocoordinate.html">QGeoCoordinate</a> &amp; <i>coordinate</i> )</h3>
+<p>Sets the waypoint associated with this maneuver to <i>coordinate</i>.</p>
+<p>See also <a href="qgeomaneuver.html#waypoint">waypoint</a>().</p>
+<h3 class="fn"><a name="timeToNextInstruction"></a>int QGeoManeuver::timeToNextInstruction () const</h3>
+<p>Returns the estimated time it will take to travel from the point at which the associated instruction was issued and the point that the next instruction should be issued, in seconds.</p>
+<p>See also <a href="qgeomaneuver.html#setTimeToNextInstruction">setTimeToNextInstruction</a>().</p>
+<h3 class="fn"><a name="waypoint"></a><a href="qgeocoordinate.html">QGeoCoordinate</a> QGeoManeuver::waypoint () const</h3>
+<p>Returns the waypoint associated with this maneuver.</p>
+<p>If there is not waypoint associated with this maneuver an invalid <a href="qgeocoordinate.html">QGeoCoordinate</a> will be returned.</p>
+<p>See also <a href="qgeomaneuver.html#setWaypoint">setWaypoint</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QGeoManeuver::operator!= ( const QGeoManeuver &amp; <i>other</i> ) const</h3>
+<p>Returns whether this maneuver is not equal to <i>other</i>.</p>
+<h3 class="fn"><a name="operator-eq"></a>QGeoManeuver &amp; QGeoManeuver::operator= ( const QGeoManeuver &amp; <i>other</i> )</h3>
+<p>Assigns <i>other</i> to this maneuver object and then returns a reference to this maneuver object.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QGeoManeuver::operator== ( const QGeoManeuver &amp; <i>other</i> ) const</h3>
+<p>Returns whether this maneuver is equal to <i>other</i>.</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

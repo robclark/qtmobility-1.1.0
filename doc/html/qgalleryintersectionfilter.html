@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qgalleryfilter.cpp -->
+  <title>Qt Mobility 1.1: QGalleryIntersectionFilter Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtgallery.html">QtGallery</a></li>
+              <li>QGalleryIntersectionFilter</li>
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QGalleryIntersectionFilter Class Reference</h1>
+<p>The QGalleryIntersectionFilter class provides a filter which matches the intersection of two or more meta-data filters. <a href="#details">More...</a></p>
+<pre class="highlightedCode brush: cpp"> #include &lt;QGalleryIntersectionFilter&gt;</pre><ul>
+<li><a href="qgalleryintersectionfilter-members.html">List of all members, including inherited members</a></li>
+</ul>
+<hr />
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#QGalleryIntersectionFilter">QGalleryIntersectionFilter</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#QGalleryIntersectionFilter-2">QGalleryIntersectionFilter</a></b> ( const QGalleryMetaDataFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#QGalleryIntersectionFilter-3">QGalleryIntersectionFilter</a></b> ( const QGalleryUnionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#QGalleryIntersectionFilter-4">QGalleryIntersectionFilter</a></b> ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#dtor.QGalleryIntersectionFilter">~QGalleryIntersectionFilter</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#append">append</a></b> ( const QGalleryMetaDataFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#append-2">append</a></b> ( const QGalleryUnionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#append-3">append</a></b> ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#clear">clear</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#filterCount">filterCount</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QGalleryFilter&gt; </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#filters">filters</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#insert">insert</a></b> ( int <i>index</i>, const QGalleryMetaDataFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#insert-2">insert</a></b> ( int <i>index</i>, const QGalleryUnionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#insert-3">insert</a></b> ( int <i>index</i>, const QGalleryIntersectionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#isEmpty">isEmpty</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#isValid">isValid</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#prepend">prepend</a></b> ( const QGalleryMetaDataFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#prepend-2">prepend</a></b> ( const QGalleryUnionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#prepend-3">prepend</a></b> ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#remove">remove</a></b> ( int <i>index</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#replace">replace</a></b> ( int <i>index</i>, const QGalleryMetaDataFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#replace-2">replace</a></b> ( int <i>index</i>, const QGalleryUnionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryIntersectionFilter &amp; </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#operator-lt-lt">operator&lt;&lt;</a></b> ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryIntersectionFilter &amp; </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#operator-eq">operator=</a></b> ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</td></tr>
+</table>
+<hr />
+<a name="related-non-members"></a>
+<h2>Related Non-Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QGalleryIntersectionFilter </td><td class="memItemRight bottomAlign"><b><a href="qgalleryintersectionfilter.html#operator-and-and">operator&amp;&amp;</a></b> ( const QGalleryIntersectionFilter &amp; <i>filter1</i>, const QGalleryIntersectionFilter &amp; <i>filter2</i> )</td></tr>
+</table>
+<a name="details"></a>
+<hr />
+<div class="descr"/>
+<h2>Detailed Description</h2>
+<p>The QGalleryIntersectionFilter class provides a filter which matches the intersection of two or more meta-data filters.</p>
+<p>An intersection filter represents the intersection of a list of gallery filters. Filters can be added to an intersection using either the <a href="qgalleryintersectionfilter.html#append">append</a>(), <a href="qgalleryintersectionfilter.html#prepend">prepend</a>(), or <a href="qgalleryintersectionfilter.html#insert">insert</a>() functions, or using the <a href="qgalleryintersectionfilter.html#operator-lt-lt">&lt;&lt; operator</a>.</p>
+<p>Intersection filters can also combining two gallery filters with the &amp;&amp; operator.</p>
+</div>
+<p>See also <a href="qgalleryfilter.html">QGalleryFilter</a> and <a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a>.</p>
+<hr />
+<div class="func"/>
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGalleryIntersectionFilter"></a>QGalleryIntersectionFilter::QGalleryIntersectionFilter ()</h3>
+<p>Constructs an empty intersection.</p>
+<h3 class="fn"><a name="QGalleryIntersectionFilter-2"></a>QGalleryIntersectionFilter::QGalleryIntersectionFilter ( const <a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> &amp; <i>filter</i> )</h3>
+<p>Constructs an intersection filter from a meta-data <i>filter</i>.</p>
+<h3 class="fn"><a name="QGalleryIntersectionFilter-3"></a>QGalleryIntersectionFilter::QGalleryIntersectionFilter ( const <a href="qgalleryunionfilter.html">QGalleryUnionFilter</a> &amp; <i>filter</i> )</h3>
+<p>Constructs an intersection filter from a union <i>filter</i>.</p>
+<h3 class="fn"><a name="QGalleryIntersectionFilter-4"></a>QGalleryIntersectionFilter::QGalleryIntersectionFilter ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</h3>
+<p>Constructs a copy of an intersection <i>filter</i>.</p>
+<h3 class="fn"><a name="dtor.QGalleryIntersectionFilter"></a>QGalleryIntersectionFilter::~QGalleryIntersectionFilter ()</h3>
+<p>Destroys an intersection filter.</p>
+<h3 class="fn"><a name="append"></a>void QGalleryIntersectionFilter::append ( const <a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> &amp; <i>filter</i> )</h3>
+<p>Appends a meta-data <i>filter</i> to an intersection.</p>
+<h3 class="fn"><a name="append-2"></a>void QGalleryIntersectionFilter::append ( const <a href="qgalleryunionfilter.html">QGalleryUnionFilter</a> &amp; <i>filter</i> )</h3>
+<p>Appens a union <i>filter</i> to an intersection.</p>
+<h3 class="fn"><a name="append-3"></a>void QGalleryIntersectionFilter::append ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</h3>
+<p>Appends the contents of an intersection <i>filter</i> to an intersection.</p>
+<h3 class="fn"><a name="clear"></a>void QGalleryIntersectionFilter::clear ()</h3>
+<p>Clears all the filters from an intersection.</p>
+<h3 class="fn"><a name="filterCount"></a>int QGalleryIntersectionFilter::filterCount () const</h3>
+<p>Returns the number of filters in an intersection.</p>
+<h3 class="fn"><a name="filters"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qgalleryfilter.html">QGalleryFilter</a>&gt; QGalleryIntersectionFilter::filters () const</h3>
+<p>Return the filters contained in an intersection.</p>
+<h3 class="fn"><a name="insert"></a>void QGalleryIntersectionFilter::insert ( int <i>index</i>, const <a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> &amp; <i>filter</i> )</h3>
+<p>Inserts a meta-data <i>filter</i> into an intersection at <i>index</i>.</p>
+<h3 class="fn"><a name="insert-2"></a>void QGalleryIntersectionFilter::insert ( int <i>index</i>, const <a href="qgalleryunionfilter.html">QGalleryUnionFilter</a> &amp; <i>filter</i> )</h3>
+<p>Inserts a union <i>filter</i> into an intersection at <i>index</i>.</p>
+<h3 class="fn"><a name="insert-3"></a>void QGalleryIntersectionFilter::insert ( int <i>index</i>, const QGalleryIntersectionFilter &amp; <i>filter</i> )</h3>
+<p>Inserts the contents of an intersection <i>filter</i> into an intersection at <i>index</i>.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QGalleryIntersectionFilter::isEmpty () const</h3>
+<p>Returns true if an intersection does not contain any filters, and returns false otherwise.</p>
+<h3 class="fn"><a name="isValid"></a>bool QGalleryIntersectionFilter::isValid () const</h3>
+<p>Returns true if the filter is a valid intersection filter.</p>
+<p>An invalid filter can be obtained by casting a non <a href="qgalleryfilter.html#Type-enum">QGalleryFilter::Intersection</a> type <a href="qgalleryfilter.html">QGalleryFilter</a> to <a href="qgalleryintersectionfilter.html">QGalleryIntersectionFilter</a>.</p>
+<h3 class="fn"><a name="prepend"></a>void QGalleryIntersectionFilter::prepend ( const <a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> &amp; <i>filter</i> )</h3>
+<p>Prepends a meta-data <i>filter</i> to an intersection.</p>
+<h3 class="fn"><a name="prepend-2"></a>void QGalleryIntersectionFilter::prepend ( const <a href="qgalleryunionfilter.html">QGalleryUnionFilter</a> &amp; <i>filter</i> )</h3>
+<p>Prepends a union <i>filter</i> to an intersection.</p>
+<h3 class="fn"><a name="prepend-3"></a>void QGalleryIntersectionFilter::prepend ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</h3>
+<p>Prepends the contents of an intersection <i>filter</i> to an intersection.</p>
+<h3 class="fn"><a name="remove"></a>void QGalleryIntersectionFilter::remove ( int <i>index</i> )</h3>
+<p>Removes the filter at <i>index</i> from an intersection.</p>
+<h3 class="fn"><a name="replace"></a>void QGalleryIntersectionFilter::replace ( int <i>index</i>, const <a href="qgallerymetadatafilter.html">QGalleryMetaDataFilter</a> &amp; <i>filter</i> )</h3>
+<p>Replaces the filter at <i>index</i> in an intersection with a meta-data <i>filter</i>.</p>
+<h3 class="fn"><a name="replace-2"></a>void QGalleryIntersectionFilter::replace ( int <i>index</i>, const <a href="qgalleryunionfilter.html">QGalleryUnionFilter</a> &amp; <i>filter</i> )</h3>
+<p>Replaces the filter at <i>index</i> in an intersection with a union <i>filter</i>.</p>
+<h3 class="fn"><a name="operator-lt-lt"></a>QGalleryIntersectionFilter &amp; QGalleryIntersectionFilter::operator&lt;&lt; ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</h3>
+<p>Appends a <i>filter</i> to an intersection.</p>
+<h3 class="fn"><a name="operator-eq"></a>QGalleryIntersectionFilter &amp; QGalleryIntersectionFilter::operator= ( const QGalleryIntersectionFilter &amp; <i>filter</i> )</h3>
+<p>Assigns the value of <i>filter</i> to another intersection filter.</p>
+</div>
+<hr />
+<div class="relnonmem"/>
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-and-and"></a>QGalleryIntersectionFilter operator&amp;&amp; ( const QGalleryIntersectionFilter &amp; <i>filter1</i>, const QGalleryIntersectionFilter &amp; <i>filter2</i> )</h3>
+<p>Returns a gallery filter matches the intersection of <i>filter1</i> and <i>filter2</i>.</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

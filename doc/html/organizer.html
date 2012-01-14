@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- organizer.qdoc -->
+  <title>Qt Mobility 1.1: Organizer</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li>Organizer</li>            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#namespace">Namespace</a></li>
+<li class="level1"><a href="#introduction">Introduction</a></li>
+<li class="level1"><a href="#basic-usage">Basic Usage</a></li>
+<li class="level2"><a href="#the-organizer-manager">The Organizer Manager</a></li>
+<li class="level2"><a href="#creating-a-new-item">Creating a New Item</a></li>
+<li class="level2"><a href="#retrieving-items">Retrieving Items</a></li>
+<li class="level2"><a href="#updating-an-existing-item">Updating an Existing Item</a></li>
+<li class="level2"><a href="#removing-an-item-from-a-manager">Removing an item from a manager</a></li>
+<li class="level1"><a href="#the-organizer-item-model">The Organizer Item Model</a></li>
+<li class="level2"><a href="#items">Items</a></li>
+<li class="level2"><a href="#recurring-items">Recurring Items</a></li>
+<li class="level2"><a href="#collections">Collections</a></li>
+<li class="level2"><a href="#all-day-events">All-day Events</a></li>
+<li class="level1"><a href="#api-usage">API Usage</a></li>
+<li class="level2"><a href="#asynchronous-api">Asynchronous API</a></li>
+<li class="level2"><a href="#synchronous-api">Synchronous API</a></li>
+<li class="level1"><a href="#more-information">More information</a></li>
+<li class="level1"><a href="#reference-documentation">Reference documentation</a></li>
+<li class="level2"><a href="#main-classes">Main Classes</a></li>
+<li class="level2"><a href="#qorganizeritemdetail-leaf-classes">QOrganizerItemDetail Leaf Classes</a></li>
+<li class="level2"><a href="#asynchronous-requests">Asynchronous Requests</a></li>
+<li class="level2"><a href="#organizer-item-selection-and-sorting">Organizer Item Selection And Sorting</a></li>
+<li class="level2"><a href="#implementing-backends">Implementing Backends</a></li>
+<li class="level2"><a href="#synchronization-and-serialization">Synchronization and Serialization</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+</ul>
+</div>
+<h1 class="title">Organizer</h1>
+<span class="subtitle"></span>
+<div class="descr"/>
+<p>The Organizer API enables a client to request calendar, schedule and personal data from local or remote backends. This is part of the Qt Mobility Project.</p>
+<a name="namespace"></a>
+<h2>Namespace</h2>
+<p>The QtMobility APIs are placed into the <i>QtMobility</i> namespace. This is done to facilitate the future migration of Mobility APIs into Qt. See the <a href="quickstart.html">Quickstart guide</a> for an example on how the namespace impacts on application development.</p>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>The Organizer API provides clients with the ability to access calendar, schedule and personal data in a platform-independent and datastore-agnostic manner. This is achieved by defining generic personal information data abstractions which can sufficiently describe calendar and scheduling data stored a platform's native calendaring system. Through the plugin architecture, it can be used as a front-end API for any calenaring system (eg. an online calendar).</p>
+<a name="basic-usage"></a>
+<h2>Basic Usage</h2>
+<p>The Qt Organizer API provides both a <a href="organizersync.html">synchronous</a> and an <a href="organizerasync.html">asynchronous</a> API. Note that for clarity, the short examples on this page demonstrate the synchronous API. While these code snippets might be useful for non-GUI applications, it is highly recommended that the asynchronous API is used for GUI applications.</p>
+<a name="the-organizer-manager"></a>
+<h3>The Organizer Manager</h3>
+<p>Organizer information is stored in datastores whose functionality is exposed via the <a href="qorganizermanager.html">QOrganizerManager</a> class.</p>
+<p>Most users of the API will want to use the default manager for the platform, which provides access to the system address book. Instantiating a manager by using the default constructor will result in the default manager for that platform being instantiated:</p>
+<pre class="highlightedCode brush: cpp">     QOrganizerManager defaultManager;</pre>
+<a name="creating-a-new-item"></a>
+<h3>Creating a New Item</h3>
+<p>You can create a new item simply by instantiating one and saving it a manager.</p>
+<pre class="highlightedCode brush: cpp">     <span class="comment">// a default constructed journal will have it's date/time set to the current date/time.</span>
+     QOrganizerJournal journal;
+     journal.setDescription(&quot;The conference went well.  We all agree that marshmallows are awesome, &quot;\
+                     &quot;but we were unable to reach any agreement as to how we could possibly &quot;\
+                     &quot;increase our intake of marshmallows.  Several action points were assigned &quot;\
+                     &quot;to various members of the group; I have been tasked with finding a good &quot;\
+                     &quot;recipe that combines both marshmallows and chocolate, by next Wednesday.&quot;);
+     defaultManager.saveItem(&amp;journal);</pre>
+<a name="retrieving-items"></a>
+<h3>Retrieving Items</h3>
+<p>You can request all items from the manager that occur in a given time range.</p>
+<pre class="highlightedCode brush: cpp">     QList&lt;QOrganizerItem&gt; entries =
+         defaultManager.items(QDateTime(QDate(2010, 1, 1), QTime(0, 0, 0)),
+                              QDateTime(QDate(2010, 1, 31), QTime(23, 59, 59)));</pre>
+<p>It is also possible filter the items on the value of a detail.</p>
+<pre class="highlightedCode brush: cpp">     entries = defaultManager.items(QOrganizerItemLocation::match(&quot;Meeting Room 8&quot;));</pre>
+<p>The above code will retrieve both items that have been saved to the manager and items which are generated based on <a href="#recurrences">recurrence rules</a>. Given a recurring item, it is possible to retrieve a list of items that it generates; that is, to get a list of the upcoming occurrences of a single recurring item. This can be done using <a href="qorganizermanager.html#itemOccurrences">QOrganizerManager::itemOccurrences</a>():</p>
+<p>You can also retrieve a particular existing item from a manager, by directly requesting the item with a particular (previously known) id. The synchronous API provides the <a href="qorganizermanager.html#item">QOrganizerManager::item</a>() function to retrieve a single item by its id. With the asynchronous API, this can be done using a <a href="qorganizeritemfetchrequest.html">QOrganizerItemFetchRequest</a> and a <a href="qorganizeritemidfilter.html">QOrganizerItemIdFilter</a>.</p>
+<a name="updating-an-existing-item"></a>
+<h3>Updating an Existing Item</h3>
+<p>You can update a previously saved item retrieving the item, modifying it, and saving it back to the manager. The manager uses the id of the item to match up the provided item with the one in the database.</p>
+<pre class="highlightedCode brush: cpp">     journal.addComment(&quot;Serves: 8.  Ingredients: 500g Milk Chocolate, 500g Marshmallows.&quot;\
+                     &quot;  Step 1: Put the marshmallows into 8 separate bowls.&quot;\
+                     &quot;  Step 2: Melt the chocolate.&quot;\
+                     &quot;  Step 3: Pour the chocolate over the marshmallows in the bowls.&quot;\
+                     &quot;  Step 4: Put the bowls into the refrigerator for 20 minutes; serve chilled.&quot;);
+     if (!defaultManager.saveItem(&amp;journal))
+         qDebug() &lt;&lt; &quot;Unable to save updated journal!  Error:&quot; &lt;&lt; defaultManager.error();</pre>
+<a name="removing-an-item-from-a-manager"></a>
+<h3>Removing an item from a manager</h3>
+<p>You can remove an item from the manager by using its id.</p>
+<pre class="highlightedCode brush: cpp">     defaultManager.removeItem(journal.id());</pre>
+<a name="the-organizer-item-model"></a>
+<h2>The Organizer Item Model</h2>
+<a name="items"></a>
+<h3>Items</h3>
+<p>A <a href="qorganizeritem.html">QOrganizerItem</a> represents an event, todo, journal or note.</p>
+<p>Each item stored in a manager is identified by a <a href="qorganizeritemid.html">QOrganizerItemId</a>. The id is the means by which the manager can:</p>
+<ul>
+<li>Determine whether a <a href="qorganizermanager.html#saveItem">save</a> operation should make a new item or update an existing one. (If an item has a null id, it should be saved as a new item)</li>
+<li>Match an item to an existing one for updating.</li>
+<li>Link between items (for example, in <a href="qorganizeritemparent.html">QOrganizerItemParent</a>).</li>
+</ul>
+<p>The <a href="qorganizeritem.html">QOrganizerItem</a> class provides a generic interface for accessing events, todos, journals and notes. To actually access specific fields of an item, convenience subclasses of <a href="qorganizeritem.html">QOrganizerItem</a> are offered. These are <a href="qorganizerevent.html">QOrganizerEvent</a>, <a href="qorganizertodo.html">QOrganizerTodo</a>, <a href="qorganizerjournal.html">QOrganizerJournal</a> and <a href="qorganizernote.html">QOrganizerNote</a>. Additionally, <a href="qorganizereventoccurrence.html">QOrganizerEventOccurrence</a> and <a href="qorganizertodooccurrence.html">QOrganizerTodoOccurrence</a> can be used for manipulating occurrences of event or todos (see the <a href="#recurrences">Recurring Items</a> section). Here is an example of how to retrieve details specific to an item:</p>
+<pre class="highlightedCode brush: cpp">     QList&lt;QOrganizerItem&gt; items = defaultManager.items();
+     foreach (QOrganizerItem item, entries) {
+         if (item.type() == QOrganizerItemType::TypeEvent) {
+             QOrganizerEvent event(item);
+             qDebug() &lt;&lt; &quot;Event:&quot; &lt;&lt; event.startDateTime() &lt;&lt; &quot;, &quot; &lt;&lt; event.displayLabel();
+         } else if (item.type() == QOrganizerItemType::TypeEventOccurrence) {
+             QOrganizerEventOccurrence event(item);
+             qDebug() &lt;&lt; &quot;Event:&quot; &lt;&lt; event.startDateTime() &lt;&lt; &quot;, &quot; &lt;&lt; event.displayLabel();
+         } else if (item.type() == QOrganizerItemType::TypeTodo) {
+             <span class="comment">// process todos</span>
+         } else if (item.type() == QOrganizerItemType::TypeTodoOccurrence) {
+             <span class="comment">// process recurring todos</span>
+         } else if (item.type() == QOrganizerItemType::TypeJournal) {
+             <span class="comment">// process journals</span>
+         } else if (item.type() == QOrganizerItemType::TypeNote) {
+             <span class="comment">// process notes</span>
+         }
+     }</pre>
+<a name="recurrences"></a><a name="recurring-items"></a>
+<h3>Recurring Items</h3>
+<p>A recurring item is an item that occurs more than once; for example, a meeting that occurs every week for the next 10 weeks. A recurring item is created by creating a <a href="qorganizerevent.html">QOrganizerEvent</a> or <a href="qorganizertodo.html">QOrganizerTodo</a> and setting a <a href="qorganizerrecurrencerule.html">QOrganizerRecurrenceRule</a> on it to specify the rules for when it should recur. When <a href="qorganizermanager.html#items">QOrganizerManager::items</a>() is called, recurring items are <i>not</i> returned. Rather, they expanded into multiple <a href="qorganizereventoccurrence.html">QOrganizerEventOccurrence</a> and <a href="qorganizertodooccurrence.html">QOrganizerTodoOccurrence</a> items. Each generated occurrence item has a null id.</p>
+<p>You can make an exception for an occurrence by taking a generated item occurrence from the manager, making the necessary modifications, and resaving it. When the manager is then queried with <a href="qorganizermanager.html#items">QOrganizerManager::items</a>(), it will return the list of occurrences as before, but with the modifications in place. The modified item will be given a non-null id, and replaces the generated one in the list.</p>
+<p>Here is an example of changing a single occurrence of an item:</p>
+<pre class="highlightedCode brush: cpp">     QOrganizerEventOccurrence nextMarshmallowMeeting = defaultManager.itemOccurrences(marshmallowMeeting).value(0);
+     nextMarshmallowMeeting.setStartDateTime(QDateTime::fromString(&quot;13.05.2010 18:00:00&quot;, &quot;dd.MM.yy hh:mm:ss&quot;));
+     nextMarshmallowMeeting.setEndDateTime(QDateTime::fromString(&quot;13.05.2010 20:00:00&quot;, &quot;dd.MM.yy hh:mm:ss&quot;));
+     nextMarshmallowMeeting.addComment(&quot;The next meeting will go for an hour longer (starting one &quot;\
+                                       &quot;hour earlier than usual), since we have scheduled one hour&quot;\
+                                       &quot;to taste the results of the recipe that I will be presenting &quot;\
+                                       &quot;at the meeting.&quot;);
+     defaultManager.saveItem(&amp;nextMarshmallowMeeting);</pre>
+<p>You can also query the manager for a list of unexpanded items by calling <a href="qorganizermanager.html#itemsForExport">QOrganizerManager::itemsForExport</a>(). The list of returned items will contain all items that have been saved to the manager with a call to <a href="qorganizermanager.html#saveItem">QOrganizerManager::saveItem</a>() That is, recurring events will be returned as is, and event occurrences will not appear unless they are exceptions (ie. have a non-null id). Fetching the list in this way can be useful for transfering items to other managers or for exporting to iCalendar with <a href="qtversit.html">QtVersit</a>.</p>
+<a name="collections"></a>
+<h3>Collections</h3>
+<p>Every item stored in a manager belongs to exactly one <a href="qorganizercollection.html">collection</a>. A collection can have properties such as a name, a &quot;color&quot;, a specified icon, a description, and so on. Collections may be added or removed if the manager supports those operations, or modified. There will always be at least one collection in a manager, and the manager will always have a default collection into which items are saved if no other collection is specified.</p>
+<p>Some managers will allow users to create collections (for example, a &quot;football fixtures&quot; collection) while others may have built-in collections (for example, &quot;work&quot; and &quot;home&quot; collections).</p>
+<p>A list of all collections can be retrieved from a manager with one function call:</p>
+<pre class="highlightedCode brush: cpp">     QList&lt;QOrganizerCollection&gt; collections = defaultManager.collections();</pre>
+<p>To save an item to a collection, set the collection ID on the item object. If the collection id is the null id, the item will be saved in the collection in which it is currently saved (if the item already exists) or into the manager's default collection (if it is a new item).</p>
+<pre class="highlightedCode brush: cpp">     marshmallowMeeting.setCollectionId(collection.id());
+     defaultManager.saveItem(&amp;marshmallowMeeting);</pre>
+<p>To retrieve all items in a collection, a <a href="qorganizeritemcollectionfilter.html">QOrganizerItemCollectionFilter</a> should be used.</p>
+<pre class="highlightedCode brush: cpp">     QOrganizerItemCollectionFilter collectionFilter;
+     collectionFilter.setCollectionId(collection.id());
+     items = defaultManager.items(collectionFilter);</pre>
+<a name="all-day-events"></a>
+<h3>All-day Events</h3>
+<p>Events and Todos can be specified as all-day or multi-day by setting the AllDay field to <tt>true</tt> (using <a href="qorganizerevent.html#setAllDay">QOrganizerEvent::setAllDay</a>()). When this field is set to true, it means that the time portion of the StartDateTime and EndDateTime should be ignored. An event or todo marked as all-day should be considered to start and end roughly on its given start and end dates (inclusive), but without specifying exact times. For example, a birthday could be specified as an all-day <a href="qorganizerevent.html">QOrganizerEvent</a> where the StartDateTime and EndDateTime have the same value.</p>
+<a name="api-usage"></a>
+<h2>API Usage</h2>
+<a name="asynchronous-api"></a>
+<h3>Asynchronous API</h3>
+<p>The asynchronous API provides a way to access or modify the organizer item information managed by a particular backend via non-blocking, asynchronous requests. It is recommended for most applications that the asynchronous API be used where possible.</p>
+<p>The asynchronous API is offered through various classes derived from the <a href="qorganizerabstractrequest.html">QOrganizerAbstractRequest</a> class, including <a href="qorganizeritemidfetchrequest.html">QOrganizerItemIdFetchRequest</a>, <a href="qorganizeritemfetchrequest.html">QOrganizerItemFetchRequest</a>, <a href="qorganizeritemfetchforexportrequest.html">QOrganizerItemFetchForExportRequest</a>, <a href="qorganizeritemsaverequest.html">QOrganizerItemSaveRequest</a>, <a href="qorganizeritemremoverequest.html">QOrganizerItemRemoveRequest</a>, <a href="qorganizeritemoccurrencefetchrequest.html">QOrganizerItemOccurrenceFetchRequest</a>, <a href="qorganizercollectionfetchrequest.html">QOrganizerCollectionFetchRequest</a>, <a href="qorganizercollectionremoverequest.html">QOrganizerCollectionRemoveRequest</a>, <a href="qorganizercollectionsaverequest.html">QOrganizerCollectionSaveRequest</a>, <a href="qorganizeritemdetaildefinitionfetchrequest.html">QOrganizerItemDetailDefinitionFetchRequest</a>, <a href="qorganizeritemdetaildefinitionsaverequest.html">QOrganizerItemDetailDefinitionSaveRequest</a>, and <a href="qorganizeritemdetaildefinitionremoverequest.html">QOrganizerItemDetailDefinitionRemoveRequest</a>.</p>
+<p>The asynchronous API allows manipulation of <a href="qorganizeritem.html">items</a>, <a href="qorganizercollection.html">collections</a> and <a href="qorganizeritemdetaildefinition.html">schema definitions</a>, but does not provide manager capability or meta data information reporting.</p>
+<p>For more detailed documentation on the asynchronous API, see the <a href="organizerasync.html">Organizer Asynchronous API</a>.</p>
+<a name="synchronous-api"></a>
+<h3>Synchronous API</h3>
+<p>The synchronous API provides the simplest way to access or modify the organizer item information managed by a particular backend. It has the disadvantage that calls block the current thread of execution until completion and is therefore most suitable only for applications which interact with local, high-speed datastores, or for applications which do not require a responsive user interface.</p>
+<p>The synchronous API is offered through the <a href="qorganizermanager.html">QOrganizerManager</a> class, and includes manipulation of <a href="qorganizeritem.html">items</a>, <a href="qorganizercollection.html">collections</a> and <a href="qorganizeritemdetaildefinition.html">schema definitions</a>. As previously described, the meta data reporting and manipulation functions are also provided via synchronous API only.</p>
+<p>For more detailed documentation on the synchronous API, see the <a href="organizersync.html">Organizer Synchronous API</a>.</p>
+<a name="more-information"></a>
+<h2>More information</h2>
+<p>While the information on this page should be sufficient for the common use-cases, please see the discussion on Advanced Organizer API Usage for more details on the intricacies of the API.</p>
+<p>It is possible for third party developers to implement a manager engine plugin from which clients may request data. For more information on this topic (for example, if you intend to implement a manager backend) please see <a href="organizerengines.html">Qt Organizer Manager Engines</a>.</p>
+<a name="reference-documentation"></a>
+<h2>Reference documentation</h2>
+<a name="main-classes"></a>
+<h3>Main Classes</h3>
+<table class="annotated">
+<tr class="odd topAlign"><td><p><a href="qorganizerabstractrequest.html">QOrganizerAbstractRequest</a></p></td><td><p>Mechanism for asynchronous requests to be made of a manager if it supports them</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizercollection.html">QOrganizerCollection</a></p></td><td><p>Represents a collection of items in a manager</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritem.html">QOrganizerItem</a></p></td><td><p>Represents an event, todo, note, or journal entry</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemdetail.html">QOrganizerItemDetail</a></p></td><td><p>Represents a single, complete detail about an organizer item</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemfilter.html">QOrganizerItemFilter</a></p></td><td><p>Used to select organizer items made available through a QOrganizerManager</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizermanager.html">QOrganizerManager</a></p></td><td><p>Interface which allows clients with access to organizer item information stored in a particular backend</p></td></tr>
+</table>
+<a name="qorganizeritemdetail-leaf-classes"></a>
+<h3>QOrganizerItemDetail Leaf Classes</h3>
+<p>Several subclasses of <a href="qorganizeritemdetail.html">QOrganizerItemDetail</a> are provided as part of the Qt Mobility Organizer API. They are general in design but are intended to fulfill specific use-cases. Please note that certain backends may choose not to support one or more of these subclasses as they appear here; they may offer their own which provide similar functionality.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td><p><a href="qorganizereventtime.html">QOrganizerEventTime</a></p></td><td><p>Contains the start and end dates and times of a recurring event series, or occurrence of an event</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemaudiblereminder.html">QOrganizerItemAudibleReminder</a></p></td><td><p>Contains information about an audible reminder of an item</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemcomment.html">QOrganizerItemComment</a></p></td><td><p>Contains some arbitrary information which is relevant to the organizer item</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemdescription.html">QOrganizerItemDescription</a></p></td><td><p>Contains some arbitrary information which is relevant to the organizer item</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemdisplaylabel.html">QOrganizerItemDisplayLabel</a></p></td><td><p>Contains the backend-synthesized display label of the organizer item</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritememailreminder.html">QOrganizerItemEmailReminder</a></p></td><td><p>Contains information about an email reminder of an item</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemguid.html">QOrganizerItemGuid</a></p></td><td><p>Contains the globally unique identifier of the organizer item, which can be used for synchronization purposes</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemlocation.html">QOrganizerItemLocation</a></p></td><td><p>Contains information about a location which is related to the organizer item in some manner</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemparent.html">QOrganizerItemParent</a></p></td><td><p>Contains information about the event or todo that generated this item</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritempriority.html">QOrganizerItemPriority</a></p></td><td><p>Contains the priority of the organizer item, which may be used to resolve scheduling conflicts</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemrecurrence.html">QOrganizerItemRecurrence</a></p></td><td><p>Contains a list of rules and dates on which the recurrent item occurs, and a list of rules and dates on which exceptions occur</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemreminder.html">QOrganizerItemReminder</a></p></td><td><p>Contains information about when and how the user wants to reminded of the item</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemtag.html">QOrganizerItemTag</a></p></td><td><p>Contains some arbitrary tag which is relevant to the organizer item</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemtimestamp.html">QOrganizerItemTimestamp</a></p></td><td><p>Contains the creation and last-modified timestamp associated with the organizer item. XXX TODO: what about last accessed?</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemtype.html">QOrganizerItemType</a></p></td><td><p>Describes the type of the organizer item. This detail may be automatically synthesized by the backend depending on other details in the organizer item</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemvisualreminder.html">QOrganizerItemVisualReminder</a></p></td><td><p>Contains information about a visual reminder of an item</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizerjournaltime.html">QOrganizerJournalTime</a></p></td><td><p>Contains information about the date and time for which a journal entry has been created</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizertodoprogress.html">QOrganizerTodoProgress</a></p></td><td><p>Contains information about the progress of a todo item</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizertodotime.html">QOrganizerTodoTime</a></p></td><td><p>Contains information about the time range of a todo item</p></td></tr>
+</table>
+<p>Each of these subclasses provide access to information stored in fields which may have certain constraints, as listed in the <a href="organizerschema.html">schema</a>.</p>
+<a name="asynchronous-requests"></a>
+<h3>Asynchronous Requests</h3>
+<p>You may use either the <a href="organizersync.html">synchronous</a> or <a href="organizerasync.html">asynchronous</a> API to access functionality provided by a manager backend. The <a href="organizerasync.html">asynchronous</a> API is offered through subclasses of the <a href="qorganizerabstractrequest.html">QOrganizerAbstractRequest</a> class:</p>
+<table class="annotated">
+<tr class="odd topAlign"><td><p><a href="qorganizeritemdetaildefinitionfetchrequest.html">QOrganizerItemDetailDefinitionFetchRequest</a></p></td><td><p>Allows a client to asynchronously request detail definitions from an organizer item store manager</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemdetaildefinitionremoverequest.html">QOrganizerItemDetailDefinitionRemoveRequest</a></p></td><td><p>Allows a client to asynchronously request that certain detail definitions be removed from an organizer item manager</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemdetaildefinitionsaverequest.html">QOrganizerItemDetailDefinitionSaveRequest</a></p></td><td><p>Allows a client to asynchronously request that certain detail definitions be saved in an organizer item store manager</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemfetchforexportrequest.html">QOrganizerItemFetchForExportRequest</a></p></td><td><p>Allows a client to asynchronously request organizer items from an organizer item store manager</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemfetchrequest.html">QOrganizerItemFetchRequest</a></p></td><td><p>Allows a client to asynchronously request organizer items from an organizer item store manager</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemidfetchrequest.html">QOrganizerItemIdFetchRequest</a></p></td><td><p>Allows a client to asynchronously request a list of organizer item ids from a organizer item store manager</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemoccurrencefetchrequest.html">QOrganizerItemOccurrenceFetchRequest</a></p></td><td><p>Allows a client to asynchronously request occurrences generated by a recurring item</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemremoverequest.html">QOrganizerItemRemoveRequest</a></p></td><td><p>Allows a client to asynchronously request that certain organizer items be removed from a organizer items store</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemsaverequest.html">QOrganizerItemSaveRequest</a></p></td><td><p>Allows a client to asynchronously request that certain organizer items be saved to an organizer item store</p></td></tr>
+</table>
+<a name="organizer-item-selection-and-sorting"></a>
+<h3>Organizer Item Selection And Sorting</h3>
+<p>You may select an organizer item by specifying a unique item id, or by supplying a <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> which matches the item or items they wish to select. The various derivatives of <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> allow for fine-grained and flexible selection of organizer data according to various criteria:</p>
+<table class="annotated">
+<tr class="odd topAlign"><td><p><a href="qorganizeritemchangelogfilter.html">QOrganizerItemChangeLogFilter</a></p></td><td><p>Filter based around a organizer item timestamp criterion</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemdetailfilter.html">QOrganizerItemDetailFilter</a></p></td><td><p>Filter based around a detail value criterion</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemdetailrangefilter.html">QOrganizerItemDetailRangeFilter</a></p></td><td><p>Filter based around a detail value range criterion</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemidfilter.html">QOrganizerItemIdFilter</a></p></td><td><p>Filter based around a list of organizer item ids</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemintersectionfilter.html">QOrganizerItemIntersectionFilter</a></p></td><td><p>Filter which intersects the results of other filters</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeriteminvalidfilter.html">QOrganizerItemInvalidFilter</a></p></td><td><p>Matches no organizeritems</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizeritemunionfilter.html">QOrganizerItemUnionFilter</a></p></td><td><p>Filter which unions the results of other filters</p></td></tr>
+</table>
+<p>A client can also request that the results of such a selection be sorted, by passing a <a href="qorganizeritemsortorder.html">QOrganizerItemSortOrder</a> (or list of sort orders) to the manager.</p>
+<a name="implementing-backends"></a>
+<h3>Implementing Backends</h3>
+<p>A backend implementor must implement the following interfaces:</p>
+<table class="annotated">
+<tr class="odd topAlign"><td><p><a href="qorganizercollectionid.html">QOrganizerCollectionEngineId</a></p></td><td><p>Uniquely identifies an item within a particular engine plugin</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizeritemid.html">QOrganizerItemEngineId</a></p></td><td><p>Uniquely identifies an item within a particular engine plugin</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qorganizermanagerengine.html">QOrganizerManagerEngine</a></p></td><td><p>The interface for all implementations of the organizer item manager backend functionality</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qorganizermanagerenginefactory.html">QOrganizerManagerEngineFactory</a></p></td><td><p>The interface for plugins that implement QOrganizerManagerEngine functionality</p></td></tr>
+</table>
+<p>For more information on this topic, see please see the documentation on <a href="organizerengines.html">implementing manager engines</a>.</p>
+<a name="synchronization-and-serialization"></a>
+<h3>Synchronization and Serialization</h3>
+<p>The organizer API is used by another Qt Mobility module: the <a href="versit.html">Versit</a>* module. It allows serialization of a <a href="qorganizeritem.html">QOrganizerItem</a> into an iCalendar document, and vice versa.</p>
+<p>[*] Versit <sup>&reg;</sup> is a trademark of the Internet Mail Consortium.</p>
+<a name="examples"></a>
+<h2>Examples</h2>
+<p>The following sample applications show examples of API usage:</p>
+<ul>
+<li><a href="calendardemo.html">Example Calendar Application</a></li>
+</ul>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

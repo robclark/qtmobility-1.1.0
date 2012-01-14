@@ -1,0 +1,628 @@
+/****************************************************************************
+**
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in a
+** written agreement between you and Nokia.
+**
+** GNU Free Documentation License
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+** If you have questions regarding the use of this file, please contact
+** Nokia at qt-info@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \group mobility
+    \title Qt Mobility Project APIs
+
+    Qt Mobility Project supplies a set of new APIs for Qt enabling a range of
+    mobile-centric technologies and features on mobile and non-mobile platforms.
+
+*/
+
+
+
+/*!
+    \page index.html
+    \startpage index.html  Qt Reference Documentation
+
+    \brief An overview of the Qt Mobility Project APIs.
+
+    \tableofcontents
+
+    Although we anticipate that the new APIs will be of most advantage to those
+    developers embarked on mobile application development, in many cases they may
+    be equally relevant for other development usage including, in some cases,
+    desktop application development.
+
+
+    \section1 Overview
+
+    \section2 Introducing the Qt Mobility Project APIs
+
+    The Qt Mobility project covers a diverse range of features and technologies.
+    It is not a single API but a collection of APIs and frameworks.
+
+    This release contains the following APIs:
+
+    \annotatedlist  mobility
+
+    These APIs give the developer a range of desirable functions for a
+    mobile platform, but now these functions become possible on platforms not
+    traditionally associated with some of the features. A mobile device
+    using the Qt Mobility Project API would be able to
+        \list
+        \o Locate services on-board or remotely. Find an optimal
+    connection to the network for the particular service.
+        \o Services built on top of these APIs would include Internet
+        applications such as email and web browsing.
+        \o Multimedia features enable image and video capture with audio ,
+    audio recording, and the playing of music or video clips.
+        \o Location will make the device aware of its geographical location
+    to support GIS applications.
+        \o Publish-Subscribe enables communication between separate objects
+        whether local or remote to the device.
+        \endlist
+
+    The New Qt APIs deliver to developers an enabling package. It
+    will be used by developers to build a variety of applications and
+    services that are mobile capable or familiar to mobile users,
+    irrespective of whether the platform is mobile or not. This means that
+    there is the possibility of easy transfer of user experience from PC to
+    phone or vice versa.
+    
+    \section1 Namespace
+
+    The Qt Mobility project APIs are placed into the \i{QtMobility} namespace, with
+    the important exception of Multimedia. This is done to facilitate the
+    future migration of Mobility APIs into Qt.
+    
+    See the \l {Quickstart Example}{Quickstart guide} for an example on how
+    the  namespace impacts on application development.
+
+    \section1 Getting Started
+    To get started with Qt Mobility see the
+    \list
+        \o \l {Installation Guide}
+        \o \l {Quickstart Example}
+        \o \l {Qt Mobility Examples}{List of all examples.}
+    \endlist
+    
+    For users on the supported Symbian platforms, shown at the bottom of this
+    page, see the instructions at the
+    \l{http://library.forum.nokia.com/topic/Qt_for_Symbian_Developers_Library/GUID-7E53D0F7-72CB-41C4-8807-FE7A772B0DB4.html}{Qt For Symbian Developer's Library}
+
+    \section2 Known Issues
+    See \l {Release Notes of the QtMobility Project release}{Release Notes}.
+
+    For an overview of Platform Compatibility see \l {Platform Compatibility}.
+    
+    \section1 The Qt Mobility APIs
+    
+    \section2 Service Framework
+
+    A platform independent method of finding Services. A 'service' is an
+    independent component that allows a client to perform a well-defined 
+    operation.
+
+    The services are implemented as plugins installed on the device and can
+    look for supporting external services running on a central server. E.g.
+    weather, local tourist attractions etc. Default applications can use
+    the layer to locate servers.
+
+    Since this is an abstraction layer then the app does not need to be
+    concerned with the underlying protocol, where the servers are, the
+    hardware peculiarities with networking and other low level details.
+    
+    For more details see the \l {Qt Service Framework} {Service Framework API overview}.
+
+    \section2 Messaging
+
+    A common interface for handling SMS, MMS, MIME Email and TNEF Email 
+    messages. Enables access to messaging services to search and sort 
+    messages, notify of changes to messages stored, send messages 
+    with or without attachments, retrieve message data, and launch the 
+    preferred messaging client to either display an existing message, 
+    or compose a message.
+
+    For more details see the \l {Messaging} {Messaging API overview}.
+
+    \section2 Bearer Management
+
+    Although not a network manager, this component manages the connectivity
+    state of the device to the network. So it does not manage network
+    configurations, which are the role of the platform provider, but it does
+    allow the user to start or stop network interfaces. Some higher level
+    management of the connection session may also be possible as well
+    depending on the platform.
+
+    Some platforms can have a set of grouped access points perhaps based on a
+    common purpose. Bearer Management allows comparison and prioritization
+    of the access and use of these points. 
+
+    The aim of Bearer Management is to reduce the need for the developer to be
+    concerned about trying to locate the best connection from a list of
+    possible IP bearers and 3G connections. The user can select the best or
+    it can be selected transparently so that WLAN roaming can occur
+    seemlessly.
+
+    Some examples of the Bearer Management functionality,
+        \list
+        \o On demand use of the appropriate Access Point. When a user starts
+    to use a browser, the appropriate access point is selected from those
+    available and a connection is transparently made.
+        \o Always-on applications such as email or IM roam automatically
+    between cellular packet data and WLAN networks. The application developer
+    is in control and for example the application can gracefully close TCP
+    connections over the old bearer after setting up new TCP connections
+    over the new bearer.
+        \o Application developer can create a settings user interface, where
+    the user can select a certain connection to be used with the application
+        \o A connection manager application can be implemented with Qt. This
+    application enumerates available connections, shows counters, and allows
+    the user to connect or disconnect
+        \endlist
+    
+    For more details, see the \l {Bearer management} {Bearer Management API overview}.
+
+    \section2 Publish and Subscribe
+
+    Will enable context sensitive access to information in future releases.
+    Data is organized as a tree, with data being able to 'shadow' other
+    data with the 'same key', a string specifying the leaf or node. The
+    context is an example of a context ontology, a defined set of
+    relationships. As the context changes the values of the objects change
+    but the relationships remain the same. It is intended to be an enabling
+    technology, the basis of a range future applications.
+
+    At this stage the API is intended to act as a common communications
+    method between applications, whether local or remote.
+    
+    For more details, see the \l {Publish and Subscribe} {Publish and Subscribe API overview}.
+
+    \section2 Contacts
+
+    The structure and retrieval of contact data from local or remote backends.
+    It includes the ability to create, edit, list, delete and lookup contact
+    information whether it is stored locally or remotely.
+
+    For more details, see the \l {Contacts} {Contacts API overview}.
+
+    \section2 Location
+
+    The location API is composed of 3 components. Location positioning, 
+    landmarks, and mapping and navigation.  The location positioning API provides an easy to 
+    use interface that encapsulates basic geographical information obtained
+    from satellite or other sources about the user, including latitude and
+    longitude, bearing, speed and altitude.  The Landmarks API allows storage and 
+    retrieval of points of interests while the Maps and Navigation API provides
+    mapping, geocoding and routing functionality.
+    
+    For more details, see the \l {Location} {Location API overview}.
+
+    \section2 Multimedia
+
+    An API to play audio and video of various formats. Record audio. The playing
+    and managing of an FM radio. This includes the typical functionality you
+    would find on a music and video player, combined with an FM radio.
+
+    For more details see the \l {Multimedia} {Multimedia API overview}.
+    
+    \section2 System Information
+
+    An API to discover system related information and capabilities. Information
+    available will cover software version numbers, hardware features,
+    network connection types and status, display, data storage devices,
+    device information and the screensaver.
+    
+    For more details see the \l {System Information} {System Information API overview}.
+
+    \section2 Sensors
+
+    An API for accessing hardware sensors. This covers both high-level
+    sensors such as screen orientation (portrait, landscape) and low-level,
+    real-time sensors such as accelerometer data.
+
+    For more details see the \l{Sensors}{Sensors API overview}.
+
+    \section2 Versit (vCard)
+
+    An API to manage Versit \reg documents, such as vCards.
+
+    For more details see the \l{Versit}{Versit API overview}.
+
+    \section2 Organizer
+
+    An API for management of calendar, scheduling and personal data
+    from local or remote backends.   It includes the ability to create,
+    edit, list, delete and lookup organizer information whether it is stored
+    locally or remotely.
+
+    For more details, see the \l {Organizer} {Organizer API overview}.
+
+    \section2 Versit (Organizer)
+
+    This is a continuation of the Versit API to interface the Organizer API
+    with iCalendar documents using the same framework as for vCards.
+
+    \section2 Camera
+
+    The Camera API provides control of system camera devices. Providing
+    support for still or video image capture with sound support. This functionality
+    is part of the Multimedia API.
+
+    For more details, see the \l {Multimedia} {Multimedia API overview}.
+    
+    \section2 Landmarks
+
+    The Landmarks portion of the Location API facilitates the creation,
+    retrieval, updating and deletion of landmarks from arbitrary data stores.
+
+    For more details, see the \l {Landmarks} {Landmarks API overview}.
+
+    \section2 Document Gallery
+
+    An API for accessing collections of documents and media and their meta-data.
+
+    The Document Gallery provides an interface to a searchable index of
+    document meta-data.  The gallery may be queried to discover the meta-data
+    of documents, or to discover documents with desired meta-data.
+
+    For more details, see the \l {Document Gallery}{Document Gallery overview}.
+    
+    \section2 Feedback
+
+    The Feedback API enables a client to control the vibration of the device
+    or the piezo feedback from the screen.
+
+    For more details, see the \l {Feedback}{Feedback API Overview}.
+
+    \section1 The QtMobility Namespace 
+
+    The QtMobility APIs are placed into the QtMobility namespace. This is
+    done to facilitate the future migration of Mobility APIs into Qt. See
+    the \l {Quickstart Example}{Quickstart guide} for an example on how
+    the namespace impacts on application development.
+
+
+    \section1 Platform Compatibility
+
+
+    \raw HTML
+
+    <table cellpadding="2" cellspacing="1" border="1" width="90%">
+    <tbody>
+    <tr>
+    <td>Color</td>
+    <td>Explanation</td>
+
+    </tr>
+        </tr>
+        <tr>
+        <td bgcolor="green"></td>
+        <td>A functional backend for the API on the platform is complete.</td>
+        </tr>
+        <tr>
+        <td bgcolor="yellow"></td>
+        <td>A functional backend for the API on the platform is being worked however it is not functionally complete.</td>
+
+        </tr>
+        <tr>
+    <tr>
+    <td bgcolor="lightgray"></td>
+    <td>A functional backend for the API on the platform is being worked on. At this point it is far from functionally complete or there is no platform specific code inside QDF source code.</td>
+    </tr>
+    <tr>
+    <td bgcolor="gray"></td>
+    <td>A functional backend for the API on the platform is not being worked on. It is possible for others to implement and integrate support.</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <b>Tier 1 Platforms</b><br>
+    QtMobility API development focuses on Nokia platforms. These platforms are part of our ongoing QA, which includes unit test coverage per API and rigorous testing via test utilities and other system test processes.
+    <br>
+    <b>Tier 2 Platforms</b><br>
+    These platforms are not currently under active development or QA. Contributions to these platforms are welcome.
+    <br>
+    <br>
+    <table align="center" cellpadding="2" cellspacing="1" border="1" rules="all">
+    <tbody>
+    <tr>
+    <td rowspan="2">&nbsp;</td>
+    <td rowspan="2"><b>API Maturity Level</b></td>
+    <td colspan="6" align="center" bgcolor="#96E066"><b>Tier 1 Platforms</b></td>
+    <td colspan="3" align="center" bgcolor="#96E066"><b>Tier 2 Platforms</b></td>
+    </tr>
+    <tr>
+    <td><b>S60 3rd Edition, Feature Pack 1</b></td>
+    <td><b>S60 3rd Edition, Feature Pack 2</b></td>
+    <td><b>S60 5th Edition</b></td>
+    <td><b>Symbian</b></td>
+    <td nowrap="nowrap"><b>Maemo 5</b></td>
+    <td><b>Harmattan</b></td>
+    <td><b>Windows XP/Vista</b></td>
+    <td><b>Linux</b></td>
+    <td nowrap="nowrap"><b>Mac OS X</b></td>
+    </tr>
+    <tr>
+    <td nowrap="nowrap">Service Framework (in-process)</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Messaging</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="gray"></td>
+    </tr>
+    <tr>
+    <td>Bearer Management</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Publish and Subscribe</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Contacts</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    </tr>
+    <tr>
+    <td>Location</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Multimedia</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>System Information</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Sensors</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    </tr>
+    <tr>
+    <td>Versit(vCard)</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Versit(Organizer)</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Camera</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    </tr>
+    <tr>
+    <td nowrap="nowrap">Service Framework(OOP)</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Organizer</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    </tr>
+    <tr>
+    <td>Landmarks</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Document Gallery</td>
+    <td>FINAL</td>
+    <td bgcolor="yellow">*)</td>
+    <td bgcolor="yellow">*)</td>
+    <td bgcolor="yellow">*)</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    </tr>
+    <tr>
+    <td>Maps/Navigation</td>
+    <td>FINAL</td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    <td bgcolor="green"></td>
+    </tr>
+    <tr>
+    <td>Feedback</td>
+    <td>FINAL</td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="yellow"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    <td bgcolor="gray"></td>
+    </tr>
+    <p></p>
+    <p></p>
+    </tbody>
+    </table>
+    <br>
+
+    \endraw
+
+    \raw HTML
+
+    
+
+    \endraw
+
+    \raw HTML
+    <p>
+    \endraw
+
+    *) The document gallery backend for S60 3.1, 3.2, and 5.0 is not enabled
+    in pre-built packages due to library dependency issues on some devices.
+
+    \section1 Feedback and bug reports
+    Email any inquiries and feedback about Qt Mobility to qt-mobility-feedback@trolltech.com
+
+    And please report any bugs you may find to \l {http://bugreports.qt.nokia.com}
+
+    \section1 Acknowledgements
+
+    The icheck tool uses the following third-party component:
+
+    \bold {Open Source front-end for C++ (MIT license)}, Roberto Raggi <roberto.raggi@gmail.com>, QTMOBILITY/tools/icheck/parser/src
+*/

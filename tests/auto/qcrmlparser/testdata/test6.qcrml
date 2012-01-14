@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository  uidValue="0x11112222">
+  <key ref="compass" int="0x98765432" readOnly="true"/>
+</repository>

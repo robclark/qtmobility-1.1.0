@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- todo.qdoc -->
+  <title>Qt Mobility 1.1: ToDo Example</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li><a href="all-examples.html">Examples</a></li>              <li><a href="examples-todo.html"></a></li>              <li>ToDo Example</li>            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#window-class-definition">Window Class Definition</a></li>
+<li class="level1"><a href="#window-class-implementation">Window Class Implementation</a></li>
+<li class="level1"><a href="#todoeditor-class-definition">TodoEditor Class Definition</a></li>
+<li class="level1"><a href="#todoeditor-class-implementation">TodoEditor Class Implementation</a></li>
+</ul>
+</div>
+<h1 class="title">ToDo Example</h1>
+<span class="subtitle"></span>
+<div class="descr"/>
+<p>Files:</p>
+<ul>
+<li><a href="todo-todoeditor-cpp.html">todo/todoeditor.cpp</a></li>
+<li><a href="todo-todoeditor-h.html">todo/todoeditor.h</a></li>
+<li><a href="todo-window-cpp.html">todo/window.cpp</a></li>
+<li><a href="todo-window-h.html">todo/window.h</a></li>
+<li><a href="todo-main-cpp.html">todo/main.cpp</a></li>
+<li><a href="todo-todo-pro.html">todo/todo.pro</a></li>
+</ul>
+<p>The ToDo example shows how to organize todo items using the Qt Mobility Organizer framework.</p>
+<p class="centerAlign"><img src="images/todoexample.png" /></p><p>Most organizing software, e.g&#x2e;, calendar applications, lets the user create todo items, which describe an activity that should be completed. Other items may include meetings, notes, and events. A todo item typically includes the following information:</p>
+<ul>
+<li>A timestamp for when the item was created.</li>
+<li>A timestamp for when the activity should be completed.</li>
+<li>A timestamp for when the activity was completed.</li>
+<li>A priority for how important the activity is.</li>
+<li>Information on whether the todo is recurring (i.e&#x2e;, if it should be repeated at regular intervals).</li>
+<li>A description of the activity.</li>
+</ul>
+<p>A todo item is represented in Qt with the <a href="qorganizertodo.html">QOrganizerTodo</a> class. Instances are managed by a <a href="qorganizermanager.html">QOrganizerManager</a>, which can save todos created by a program and return the todo items it manages. <a href="qorganizertodo.html">QOrganizerTodo</a> contains the information mentioned in the list above. In Qt, we call this item details. They are represented by <a href="qorganizeritemdetail.html">QOrganizerItemDetail</a> and its subclasses. For instance, <a href="qorganizertodo.html">QOrganizerTodo</a> keeps a <a href="qorganizeritempriority.html">QOrganizerItemPriority</a> (which inherits <a href="qorganizeritemdetail.html">QOrganizerItemDetail</a>).</p>
+<p>The item details available for a <a href="qorganizertodo.html">QOrganizerTodo</a> follows a standardized schema, i.e, a todo item has a standard set of item details. Most <a href="qorganizermanager.html">QOrganizerManager</a> backends will follow this schema. A backend is the implementation of the <a href="qorganizermanager.html">QOrganizerManager</a>'s functionality for a specific platform. Some backends may not support all details, and possibly include others.</p>
+<p>The example consists of two classes:</p>
+<ul>
+<li><tt>Window</tt>: Lets the user select a date and create todo items for the date selected. It also displays a list with todo items for the date selected.</li>
+<li><tt>TodoEditor</tt>: Lets the user edit a todo item using standard Qt widgets.</li>
+</ul>
+<p>We will now look at the definitions and implementations of <tt>Window</tt> and <tt>TodoEditor</tt>.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class is responsible for setting up the GUI of the example. It creates <a href="qorganizertodo.html">QOrganizerTodo</a> items and send them to the TodoEditor for editing. It saves and retrieves todo items from the organizer item manager.</p>
+<p>Let's take a look at its definition.</p>
+<pre class="highlightedCode brush: cpp"> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+     ~Window();
+
+ private slots:
+     void editNewTodo();
+     void editTodo(QListWidgetItem *item);
+     void saveTodo(QOrganizerTodo &amp;todo);
+     void refreshList();
+     void deleteTodo();
+
+ private:
+     void setupGui();
+
+     QOrganizerManager *manager;
+
+     TodoEditor *todoEditor;
+
+     QListWidget *listWidget;
+     QStackedWidget *stackedWidget;
+     QPushButton *newTodoButton;
+     QPushButton *deletTodoButton;
+     QCalendarWidget *calendarWidget;
+ };</pre>
+<p>The slots are connected to the widgets of <tt>Window</tt>, and handles user requests to create a new todo item, edit an existing item, and delete an item. The <tt>saveTodo()</tt> slot is invoked when the user has finished editing a todo item. <tt>refreshList()</tt> updates the <b>Todo Item List</b> when todo items are added, deleted, or edited.</p>
+<p>We'll now go through the slots and constructor of <tt>Window</tt>. The only other function, <tt>setupGui()</tt>, initializes and lays out the widgets, and that is treated in other examples.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>The constructor creates the <a href="qorganizermanager.html">QOrganizerManager</a> instance:</p>
+<pre class="highlightedCode brush: cpp"> Window::Window()
+ {
+     setupGui();
+
+     manager = new QOrganizerManager(&quot;memory&quot;);
+
+     setWindowTitle(tr(&quot;ToDo Example&quot;));
+     refreshList();
+ }</pre>
+<p>We here instruct that the manger should use the <tt>memory</tt> backend. This backend implements the default schema and uses the computers memory for storing items. This way, we can be sure that the backend will behave equally on all platforms.</p>
+<p>The <tt>editNewTodo()</tt> slot is connected to the <b>New Todo Button</b>, and sets up a new <a href="qorganizertodo.html">QOrganizerTodo</a> for editing.</p>
+<pre class="highlightedCode brush: cpp"> void Window::editNewTodo()
+ {
+     QOrganizerTodo newTodo;
+     newTodo.setPriority(QOrganizerItemPriority::HighPriority);
+     newTodo.setStatus(QOrganizerTodoProgress::StatusNotStarted);
+     QDateTime currentDateTime(calendarWidget-&gt;selectedDate(),
+         QTime::currentTime());
+     newTodo.setStartDateTime(currentDateTime);
+     newTodo.setDueDateTime(currentDateTime.addSecs(60*60));
+
+     todoEditor-&gt;editTodo(newTodo);
+
+     stackedWidget-&gt;setCurrentWidget(todoEditor);
+ }</pre>
+<p>Here we set the item details of the new <a href="qorganizertodo.html">QOrganizerTodo</a> to reasonable defaults. The <tt>editTodo()</tt> slot sets up the widgets of the <tt>TodoEditor</tt> with the data from the new todo. Finally, the stacked widget is set to show the todo editor.</p>
+<p>The <tt>editTodo()</tt> slot is invoked when the player double clicks a todo item in the <b> Todo Item List </b> with the mouse.</p>
+<pre class="highlightedCode brush: cpp"> Q_DECLARE_METATYPE(QOrganizerTodo)
+
+ void Window::editTodo(QListWidgetItem *item)
+ {
+     QVariant variant = item-&gt;data(Qt::UserRole);
+     if (!variant.canConvert&lt;QOrganizerTodo&gt;())
+         return;
+
+     QOrganizerTodo todo = variant.value&lt;QOrganizerTodo&gt;();
+     todoEditor-&gt;editTodo(todo);
+     stackedWidget-&gt;setCurrentWidget(todoEditor);
+ }</pre>
+<p>The slot is invoked with the <a href="http://qt.nokia.com/doc/4.6/qlistwidgetitem.html">QListWidgetItem</a> that was double clicked. We have saved the <a href="qorganizertodo.html">QOrganizerTodo</a> in the list widget item. The list widget item stores data in <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a>s, so we need to include the <a href="http://qt.nokia.com/doc/4.6/qmetatype.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>() macro, which helps make <a href="qorganizertodo.html">QOrganizerTodo</a>s usable with <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a>.</p>
+<p>When we have retrieved the todo item, we send it to the <tt>TodoEditor</tt> for editing, which we show on the screen.</p>
+<p>The <tt>saveTodo()</tt> slot is invoked by the <tt>TodoEditor</tt> when the user has finished editing.</p>
+<pre class="highlightedCode brush: cpp"> void Window::saveTodo(QOrganizerTodo &amp;todo)
+ {
+     manager-&gt;saveItem(&amp;todo);
+
+     stackedWidget-&gt;setCurrentIndex(0);
+     refreshList();
+ }</pre>
+<p>Saving a <a href="qorganizertodo.html">QOrganizerTodo</a> in the <a href="qorganizermanager.html">QOrganizerManager</a> is easy using the <a href="qorganizermanager.html#saveItem">saveItem()</a> function. We call the <tt>refreshList()</tt> slot to update the <b> Todo Item List </b> so that new and edited todos is displayed correctly.</p>
+<p>The <tt>deleteTodo()</tt> slot is connected to the <b>Delete Todo Button</b>, and will delete the currently selected todo in the <b> Todo List </b> from the manager.</p>
+<pre class="highlightedCode brush: cpp"> void Window::deleteTodo()
+ {
+     QList&lt;QListWidgetItem *&gt; items = listWidget-&gt;selectedItems();
+     if (!items.isEmpty()) {
+         QVariant variant = items.at(0)-&gt;data(Qt::UserRole);
+         if (variant.canConvert&lt;QOrganizerTodo&gt;()) {
+             QOrganizerTodo theTodo = variant.value&lt;QOrganizerTodo&gt;();
+             manager-&gt;removeItem(theTodo.id());
+             refreshList();
+         }
+     }
+ }</pre>
+<p>Here we fetch the selected list widget item from the list. To delete the item in the manager, we send the items <a href="qorganizeritem.html#id">id</a> to the manager's <a href="qorganizermanager.html#removeItem">removeItem()</a> function. An item's id uniquely identifies it in its manager.</p>
+<p>We now move on to the <tt>refreshList()</tt> function, which set's up the <b> Todo List </b> with the todo items currently stored in the manager.</p>
+<pre class="highlightedCode brush: cpp"> void Window::refreshList()
+ {
+     listWidget-&gt;clear();
+
+     QOrganizerItemSortOrder sortOrder;
+     sortOrder.setDetailDefinitionName(QOrganizerTodoTime::DefinitionName,
+         QOrganizerTodoTime::FieldDueDateTime);
+
+     QList&lt;QOrganizerItem&gt; items =
+         manager-&gt;items(QOrganizerItemFilter(), QList&lt;QOrganizerItemSortOrder&gt;() &lt;&lt; sortOrder);</pre>
+<p>First we remove all items from the list widget, i.e&#x2e;, we set up the list from scratch each time <tt>refreshList()</tt> is called.</p>
+<p>The <a href="qorganizermanager.html#items">items()</a> functions retrieves <a href="qorganizeritem.html">QOrganizerItem</a>s from the manager. By giving the manager a <a href="qorganizeritemsortorder.html">QOrganizerItemSortOrder</a>, the manager will sort the items for us. The sort order takes the item detail it should sort after. You also need to specify which field of the detail should be used for sorting. Note that all details have a DefinitionName constant declared. They also keep constants for all of their fields. The <a href="qorganizermanager.html#items">items()</a> takes a list of sort orders in case one wants to sort by more than one field.</p>
+<p>It is also possible to let the manager filter items. You can look up the <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> class description for details.</p>
+<pre class="highlightedCode brush: cpp">     foreach(QOrganizerItem item, items) {
+         if (item.type() == QOrganizerItemType::TypeTodo) {
+             QOrganizerTodo todo = static_cast&lt;QOrganizerTodo&gt;(item);
+             if (todo.startDateTime() &gt;
+                     QDateTime(calendarWidget-&gt;selectedDate(), QTime(23,59)) ||
+                 todo.dueDateTime() &lt;
+                     QDateTime(calendarWidget-&gt;selectedDate(), QTime(0, 0)))
+                 continue;
+
+             QString display = todo.startDateTime().toString(&quot;yy/MM/dd hh:mm&quot;) +
+                 &quot;-&quot; + todo.dueDateTime().toString(&quot;yy/MM/dd hh:mm&quot;) +
+                 &quot; - &quot;+ todo.displayLabel();
+
+             QListWidgetItem *listItem =
+                 new QListWidgetItem(display, listWidget);
+             listItem-&gt;setData(Qt::UserRole, QVariant::fromValue(todo));
+         }
+     }
+ }</pre>
+<p>We iterate through the todo items in the manager, keeping the items that are active, i.e&#x2e;, the date selected in the calendar is between the start and due dates of the item.</p>
+<p>We create a list widget item for the todo. We set its text to the item's start sate, due date, and <a href="qorganizeritem.html#displayLabel">displayLabel()</a>.</p>
+<p>We save the <a href="qorganizertodo.html">QOrganizerTodo</a> itself in the <a href="http://qt.nokia.com/doc/4.6/qt.html#ItemDataRole-enum">Qt::UserRole</a> of the list widget item. We have seen previously how to retrieve it.</p>
+<a name="todoeditor-class-definition"></a>
+<h2>TodoEditor Class Definition</h2>
+<p>The <tt>TodoEditor</tt> contains widgets for editing a <a href="qorganizertodo.html">QOrganizerTodo</a>.</p>
+<p class="centerAlign"><img src="images/todoeditor.png" /></p><p>Here is the <tt>TodoEditor</tt> class's definition:</p>
+<pre class="highlightedCode brush: cpp"> class TodoEditor : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     TodoEditor();
+
+ signals:
+     void editingFinished(QOrganizerTodo &amp;todo);
+
+ public slots:
+     void editTodo(const QOrganizerTodo &amp;todo);
+
+ private slots:
+     void updateSubject();
+     void updateDescription();
+     void updateDates();
+     void updateStatus(int index);
+     void updatePriority(int index);
+     void updateAlarm(int index);
+     void finishEditing();
+
+ private:
+     void setupGui();
+     void setupCombos();
+
+     QOrganizerTodo todo;
+
+     QDateTimeEdit *startDateEdit;
+     QDateTimeEdit *dueDateEdit;
+     QComboBox *statusCombo;
+     QComboBox *priorityCombo;
+     QComboBox *alarmCombo;
+     QLineEdit *subjectLineEdit;
+     QTextEdit *descriptionTextEdit;
+     QPushButton *doneButton;
+ };</pre>
+<p>The <tt>editTodo()</tt> slot is called by <tt>Window</tt> when a todo item should be edited. <tt>finishEditing()</tt> is connected to <tt>doneButton</tt>, and emits the <tt>editingFinished()</tt> signal. This signal is connected to the <tt>saveTodo()</tt> slot of the <tt>Window</tt>.</p>
+<p>The rest of slots are connected to the widgets that edit the todo item's details.</p>
+<p><tt>setupGui()</tt> creates, lays out, and connects the widgets to the slots of <tt>TodoEditor</tt>. <tt>setupCombos()</tt> helps <tt>setupGui()</tt> by creating the comboboxes and by filling their drop-down lists.</p>
+<a name="todoeditor-class-implementation"></a>
+<h2>TodoEditor Class Implementation</h2>
+<p>We start by taking a quick look at <tt>setupCombos()</tt>, which sets up the <a href="http://qt.nokia.com/doc/4.6/qcombobox.html">QComboBox</a>es.</p>
+<pre class="highlightedCode brush: cpp"> void TodoEditor::setupCombos()
+ {
+     priorityCombo = new QComboBox;
+     priorityCombo-&gt;addItem(&quot;Unknown&quot;, QOrganizerItemPriority::UnknownPriority);
+     priorityCombo-&gt;addItem(&quot;Highest&quot;, QOrganizerItemPriority::HighestPriority);
+     priorityCombo-&gt;addItem(&quot;Extremely high&quot;,
+         QOrganizerItemPriority::ExtremelyHighPriority);
+     priorityCombo-&gt;addItem(&quot;Very high&quot;,
+         QOrganizerItemPriority::VeryHighPriority);
+     priorityCombo-&gt;addItem(&quot;High&quot;, QOrganizerItemPriority::HighPriority);
+     priorityCombo-&gt;addItem(&quot;Medium&quot;, QOrganizerItemPriority::MediumPriority);
+     priorityCombo-&gt;addItem(&quot;Low&quot;, QOrganizerItemPriority::LowPriority);
+     priorityCombo-&gt;addItem(&quot;Very low&quot;, QOrganizerItemPriority::VeryLowPriority);
+     priorityCombo-&gt;addItem(&quot;Extremely low&quot;,
+         QOrganizerItemPriority::ExtremelyLowPriority);
+     priorityCombo-&gt;addItem(&quot;Lowest&quot;, QOrganizerItemPriority::LowestPriority);
+
+     statusCombo = new QComboBox;
+     statusCombo-&gt;addItem(&quot;Not started&quot;,
+         QOrganizerTodoProgress::StatusNotStarted);
+     statusCombo-&gt;addItem(&quot;In progress&quot;, QOrganizerTodoProgress::StatusInProgress);
+     statusCombo-&gt;addItem(&quot;Complete&quot;,
+         QOrganizerTodoProgress::StatusComplete);
+
+     alarmCombo = new QComboBox;
+     QStringList alarmList;
+     alarmList &lt;&lt; &quot;None&quot; &lt;&lt; &quot;15 minutes&quot; &lt;&lt; &quot;30 minutes&quot; &lt;&lt; &quot;45 minutes&quot;
+               &lt;&lt; &quot;1 hour&quot;;
+     alarmCombo-&gt;addItems(alarmList);
+ }</pre>
+<p>As with list widget items, you can also store user data in an item of <a href="http://qt.nokia.com/doc/4.6/qcombobox.html">QComboBox</a>'s drop-down list. Here we save a <a href="qorganizertodo.html">QOrganizerTodo</a>'s possible values for its <a href="qorganizertodo.html#priority">priority()</a> and <a href="qorganizertodo.html#status">status()</a> details. The <tt>alarmCombo</tt> helps the user select a time for when to be reminded of the todo.</p>
+<p>The <tt>editTodo()</tt> slot is called when a new <a href="qorganizertodo.html">QOrganizerTodo</a> should be edited.</p>
+<pre class="highlightedCode brush: cpp"> void TodoEditor::editTodo(const QOrganizerTodo &amp;newTodo)
+ {
+     todo = newTodo;
+
+     subjectLineEdit-&gt;setText(todo.displayLabel());
+     startDateEdit-&gt;setDateTime(todo.startDateTime());
+     dueDateEdit-&gt;setDateTime(todo.dueDateTime());
+     priorityCombo-&gt;setCurrentIndex(
+         priorityCombo-&gt;findData(QVariant(todo.priority())));
+     statusCombo-&gt;setCurrentIndex(
+         statusCombo-&gt;findData(QVariant(todo.status())));
+     descriptionTextEdit-&gt;setText(todo.description());</pre>
+<p>We set the contents of our widgets to the details of the todo item. The functions we use here are utility functions provided by <a href="qorganizertodo.html">QOrganizerTodo</a> that accesses the <a href="qorganizeritemdetail.html">QOrganizerItemDetail</a>s for us. We could also have accessed them by using the <a href="qorganizeritemdetail.html#value">value()</a> functions of <a href="qorganizeritemdetail.html">QOrganizerItemDetail</a>.</p>
+<pre class="highlightedCode brush: cpp">     if (!todo.details(QOrganizerItemVisualReminder::DefinitionName).isEmpty()){
+         QOrganizerItemVisualReminder reminder =
+             todo.detail&lt;QOrganizerItemVisualReminder&gt;();
+         int seconds = reminder.secondsBeforeStart();
+         alarmCombo-&gt;setCurrentIndex(seconds/(15*60));
+     } else
+         alarmCombo-&gt;setCurrentIndex(0);
+ }</pre>
+<p>Many backends support notifying the user when a todo item is due. We can request this by adding a QOrganizerItemRemainder detail to the <a href="qorganizertodo.html">QOrganizerTodo</a>. We first check whether a remainder detail is present on the todo item. If it is we update the <b>Alarm Combo Box</b>. The <a href="http://qt.nokia.com/doc/4.6/qdatetime.html#secsTo">secsTo()</a> function returns the difference between two <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a>s in seconds.</p>
+<p>The next two slots update the subject and description of the todo item.</p>
+<pre class="highlightedCode brush: cpp"> void TodoEditor::updateSubject()
+ {
+     todo.setDisplayLabel(subjectLineEdit-&gt;text());
+ }
+
+ void TodoEditor::updateDescription()
+ {
+     todo.setDescription(descriptionTextEdit-&gt;toPlainText());
+ }</pre>
+<p>We save the subject in the item's <a href="qorganizeritem.html#displayLabel">displayLabel()</a>, which is meant for displaying a short description that can be used in item views. The <a href="qorganizeritem.html#description">description()</a> is a longer text describing the item.</p>
+<p>The <tt>updateDates()</tt> slot is connected to the two <a href="http://qt.nokia.com/doc/4.6/qdatetimeedit.html">QDateTimeEdit</a>s that let the user select start and due dates for the todo item.</p>
+<pre class="highlightedCode brush: cpp"> void TodoEditor::updateDates()
+ {
+     QDateTime startTime = startDateEdit-&gt;dateTime();
+     QDateTime dueDateTime = dueDateEdit-&gt;dateTime();
+
+     todo.setStartDateTime(startTime);
+     todo.setDueDateTime(dueDateTime);
+
+     updateAlarm(alarmCombo-&gt;currentIndex());
+ }</pre>
+<p>Note that we need to update the remainder detail when the due date changes because the remainder is calculated relative to the due date. We do that in <tt>updateAlarm()</tt>, which we will come back to later.</p>
+<p>The <tt>updateStatus()</tt> and <tt>updatePriority()</tt> functions are connected to the combo boxes that we created in <tt>setupCombos()</tt>.</p>
+<pre class="highlightedCode brush: cpp"> void TodoEditor::updateStatus(int index)
+ {
+     QOrganizerTodoProgress::Status status =
+         (QOrganizerTodoProgress::Status) statusCombo-&gt;itemData(index).toInt();
+     todo.setStatus(status);
+ }
+
+ void TodoEditor::updatePriority(int index)
+ {
+     QOrganizerItemPriority::Priority priority =
+         (QOrganizerItemPriority::Priority)
+             priorityCombo-&gt;itemData(index).toInt();
+     todo.setPriority(priority);
+ }</pre>
+<p>The only thing to notice here is that enum values are saved as <tt>int</tt>s in the drop-down list items.</p>
+<p>The <tt>updateAlarm()</tt> function is connected to the <tt>alarmCombo</tt> as we saw earlier.</p>
+<pre class="highlightedCode brush: cpp"> void TodoEditor::updateAlarm(int index)
+ {
+     int seconds = index * (15*60);
+     QDateTime dueDate = todo.dueDateTime();
+
+     QOrganizerItemVisualReminder oldReminder =
+         todo.detail(QOrganizerItemVisualReminder::DefinitionName);
+     todo.removeDetail(&amp;oldReminder);
+
+     if (seconds == 0)
+         return;
+
+     QOrganizerItemVisualReminder reminder;
+     reminder.setSecondsBeforeStart(seconds);
+
+     todo.saveDetail(&amp;reminder);
+ }</pre>
+<p>We first calculate the time before the todo is due the alarm should go off. We calculate this in seconds because <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a>'s <a href="http://qt.nokia.com/doc/4.6/qdatetime.html#addSecs">addSecs()</a> function gives us an easy way of finding the time from the todo's due time.</p>
+<p>Before we add the new reminder, we need to remove any previously added reminders; if not, the <a href="qorganizertodo.html">QOrganizerTodo</a> item would have several <a href="qorganizeritemvisualreminder.html">QOrganizerItemVisualReminder</a>s registered with it.</p>
+<p>The reminder is not accessible through the convenience functions of <a href="qorganizertodo.html">QOrganizerTodo</a>, so we add it using the item detail access functions from <a href="qorganizeritem.html">QOrganizerItem</a>.</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

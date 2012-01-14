@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- contactsactions.qdoc -->
+  <title>Qt Mobility 1.1: Qt Contacts Action API</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li>Qt Contacts Action API</li>            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#introduction">Introduction</a></li>
+<li class="level1"><a href="#information-for-clients">Information For Clients</a></li>
+<li class="level1"><a href="#information-for-action-implementors">Information For Action Implementors</a></li>
+<li class="level2"><a href="#other-considerations">Other Considerations</a></li>
+<li class="level2"><a href="#example-implementation">Example Implementation</a></li>
+<li class="level2"><a href="#deployment">Deployment</a></li>
+<li class="level3"><a href="#deployment-on-maemo5">Deployment on Maemo5</a></li>
+<li class="level3"><a href="#deployment-on-symbian">Deployment on Symbian</a></li>
+</ul>
+</div>
+<h1 class="title">Qt Contacts Action API</h1>
+<span class="subtitle"></span>
+<div class="descr"/>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>The Qt Mobility Contacts API supports the concept of a generic action which may be invoked upon an <a href="qcontactactiontarget.html">action target</a> (e.g&#x2e;, a contact) or list thereof. The API allows clients to invoke an action upon a target (for example, to send an email to a contact) in a cross-platform manner, and allows third-party developers to provide platform-specific action plugins which may be used by clients.</p>
+<a name="information-for-clients"></a>
+<h2>Information For Clients</h2>
+<p>The client interface to actions consists of three classes: <a href="qcontactaction.html">QContactAction</a>, <a href="qcontactactiontarget.html">QContactActionTarget</a> and <a href="qcontactactiondescriptor.html">QContactActionDescriptor</a>. A <a href="qcontactactiondescriptor.html">descriptor</a> uniquely identifies a particular implementation of an <a href="qcontactaction.html">action</a>, and allows the client to query meta-data about the action. An <a href="qcontactactiontarget.html">action target</a> consists of either a contact, a detail of a contact, or a list of details of a contact.</p>
+<p>The available actions may be queried by calling <a href="qcontactaction.html#availableActions">QContactAction::availableActions</a>(). This function returns the list of names of actions which are provided by the given service name, or by any service if the parameter is omitted.</p>
+<p>There may be multiple implementations of any given action identified by a particular action name, since multiple third-party action providers could provide (for example) a &quot;call&quot; action, using various proprietary protocols and techologies. Once the client knows which action they wish to perform on a contact, they can retrieve the list of action descriptors for that action by calling <a href="qcontactaction.html#actionDescriptors">QContactAction::actionDescriptors</a>() which takes the action name as a parameter.</p>
+<p>Note that there are several predefined action names including <a href="qcontactaction.html#ActionCall-var">QContactAction::ActionCall</a>, <a href="qcontactaction.html#ActionEmail-var">QContactAction::ActionEmail</a>, <a href="qcontactaction.html#ActionSms-var">QContactAction::ActionSms</a> etc, however there is no guarantee that all of these actions are implemented on any given platform.</p>
+<p>Finally, once the client has selected a particular implementation of the action, by inspecting the action descriptor (from which they can retrieve meta-data and check that it supports the contact that they wish to perform the action on), the client may request a pointer to the action implementation by calling <a href="qcontactaction.html#action">QContactAction::action</a>() and passing the action descriptor as a parameter. Note that the client takes ownership of the returned <a href="qcontactaction.html">QContactAction</a> pointer and must delete it to avoid leaking memory. The caller is able to delete the action at any time, however doing so prior to when the action transitions to a finished state may have an undefined outcome depending on the implementation of the action.</p>
+<a name="information-for-action-implementors"></a>
+<h2>Information For Action Implementors</h2>
+<p>If you are a third-party developer who wants to provide an action for other clients to use, you must do four things:</p>
+<ul>
+<li>Implement a <a href="qserviceplugininterface.html">QServicePluginInterface</a>-derived class</li>
+<li>Implement a <a href="qcontactactionfactory.html">QContactActionFactory</a>-derived class</li>
+<li>Implement (one or more) <a href="qcontactaction.html">QContactAction</a>-derived classes</li>
+<li>Write an xml file which describes your service plugin</li>
+</ul>
+<p>For more information on the <a href="qserviceplugininterface.html">QServicePluginInterface</a> and the format of the service description xml, please see the <a href="service-frameworks.html">Qt Mobility Service Framework</a> documentation. An example action plugin is provided later in this document.</p>
+<p>Note that while the plugins are loaded by the <a href="service-frameworks.html">Qt Mobility Service Framework</a>, clients of the Qt Contacts Action API are entirely shielded from this implementation detail.</p>
+<p>The <a href="qcontactactiondescriptor.html">QContactActionDescriptor</a> class is actually a client-facing interface to an action factory, which allows the factory to provide meta-data and other implementation-specific information to clients on demand.</p>
+<a name="other-considerations"></a>
+<h3>Other Considerations</h3>
+<p>We recommend that action implementors provide values for the default meta-data keys (including icons and labels) documented in <a href="qcontactactiondescriptor.html">QContactActionDescriptor</a>, to allow client applications to provide meaningful user interface elements to represent the action.</p>
+<p>We recommend that action implementors read the documentation of the <a href="service-frameworks.html">Qt Mobility Service Framework</a> carefully, to better understand how their implementation plugin may be updated with patch releases or major releases, and how these considerations affect the implementation of the plugin.</p>
+<a name="example-implementation"></a>
+<h3>Example Implementation</h3>
+<p>The following snippet provides an example of an action plugin. As previously described, the action plugin consists of a <a href="qserviceplugininterface.html">QServicePluginInterface</a>, a <a href="qcontactactionfactory.html">QContactActionFactory</a>, and one or more <a href="qcontactaction.html">QContactAction</a> derived classes. The <a href="qserviceplugininterface.html">QServicePluginInterface</a>-derived class merely instantiates the <a href="qcontactactionfactory.html">QContactActionFactory</a>-derived class on request for the Qt Service Framework. The <a href="qcontactactionfactory.html">QContactActionFactory</a>-derived class then instantiates the actions when required.</p>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /*
+    This action plugin is capable of producing two actions which each have the
+    same action name, service name, interface name and implementation (minor) version,
+    but internally use a different implementation.  This difference is reported via the
+    meta data function of the factory (which is exposed to clients via the descriptor
+    which provides a &quot;front end&quot; to the factory).
+
+    Example use case:
+    Company &quot;Example VoIP Solutions&quot; wants to provide a &quot;Call&quot; action with different implementations.
+        -&gt; it provides a SINGLE plugin which provides two actions, both of which are:
+            - ServiceName = &quot;Example VoIP Solution&quot;
+            - InterfaceName = &quot;com.nokia.qt.mobility.contacts.action&quot; (QContactActionFactory::InterfaceName)
+            - Major Version = &quot;1&quot;
+            - Minor Version = &quot;1&quot;
+            - ActionName = &quot;call&quot; (this is a custom property in the service interface xml)
+        -&gt; BUT one of the actions has the custom property:
+            - Provider = &quot;sip&quot;
+        -&gt; where the other action has the custom property:
+            - Provider = &quot;example proprietary protocol&quot;
+        -&gt; the custom properties are available to clients via the QContactActionDescriptor::metaData() function.
+  */</span>
+
+ class QContactMultiActionPlugin : public QObject, public QServicePluginInterface
+ {
+     Q_OBJECT
+     Q_INTERFACES(QtMobility::QServicePluginInterface)
+
+ public:
+     QObject* createInstance(const QServiceInterfaceDescriptor&amp; descriptor,
+                             QServiceContext* context,
+                             QAbstractSecuritySession* session);
+ };
+
+ class QContactMultiActionFactory : public QContactActionFactory
+ {
+     Q_OBJECT
+
+ public:
+     QContactMultiActionFactory();
+     ~QContactMultiActionFactory();
+
+     QList&lt;QContactActionDescriptor&gt; actionDescriptors() const;
+     QContactAction* create(const QContactActionDescriptor&amp; which) const;
+
+     QSet&lt;QContactActionTarget&gt; supportedTargets(const QContact&amp; contact, const QContactActionDescriptor&amp; which) const;
+     QContactFilter contactFilter(const QContactActionDescriptor&amp; which) const;
+     QVariant metaData(const QString&amp; key, const QList&lt;QContactActionTarget&gt;&amp; targets, const QVariantMap&amp; parameters, const QContactActionDescriptor&amp; which) const;
+
+     bool supportsContact(const QContact&amp; contact, const QContactActionDescriptor&amp; which) const;
+
+ private:
+     QContactActionDescriptor m_actionOneDescriptor;
+     QContactActionDescriptor m_actionTwoDescriptor;
+ };
+
+ class QContactActionOne : public QContactAction
+ {
+     Q_OBJECT
+
+ public:
+     QContactActionOne();
+     ~QContactActionOne();
+
+     bool invokeAction(const QContactActionTarget&amp; target, const QVariantMap&amp; params = QVariantMap());
+     bool invokeAction(const QList&lt;QContactActionTarget&gt;&amp; targets, const QVariantMap&amp; params = QVariantMap());
+     QVariantMap results() const;
+     State state() const;
+
+ private slots:
+     void performAction();
+ };
+
+ class QContactActionTwo : public QContactAction
+ {
+     Q_OBJECT
+
+ public:
+     QContactActionTwo();
+     ~QContactActionTwo();
+
+     bool invokeAction(const QContactActionTarget&amp; target, const QVariantMap&amp; params = QVariantMap());
+     bool invokeAction(const QList&lt;QContactActionTarget&gt;&amp; targets, const QVariantMap&amp; params = QVariantMap());
+     QVariantMap results() const;
+     State state() const;
+
+ private slots:
+     void performAction();
+ };</pre>
+<p>The implementation of these classes might be something like the following (example only):</p>
+<pre class="highlightedCode brush: cpp"> QObject* QContactMultiActionPlugin::createInstance(const QServiceInterfaceDescriptor&amp; descriptor,
+                         QServiceContext* context,
+                         QAbstractSecuritySession* session)
+ {
+     Q_UNUSED(context);
+     Q_UNUSED(session);
+
+     if (descriptor.interfaceName() == QContactActionFactory::InterfaceName
+             &amp;&amp; descriptor.serviceName() == QString(QLatin1String(&quot;tst_qcontactactions:multiaction&quot;))
+             &amp;&amp; descriptor.majorVersion() == 1
+             &amp;&amp; descriptor.minorVersion() == 1
+             &amp;&amp; descriptor.customAttribute(&quot;ActionName&quot;) == QString(QLatin1String(&quot;call&quot;))) {
+         return new QContactMultiActionFactory;
+     } else {
+         return 0;
+     }
+ }
+
+ Q_EXPORT_PLUGIN2(contacts_multiaction, QContactMultiActionPlugin);
+
+ QContactMultiActionFactory::QContactMultiActionFactory()
+     : QContactActionFactory()
+ {
+     m_actionOneDescriptor = createDescriptor(&quot;call&quot;, &quot;tst_qcontactactions:multiaction&quot;, &quot;sip&quot;, 1);
+     m_actionTwoDescriptor = createDescriptor(&quot;call&quot;, &quot;tst_qcontactactions:multiaction&quot;, &quot;prop&quot;, 1);
+ }
+
+ QContactMultiActionFactory::~QContactMultiActionFactory()
+ {
+ }
+
+ QList&lt;QContactActionDescriptor&gt; QContactMultiActionFactory::actionDescriptors() const
+ {
+     QList&lt;QContactActionDescriptor&gt; retn;
+     retn &lt;&lt; m_actionOneDescriptor &lt;&lt; m_actionTwoDescriptor;
+     return retn;
+ }
+
+ QContactAction* QContactMultiActionFactory::create(const QContactActionDescriptor&amp; which) const
+ {
+     if (which == m_actionOneDescriptor)
+         return new QContactActionOne;
+     else if (which == m_actionTwoDescriptor)
+         return new QContactActionTwo;
+     else
+         return 0;
+ }
+
+ QSet&lt;QContactActionTarget&gt; QContactMultiActionFactory::supportedTargets(const QContact&amp; contact, const QContactActionDescriptor&amp; which) const
+ {
+     QSet&lt;QContactActionTarget&gt; retn;
+     if (which == m_actionOneDescriptor || which == m_actionTwoDescriptor) {
+         <span class="comment">// in this example, they support the same targets.</span>
+         QList&lt;QContactPhoneNumber&gt; pndets = contact.details&lt;QContactPhoneNumber&gt;();
+         for (int i = 0; i &lt; pndets.size(); ++i) {
+             QContactActionTarget curr;
+             curr.setContact(contact);
+             curr.setDetails(QList&lt;QContactDetail&gt;() &lt;&lt; pndets.at(i));
+             retn &lt;&lt; curr;
+         }
+     }
+
+     return retn;
+ }
+
+ QContactFilter QContactMultiActionFactory::contactFilter(const QContactActionDescriptor&amp; which) const
+ {
+     if (which == m_actionOneDescriptor || which == m_actionTwoDescriptor) {
+         QContactDetailFilter retn;
+         retn.setDetailDefinitionName(QContactPhoneNumber::DefinitionName, QContactPhoneNumber::FieldNumber);
+         return retn;
+     }
+
+     return QContactFilter();
+ }
+
+ QVariant QContactMultiActionFactory::metaData(const QString&amp; key, const QList&lt;QContactActionTarget&gt;&amp; targets, const QVariantMap&amp; parameters, const QContactActionDescriptor&amp; which) const
+ {
+     Q_UNUSED(targets)
+     Q_UNUSED(parameters)
+
+     if (key == QContactActionDescriptor::MetaDataLabel)
+         return QString(&quot;Call with VoIP&quot;);
+     <span class="comment">// Label etc</span>
+
+     if (key == QLatin1String(&quot;Provider&quot;)) {<span class="comment">// our custom metadata - just return which.actionIdentifier</span>
+         return which.actionIdentifier();
+     }
+
+     return QVariant();
+ }
+
+ bool QContactMultiActionFactory::supportsContact(const QContact&amp; contact, const QContactActionDescriptor&amp; which) const
+ {
+     if (which == m_actionOneDescriptor || which == m_actionTwoDescriptor)
+         return !contact.details&lt;QContactPhoneNumber&gt;().isEmpty();
+     return false;
+ }
+
+ QContactActionOne::QContactActionOne()
+ {
+
+ }
+
+ QContactActionOne::~QContactActionOne()
+ {
+
+ }
+
+ bool QContactActionOne::invokeAction(const QContactActionTarget&amp; target, const QVariantMap&amp; params)
+ {
+     Q_UNUSED(params)
+     <span class="comment">// this action only works on (contact + phone number) targets.</span>
+     if (target.details().size() &gt; 1 || target.details().at(0).definitionName() != QContactPhoneNumber::DefinitionName)
+         return false;
+
+     QTimer::singleShot(1, this, SLOT(performAction()));
+     return true;
+ }
+
+ bool QContactActionOne::invokeAction(const QList&lt;QContactActionTarget&gt;&amp; targets, const QVariantMap&amp; params)
+ {
+     Q_UNUSED(params)
+     foreach (const QContactActionTarget&amp; target, targets) {
+         if (target.details().size() &gt; 1 || target.details().at(0).definitionName() != QContactPhoneNumber::DefinitionName) {
+             return false;
+         }
+     }
+
+     QTimer::singleShot(1, this, SLOT(performAction()));
+     return true;
+ }
+
+ QVariantMap QContactActionOne::results() const
+ {
+     return QVariantMap();
+ }
+
+ QContactAction::State QContactActionOne::state() const
+ {
+     return QContactAction::FinishedState;
+ }
+
+ void QContactActionOne::performAction()
+ {
+     QMessageBox::information(0, &quot;ActionOne&quot;, &quot;This is action one!&quot;);
+     emit stateChanged(QContactAction::FinishedState);
+ }
+
+ QContactActionTwo::QContactActionTwo()
+ {
+
+ }
+
+ QContactActionTwo::~QContactActionTwo()
+ {
+
+ }
+
+ bool QContactActionTwo::invokeAction(const QContactActionTarget&amp; target, const QVariantMap&amp; params)
+ {
+     Q_UNUSED(params)
+     <span class="comment">// this action only works on (contact + phone number) targets.  Note that it doesn't</span>
+     <span class="comment">// have to be the same as QContactActionOne -- it could have an entirely different implementation</span>!
+     if (target.details().size() &gt; 1 || target.details().at(0).definitionName() != QContactPhoneNumber::DefinitionName)
+         return false;
+
+     QTimer::singleShot(1, this, SLOT(performAction()));
+     return true;
+ }
+
+ bool QContactActionTwo::invokeAction(const QList&lt;QContactActionTarget&gt;&amp; targets, const QVariantMap&amp; params)
+ {
+     Q_UNUSED(params)
+     foreach (const QContactActionTarget&amp; target, targets) {
+         if (target.details().size() &gt; 1 || target.details().at(0).definitionName() != QContactPhoneNumber::DefinitionName) {
+             return false;
+         }
+     }
+
+     QTimer::singleShot(1, this, SLOT(performAction()));
+     return true;
+ }
+
+ QVariantMap QContactActionTwo::results() const
+ {
+     return QVariantMap();
+ }
+
+ QContactAction::State QContactActionTwo::state() const
+ {
+     return QContactAction::FinishedState;
+ }
+
+ void QContactActionTwo::performAction()
+ {
+     QMessageBox::information(0, &quot;ActionTwo&quot;, &quot;This is action two!&quot;);
+     emit stateChanged(QContactAction::FinishedState);
+ }</pre>
+<p>Once implemented, the plugin must be described by an xml file as per the Qt Service Framework guidelines, and installed in an appropriate location (once again, please see the documentation for the Qt Service Framework).</p>
+<pre class="highlightedCode brush: cpp"> &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+ &lt;service&gt;
+     &lt;name&gt;tst_qcontactactions:multiaction&lt;/name&gt;
+     &lt;filepath&gt;plugins/contacts/libcontacts_multiaction&lt;/filepath&gt;
+     &lt;description&gt;This service provides two test QContactAction implementations for testing purposes.  It is also an example of a single plugin providing multiple actions whose descriptors are identical except for their meta data.&lt;/description&gt;
+     &lt;interface&gt;
+         &lt;name&gt;com.nokia.qt.mobility.contacts.action&lt;/name&gt;
+         &lt;version&gt;1.1&lt;/version&gt;
+         &lt;capabilities&gt;&lt;/capabilities&gt;
+         &lt;customproperty key=&quot;ActionName&quot;&gt;call&lt;/customproperty&gt;
+         &lt;description&gt;This plugin can instantiate two different QContactAction instances; one which provides the &quot;call&quot; action via the &quot;sip&quot; provider, the other which provides the &quot;call&quot; action via the &quot;example proprietary protocol&quot; provider.&lt;/description&gt;
+     &lt;/interface&gt;
+ &lt;/service&gt;</pre>
+<a name="deployment"></a>
+<h3>Deployment</h3>
+<p>Depending on the platform, the service which provides the action must be deployed in a certain way.</p>
+<a name="deployment-on-maemo5"></a>
+<h4>Deployment on Maemo5</h4>
+<p>The Qt Mobility Service Framework provides the &quot;servicefw&quot; tool which allows third parties to register their service with the system at installation time on the Maemo5 platform. In order to register their service, the plugin and service description xml file should both be deployed to the installation directory of your application or component, and then the command:</p>
+<pre class="highlightedCode brush: cpp">     servicefw add &quot;path/to/servicedescription.xml&quot; --system</pre>
+<p>should be run as a post-install step to register the service in the system scope. Your service will be persistently registered with the system.</p>
+<p>Similarly, you should run the command:</p>
+<pre class="highlightedCode brush: cpp">     servicefw remove &quot;yourservicename&quot;</pre>
+<p>as an uninstall step for the package which provides your component. This will ensure that your service is removed from the service framework database (although you would still have to remove the files from physical storage).</p>
+<a name="deployment-on-symbian"></a>
+<h4>Deployment on Symbian</h4>
+<p>The Qt Mobility Service Framework will automatically check a particular directory on Symbian for new or updated service description xmls. That is, any service described by an xml file in that location will automatically be registered in the system scope on that device. To ensure that your service description xml file is deployed properly, simply insert the following (or something similar) into the .pro (qmake project) file of your service:</p>
+<pre class="highlightedCode brush: cpp">     symbian {
+         load(data_caging_paths)
+         pluginDep.sources = yourserviceplugin.dll
+         pluginDep.path = $$QT_PLUGINS_BASE_DIR
+         DEPLOYMENT += pluginDep
+
+         xmlautoimport.path = /private/2002AC7F/import/
+         xmlautoimport.sources = yourservicedescription.xml
+         DEPLOYMENT += xmlautoimport
+
+         TARGET.EPOCALLOWDLLDATA = 1
+         TARGET.CAPABILITY = ## whatever your service requires
+         load(armcc_warnings)
+     }</pre>
+<p>Note that the UID in the xmlautoimport.path statement is the pre-assigned UID of the &quot;other components&quot; directory. For more information on the topic, please see the documentation for the Qt Mobility Service Framework.</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

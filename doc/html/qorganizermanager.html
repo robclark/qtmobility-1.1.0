@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qorganizermanager.cpp -->
+  <title>Qt Mobility 1.1: QOrganizerManager Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtorganizer.html">QtOrganizer</a></li>
+              <li>QOrganizerManager</li>
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QOrganizerManager Class Reference</h1>
+<p>The QOrganizerManager class provides an interface which allows clients with access to organizer item information stored in a particular backend. <a href="#details">More...</a></p>
+<pre class="highlightedCode brush: cpp"> #include &lt;QOrganizerManager&gt;</pre><p>Inherits <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qorganizermanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<hr />
+<a name="public-types"></a>
+<h2>Public Types</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#Error-enum">Error</a></b> { NoError, DoesNotExistError, AlreadyExistsError, InvalidDetailError, ..., InvalidOccurrenceError }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#ManagerFeature-enum">ManagerFeature</a></b> { MutableDefinitions, ChangeLogs, Anonymous }</td></tr>
+</table>
+<hr />
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#QOrganizerManager">QOrganizerManager</a></b> ( const QString &amp; <i>managerName</i> = QString(), const QMap&lt;QString, QString&gt; &amp; <i>parameters</i> = 0, QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#QOrganizerManager-2">QOrganizerManager</a></b> ( const QString &amp; <i>managerName</i>, int <i>implementationVersion</i>, const QMap&lt;QString, QString&gt; &amp; <i>parameters</i> = 0, QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#QOrganizerManager-3">QOrganizerManager</a></b> ( QObject * <i>parent</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#dtor.QOrganizerManager">~QOrganizerManager</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerCollection </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#collection">collection</a></b> ( const QOrganizerCollectionId &amp; <i>collectionId</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerCollection&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#collections">collections</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerCollection </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#compatibleCollection">compatibleCollection</a></b> ( const QOrganizerCollection &amp; <i>original</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerItem </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#compatibleItem">compatibleItem</a></b> ( const QOrganizerItem &amp; <i>original</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerCollection </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#defaultCollection">defaultCollection</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerItemDetailDefinition </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#detailDefinition">detailDefinition</a></b> ( const QString &amp; <i>definitionName</i>, const QString &amp; <i>organizeritemType</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMap&lt;QString, QOrganizerItemDetailDefinition&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#detailDefinitions">detailDefinitions</a></b> ( const QString &amp; <i>organizeritemType</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerManager::Error </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#error">error</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMap&lt;int, QOrganizerManager::Error&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#errorMap">errorMap</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#hasFeature">hasFeature</a></b> ( QOrganizerManager::ManagerFeature <i>feature</i>, const QString &amp; <i>organizeritemType</i> = QOrganizerItemType::TypeEvent ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#isFilterSupported">isFilterSupported</a></b> ( const QOrganizerItemFilter &amp; <i>filter</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerItem </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#item">item</a></b> ( const QOrganizerItemId &amp; <i>organizeritemId</i>, const QOrganizerItemFetchHint &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerItemId&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#itemIds">itemIds</a></b> ( const QOrganizerItemFilter &amp; <i>filter</i> = QOrganizerItemFilter(), const QList&lt;QOrganizerItemSortOrder&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; () ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerItemId&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#itemIds-2">itemIds</a></b> ( const QDateTime &amp; <i>startDate</i>, const QDateTime &amp; <i>endDate</i>, const QOrganizerItemFilter &amp; <i>filter</i> = QOrganizerItemFilter(), const QList&lt;QOrganizerItemSortOrder&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; () ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerItem&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#itemOccurrences">itemOccurrences</a></b> ( const QOrganizerItem &amp; <i>parentItem</i>, const QDateTime &amp; <i>periodStart</i> = QDateTime(), const QDateTime &amp; <i>periodEnd</i> = QDateTime(), int <i>maxCount</i> = -1, const QOrganizerItemFetchHint &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerItem&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#items">items</a></b> ( const QOrganizerItemFilter &amp; <i>filter</i> = QOrganizerItemFilter(), const QList&lt;QOrganizerItemSortOrder&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; (), const QOrganizerItemFetchHint &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerItem&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#items-2">items</a></b> ( const QDateTime &amp; <i>startDate</i>, const QDateTime &amp; <i>endDate</i>, const QOrganizerItemFilter &amp; <i>filter</i> = QOrganizerItemFilter(), const QList&lt;QOrganizerItemSortOrder&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; (), const QOrganizerItemFetchHint &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerItem&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#itemsForExport">itemsForExport</a></b> ( const QDateTime &amp; <i>startDate</i> = QDateTime(), const QDateTime &amp; <i>endDate</i> = QDateTime(), const QOrganizerItemFilter &amp; <i>filter</i> = QOrganizerItemFilter(), const QList&lt;QOrganizerItemSortOrder&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; (), const QOrganizerItemFetchHint &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#managerName">managerName</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMap&lt;QString, QString&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#managerParameters">managerParameters</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#managerUri">managerUri</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#managerVersion">managerVersion</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#removeCollection">removeCollection</a></b> ( const QOrganizerCollectionId &amp; <i>collectionId</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#removeDetailDefinition">removeDetailDefinition</a></b> ( const QString &amp; <i>definitionName</i>, const QString &amp; <i>organizeritemType</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#removeItem">removeItem</a></b> ( const QOrganizerItemId &amp; <i>organizeritemId</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#removeItems">removeItems</a></b> ( const QList&lt;QOrganizerItemId&gt; &amp; <i>organizeritemIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#saveCollection">saveCollection</a></b> ( QOrganizerCollection * <i>collection</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#saveDetailDefinition">saveDetailDefinition</a></b> ( const QOrganizerItemDetailDefinition &amp; <i>def</i>, const QString &amp; <i>organizeritemType</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#saveItem">saveItem</a></b> ( QOrganizerItem * <i>organizeritem</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#saveItems">saveItems</a></b> ( QList&lt;QOrganizerItem&gt; * <i>organizeritems</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#supportedItemTypes">supportedItemTypes</a></b> () const</td></tr>
+</table>
+<ul>
+<li class="fn">29 public functions inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#public-functions">QObject</a></li>
+</ul>
+<hr />
+<a name="signals"></a>
+<h2>Signals</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#collectionsAdded">collectionsAdded</a></b> ( const QList&lt;QOrganizerCollectionId&gt; &amp; <i>collectionIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#collectionsChanged">collectionsChanged</a></b> ( const QList&lt;QOrganizerCollectionId&gt; &amp; <i>collectionIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#collectionsRemoved">collectionsRemoved</a></b> ( const QList&lt;QOrganizerCollectionId&gt; &amp; <i>collectionIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#dataChanged">dataChanged</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#itemsAdded">itemsAdded</a></b> ( const QList&lt;QOrganizerItemId&gt; &amp; <i>itemIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#itemsChanged">itemsChanged</a></b> ( const QList&lt;QOrganizerItemId&gt; &amp; <i>itemIds</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#itemsRemoved">itemsRemoved</a></b> ( const QList&lt;QOrganizerItemId&gt; &amp; <i>itemIds</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">1 signal inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#signals">QObject</a></li>
+</ul>
+<hr />
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#availableManagers">availableManagers</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#buildUri">buildUri</a></b> ( const QString &amp; <i>managerName</i>, const QMap&lt;QString, QString&gt; &amp; <i>params</i>, int <i>implementationVersion</i> = -1 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QOrganizerItemId&gt; </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#extractIds">extractIds</a></b> ( const QList&lt;QOrganizerItem&gt; &amp; <i>items</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QOrganizerManager * </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#fromUri">fromUri</a></b> ( const QString &amp; <i>storeUri</i>, QObject * <i>parent</i> = 0 )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qorganizermanager.html#parseUri">parseUri</a></b> ( const QString &amp; <i>uri</i>, QString * <i>pManagerId</i>, QMap&lt;QString, QString&gt; * <i>pParams</i> )</td></tr>
+</table>
+<ul>
+<li class="fn">4 static public members inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">1 property inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#properties">QObject</a></li>
+<li class="fn">1 public slot inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#public-slots">QObject</a></li>
+<li class="fn">1 public variable inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#public-variables">QObject</a></li>
+<li class="fn">7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#protected-functions">QObject</a></li>
+<li class="fn">2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#protected-variables">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<div class="descr"/>
+<h2>Detailed Description</h2>
+<p>The QOrganizerManager class provides an interface which allows clients with access to organizer item information stored in a particular backend.</p>
+<p>This class provides an abstraction of a datastore or aggregation of datastores which contains organizer item information. It provides methods to retrieve and manipulate organizer item information, collection information and supported schema definitions. It also provides metadata and error information reporting.</p>
+<p>The functions provided by QOrganizerManager are purely synchronous; to access the same functionality in an asynchronous manner, clients should use the use-case-specific classes derived from <a href="qorganizerabstractrequest.html">QOrganizerAbstractRequest</a>.</p>
+<p>Some functionality provided by QOrganizerManager directly is not accessible using the asynchronous API; see the <a href="organizersync.html">synchronous</a> and <a href="organizerasync.html">asynchronous</a> API information from the <a href="organizer.html">organizer module</a> API documentation.</p>
+</div>
+<hr />
+<div class="types"/>
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Error-enum"></a>enum QOrganizerManager::Error</h3>
+<p>This enum specifies an error that occurred during the most recent operation:</p>
+<table class="valuelist"><tr class="odd"><tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::NoError</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">The most recent operation was successful</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::DoesNotExistError</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The most recent operation failed because the requested organizer item or detail definition does not exist</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::AlreadyExistsError</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">The most recent operation failed because the specified organizer item or detail definition already exists</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::InvalidDetailError</tt></td><td class=" topAlign"><tt>3</tt></td><td  class="topAlign">The most recent operation failed because the specified organizer detail definition already exists</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::LockedError</tt></td><td class=" topAlign"><tt>4</tt></td><td  class="topAlign">The most recent operation failed because the datastore specified is currently locked</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::DetailAccessError</tt></td><td class=" topAlign"><tt>5</tt></td><td  class="topAlign">The most recent operation failed because a detail was modified or removed and its access method does not allow that</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::PermissionsError</tt></td><td class=" topAlign"><tt>6</tt></td><td  class="topAlign">The most recent operation failed because the caller does not have permission to perform the operation</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::OutOfMemoryError</tt></td><td class=" topAlign"><tt>7</tt></td><td  class="topAlign">The most recent operation failed due to running out of memory</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::NotSupportedError</tt></td><td class=" topAlign"><tt>8</tt></td><td  class="topAlign">The most recent operation failed because the requested operation is not supported in the specified store</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::BadArgumentError</tt></td><td class=" topAlign"><tt>9</tt></td><td  class="topAlign">The most recent operation failed because one or more of the parameters to the operation were invalid</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::UnspecifiedError</tt></td><td class=" topAlign"><tt>10</tt></td><td  class="topAlign">The most recent operation failed for an undocumented reason</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::VersionMismatchError</tt></td><td class=" topAlign"><tt>11</tt></td><td  class="topAlign">The most recent operation failed because the backend of the manager is not of the required version</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::LimitReachedError</tt></td><td class=" topAlign"><tt>12</tt></td><td  class="topAlign">The most recent operation failed because the limit for that type of object has been reached</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::InvalidItemTypeError</tt></td><td class=" topAlign"><tt>13</tt></td><td  class="topAlign">The most recent operation failed because the item given was of an invalid type for the operation</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::InvalidCollectionError</tt></td><td class=" topAlign"><tt>14</tt></td><td  class="topAlign">The most recent operation failed because the collection is invalid</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::InvalidOccurrenceError</tt></td><td class=" topAlign"><tt>15</tt></td><td  class="topAlign">The most recent operation failed because it was an attempt to save an occurrence without a correct InstanceOrigin detail</td></tr>
+</table>
+<h3 class="fn"><a name="ManagerFeature-enum"></a>enum QOrganizerManager::ManagerFeature</h3>
+<p>This enum describes the possible features that a particular manager may support</p>
+<table class="valuelist"><tr class="odd"><tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::MutableDefinitions</tt></td><td class=" topAlign"><tt>0</tt></td><td  class="topAlign">The manager supports saving, updating or removing detail definitions. Some built-in definitions may still be immutable</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::ChangeLogs</tt></td><td class=" topAlign"><tt>2</tt></td><td  class="topAlign">The manager supports reporting of timestamps of changes, and filtering and sorting by those timestamps</td></tr>
+<tr><td  class="topAlign"><tt>QOrganizerManager::Anonymous</tt></td><td class=" topAlign"><tt>1</tt></td><td  class="topAlign">The manager is isolated from other managers</td></tr>
+</table>
+</div>
+<hr />
+<div class="func"/>
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QOrganizerManager"></a>QOrganizerManager::QOrganizerManager ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>managerName</i> = QString(), const <a href="http://qt.nokia.com/doc/4.6/qmap.html">QMap</a>&lt;<a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>, <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>&gt; &amp; <i>parameters</i> = 0, <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qorganizermanager.html">QOrganizerManager</a> whose implementation is identified by <i>managerName</i> with the given <i>parameters</i>.</p>
+<p>The <i>parent</i> <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> will be used as the parent of this <a href="qorganizermanager.html">QOrganizerManager</a>.</p>
+<p>If an empty <i>managerName</i> is specified, the default implementation for the platform will be used.</p>
+<h3 class="fn"><a name="QOrganizerManager-2"></a>QOrganizerManager::QOrganizerManager ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>managerName</i>, int <i>implementationVersion</i>, const <a href="http://qt.nokia.com/doc/4.6/qmap.html">QMap</a>&lt;<a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>, <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>&gt; &amp; <i>parameters</i> = 0, <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qorganizermanager.html">QOrganizerManager</a> whose backend has the name <i>managerName</i> and version <i>implementationVersion</i>, where the manager is constructed with the provided <i>parameters</i>.</p>
+<p>The <i>parent</i> <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> will be used as the parent of this <a href="qorganizermanager.html">QOrganizerManager</a>.</p>
+<p>If an empty <i>managerName</i> is specified, the default implementation for the platform will be instantiated. If the specified implementation version is not available, the manager with the name <i>managerName</i> with the default implementation version is instantiated.</p>
+<h3 class="fn"><a name="QOrganizerManager-3"></a>QOrganizerManager::QOrganizerManager ( <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Constructs a <a href="qorganizermanager.html">QOrganizerManager</a> whose parent <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> is <i>parent</i>. The default implementation for the platform will be created.</p>
+<h3 class="fn"><a name="dtor.QOrganizerManager"></a>QOrganizerManager::~QOrganizerManager ()</h3>
+<p>Frees the memory used by the <a href="qorganizermanager.html">QOrganizerManager</a></p>
+<h3 class="fn"><a name="availableManagers"></a><a href="http://qt.nokia.com/doc/4.6/qstringlist.html">QStringList</a> QOrganizerManager::availableManagers ()<tt> [static]</tt></h3>
+<p>Returns a list of available manager ids that can be used when constructing a <a href="qorganizermanager.html">QOrganizerManager</a>. If an empty id is specified to the constructor, the first value in this list will be used instead.</p>
+<h3 class="fn"><a name="buildUri"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QOrganizerManager::buildUri ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>managerName</i>, const <a href="http://qt.nokia.com/doc/4.6/qmap.html">QMap</a>&lt;<a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>, <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>&gt; &amp; <i>params</i>, int <i>implementationVersion</i> = -1 )<tt> [static]</tt></h3>
+<p>Returns a URI that completely describes a manager implementation, datastore, and the parameters with which to instantiate the manager, from the given <i>managerName</i>, <i>params</i> and an optional <i>implementationVersion</i></p>
+<h3 class="fn"><a name="collection"></a><a href="qorganizercollection.html">QOrganizerCollection</a> QOrganizerManager::collection ( const <a href="qorganizercollectionid.html">QOrganizerCollectionId</a> &amp; <i>collectionId</i> ) const</h3>
+<p>Returns the collection identified by the given <i>collectionId</i> which is managed by this manager.</p>
+<h3 class="fn"><a name="collections"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizercollection.html">QOrganizerCollection</a>&gt; QOrganizerManager::collections () const</h3>
+<p>Returns a list of all of the collections managed by this manager.</p>
+<h3 class="fn"><a name="collectionsAdded"></a>void QOrganizerManager::collectionsAdded ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; &amp; <i>collectionIds</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted at some point once the collections identified by <i>collectionIds</i> have been added to a datastore managed by this manager. This signal will not be emitted if the <a href="qorganizermanager.html#dataChanged">dataChanged</a>() signal was previously emitted for these changes.</p>
+<h3 class="fn"><a name="collectionsChanged"></a>void QOrganizerManager::collectionsChanged ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; &amp; <i>collectionIds</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted at some point once the metadata for the collections identified by <i>collectionIds</i> have been modified in a datastore managed by this manager. This signal is not emitted if one of the items in this collection has changed - <a href="qorganizermanager.html#itemsChanged">itemsChanged</a>() will be emitted instead. This signal will not be emitted if the <a href="qorganizermanager.html#dataChanged">dataChanged</a>() signal was previously emitted for these changes.</p>
+<h3 class="fn"><a name="collectionsRemoved"></a>void QOrganizerManager::collectionsRemoved ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizercollectionid.html">QOrganizerCollectionId</a>&gt; &amp; <i>collectionIds</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted at some point once the collections identified by <i>collectionIds</i> have been removed from a datastore managed by this manager. This signal will not be emitted if the <a href="qorganizermanager.html#dataChanged">dataChanged</a>() signal was previously emitted for these changes.</p>
+<h3 class="fn"><a name="compatibleCollection"></a><a href="qorganizercollection.html">QOrganizerCollection</a> QOrganizerManager::compatibleCollection ( const <a href="qorganizercollection.html">QOrganizerCollection</a> &amp; <i>original</i> ) const</h3>
+<p>Returns a pruned or modified version of the <i>original</i> organizer collection which is valid and can be saved in the manager. The returned organizer collection might have meta data removed or arbitrarily changed.</p>
+<h3 class="fn"><a name="compatibleItem"></a><a href="qorganizeritem.html">QOrganizerItem</a> QOrganizerManager::compatibleItem ( const <a href="qorganizeritem.html">QOrganizerItem</a> &amp; <i>original</i> ) const</h3>
+<p>Returns a pruned or modified version of the <i>original</i> organizer item which is valid and can be saved in the manager. The returned organizer item might have entire details removed or arbitrarily changed.</p>
+<h3 class="fn"><a name="dataChanged"></a>void QOrganizerManager::dataChanged ()<tt> [signal]</tt></h3>
+<p>This signal is emitted by the manager if its internal state changes, and it is unable to determine the changes which occurred, or if the manager considers the changes to be radical enough to require clients to reload all data. If this signal is emitted, no other signals will be emitted for the associated changes.</p>
+<h3 class="fn"><a name="defaultCollection"></a><a href="qorganizercollection.html">QOrganizerCollection</a> QOrganizerManager::defaultCollection () const</h3>
+<p>Returns the id of the default collection managed by this manager</p>
+<h3 class="fn"><a name="detailDefinition"></a><a href="qorganizeritemdetaildefinition.html">QOrganizerItemDetailDefinition</a> QOrganizerManager::detailDefinition ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>definitionName</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>organizeritemType</i> ) const</h3>
+<p>Returns the definition identified by the given <i>definitionName</i> that is valid for the organizer items whose type is the given <i>organizeritemType</i> in this store, or a default-constructed <a href="qorganizeritemdetaildefinition.html">QOrganizerItemDetailDefinition</a> if no such definition exists</p>
+<h3 class="fn"><a name="detailDefinitions"></a><a href="http://qt.nokia.com/doc/4.6/qmap.html">QMap</a>&lt;<a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>, <a href="qorganizeritemdetaildefinition.html">QOrganizerItemDetailDefinition</a>&gt; QOrganizerManager::detailDefinitions ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>organizeritemType</i> ) const</h3>
+<p>Returns a map of identifier to detail definition for the registered detail definitions for items whose type is the given <i>organizeritemType</i> which are valid for the organizer items in this store</p>
+<h3 class="fn"><a name="error"></a><a href="qorganizermanager.html#Error-enum">QOrganizerManager::Error</a> QOrganizerManager::error () const</h3>
+<p>Return the error code of the most recent operation</p>
+<h3 class="fn"><a name="errorMap"></a><a href="http://qt.nokia.com/doc/4.6/qmap.html">QMap</a>&lt;int, <a href="qorganizermanager.html#Error-enum">QOrganizerManager::Error</a>&gt; QOrganizerManager::errorMap () const</h3>
+<p>Returns per-input error codes for the most recent operation. This function only returns meaningful information if the most recent operation was a batch operation. Each key in the map is the index of the element in the input list for which the error (whose error code is stored in the value for that key in the map) occurred during the batch operation.</p>
+<p>See also <a href="qorganizermanager.html#error">error</a>(), <a href="qorganizermanager.html#saveItems">saveItems</a>(), and <a href="qorganizermanager.html#removeItems">removeItems</a>().</p>
+<h3 class="fn"><a name="extractIds"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemid.html">QOrganizerItemId</a>&gt; QOrganizerManager::extractIds ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritem.html">QOrganizerItem</a>&gt; &amp; <i>items</i> )<tt> [static]</tt></h3>
+<p>Return a list of <a href="qorganizeritemid.html">QOrganizerItemId</a> extracted from the <i>items</i></p>
+<h3 class="fn"><a name="fromUri"></a>QOrganizerManager * QOrganizerManager::fromUri ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>storeUri</i>, <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>parent</i> = 0 )<tt> [static]</tt></h3>
+<p>Constructs a <a href="qorganizermanager.html">QOrganizerManager</a> whose implementation, store and parameters are specified in the given <i>storeUri</i>, and whose parent object is <i>parent</i>.</p>
+<h3 class="fn"><a name="hasFeature"></a>bool QOrganizerManager::hasFeature ( <a href="qorganizermanager.html#ManagerFeature-enum">QOrganizerManager::ManagerFeature</a> <i>feature</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>organizeritemType</i> = QOrganizerItemType::TypeEvent ) const</h3>
+<p>Returns true if the given feature <i>feature</i> is supported by the manager, for the specified type of organizer item <i>organizeritemType</i></p>
+<h3 class="fn"><a name="isFilterSupported"></a>bool QOrganizerManager::isFilterSupported ( const <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> &amp; <i>filter</i> ) const</h3>
+<p>Returns true if the given <i>filter</i> is supported natively by the manager, and false if the filter behaviour would be emulated.</p>
+<p>Note: In some cases, the behaviour of an unsupported filter cannot be emulated. For example, a filter that requests organizer items that have changed since a given time depends on having that information available. In these cases, the filter will fail.</p>
+<h3 class="fn"><a name="item"></a><a href="qorganizeritem.html">QOrganizerItem</a> QOrganizerManager::item ( const <a href="qorganizeritemid.html">QOrganizerItemId</a> &amp; <i>organizeritemId</i>, const <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a> &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</h3>
+<p>Returns the organizer item in the database identified by <i>organizeritemId</i>.</p>
+<p>If the organizer item does not exist, an empty, default constructed <a href="qorganizeritem.html">QOrganizerItem</a> will be returned, and the error returned by <a href="qorganizermanager.html#error">error</a>() will be <tt>QOrganizerManager::DoesNotExistError</tt>.</p>
+<p>The <i>fetchHint</i> parameter describes the optimization hints that a manager may take. If the <i>fetchHint</i> is the default constructed hint, all existing details and relationships in the matching organizer item will be returned. A client should not make changes to an organizer item which has been retrieved using a fetch hint other than the default fetch hint. Doing so will result in information loss when saving the organizer item back to the manager (as the &quot;new&quot; restricted organizer item will replace the previously saved organizer item in the backend).</p>
+<p>See also <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a>.</p>
+<h3 class="fn"><a name="itemIds"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemid.html">QOrganizerItemId</a>&gt; QOrganizerManager::itemIds ( const <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> &amp; <i>filter</i> = QOrganizerItemFilter(), const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemsortorder.html">QOrganizerItemSortOrder</a>&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; () ) const</h3>
+<p>Returns a list of organizer item ids that match the given <i>filter</i>, sorted according to the given list of <i>sortOrders</i>. Depending on the backend, this filtering operation may involve retrieving all organizer items.</p>
+<h3 class="fn"><a name="itemIds-2"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemid.html">QOrganizerItemId</a>&gt; QOrganizerManager::itemIds ( const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>startDate</i>, const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>endDate</i>, const <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> &amp; <i>filter</i> = QOrganizerItemFilter(), const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemsortorder.html">QOrganizerItemSortOrder</a>&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; () ) const</h3>
+<p>Returns a list of organizer item ids of persisted items that match the given <i>filter</i>, sorted according to the given list of <i>sortOrders</i>, for any item which occurs (or has an occurrence which occurs) in the range specified by the given <i>startDate</i> and <i>endDate</i>. A default-constructed (invalid) <i>startDate</i> specifies an open start date (matches anything which occurs up until the <i>endDate</i>), and a default-constructed (invalid) <i>endDate</i> specifies an open end date (matches anything which occurs after the <i>startDate</i>). If both the <i>startDate</i> and <i>endDate</i> are invalid, this function will return the ids of all items which match the <i>filter</i> criteria. Depending on the backend, this filtering operation may involve retrieving all organizer items.</p>
+<h3 class="fn"><a name="itemOccurrences"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritem.html">QOrganizerItem</a>&gt; QOrganizerManager::itemOccurrences ( const <a href="qorganizeritem.html">QOrganizerItem</a> &amp; <i>parentItem</i>, const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>periodStart</i> = QDateTime(), const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>periodEnd</i> = QDateTime(), int <i>maxCount</i> = -1, const <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a> &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</h3>
+<p>Return the list of a maximum of <i>maxCount</i> organizer item instances which are occurrences of the given <i>parentItem</i> recurring item, which occur between the given <i>periodStart</i> date and the given <i>periodEnd</i> date.</p>
+<p>If <i>periodStart</i> is after <i>periodEnd</i>, the operation will fail. If <i>maxCount</i> is negative, it is backend specific as to how many occurrences will be returned. Some backends may return no instances, others may return some limited number of occurrences.</p>
+<p>The <i>fetchHint</i> allows clients to specify which pieces of information they are interested or not interested in, to allow backends to optimise data retrieval if possible. Note that it is simply a hint; backends can ignore the <i>fetchHint</i>, but if they do so they must return the full item.</p>
+<h3 class="fn"><a name="items"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritem.html">QOrganizerItem</a>&gt; QOrganizerManager::items ( const <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> &amp; <i>filter</i> = QOrganizerItemFilter(), const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemsortorder.html">QOrganizerItemSortOrder</a>&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; (), const <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a> &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</h3>
+<p>Returns a list of organizer items that match the given <i>filter</i>, sorted according to the given list of <i>sortOrders</i>.</p>
+<p>This function will return both persisted and generated occurrences of items which match the specified <i>filter</i>.</p>
+<p>Depending on the manager implementation, this filtering operation might be slow and involve retrieving all organizer items and testing them against the supplied filter - see the <a href="qorganizermanager.html#isFilterSupported">isFilterSupported</a>() function.</p>
+<p>The <i>fetchHint</i> parameter describes the optimization hints that a manager may take. If the <i>fetchHint</i> is the default constructed hint, all existing details and relationships in the matching organizer items will be returned. A client should not make changes to an organizer item which has been retrieved using a fetch hint other than the default fetch hint. Doing so will result in information loss when saving the organizer item back to the manager (as the &quot;new&quot; restricted organizer item will replace the previously saved organizer item in the backend).</p>
+<p>See also <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a>.</p>
+<h3 class="fn"><a name="items-2"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritem.html">QOrganizerItem</a>&gt; QOrganizerManager::items ( const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>startDate</i>, const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>endDate</i>, const <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> &amp; <i>filter</i> = QOrganizerItemFilter(), const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemsortorder.html">QOrganizerItemSortOrder</a>&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; (), const <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a> &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</h3>
+<p>Returns a list of organizer items that match the given <i>filter</i>, sorted according to the given list of <i>sortOrders</i>, for any item or occurrence of an item which occurs in the range specified by the given <i>startDate</i> and <i>endDate</i>. A default-constructed (invalid) <i>startDate</i> specifies an open start date (matches anything which occurs up until the <i>endDate</i>), and a default-constructed (invalid) <i>endDate</i> specifies an open end date (matches anything which occurs after the <i>startDate</i>). If both the <i>startDate</i> and <i>endDate</i> are invalid, this function will return all items which match the <i>filter</i> criteria.</p>
+<p>This function will return both persisted and generated occurrences of items which match the specified criteria.</p>
+<p>Depending on the manager implementation, this filtering operation might be slow and involve retrieving all organizer items and testing them against the supplied filter - see the <a href="qorganizermanager.html#isFilterSupported">isFilterSupported</a>() function.</p>
+<p>The <i>fetchHint</i> parameter describes the optimization hints that a manager may take. If the <i>fetchHint</i> is the default constructed hint, all existing details and relationships in the matching organizer items will be returned. A client should not make changes to an organizer item which has been retrieved using a fetch hint other than the default fetch hint. Doing so will result in information loss when saving the organizer item back to the manager (as the &quot;new&quot; restricted organizer item will replace the previously saved organizer item in the backend).</p>
+<p>See also <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a>.</p>
+<h3 class="fn"><a name="itemsAdded"></a>void QOrganizerManager::itemsAdded ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemid.html">QOrganizerItemId</a>&gt; &amp; <i>itemIds</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted at some point once the items identified by <i>itemIds</i> have been added to a datastore managed by this manager. This signal will not be emitted if the <a href="qorganizermanager.html#dataChanged">dataChanged</a>() signal was previously emitted for these changes.</p>
+<h3 class="fn"><a name="itemsChanged"></a>void QOrganizerManager::itemsChanged ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemid.html">QOrganizerItemId</a>&gt; &amp; <i>itemIds</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted at some point once the items identified by <i>itemIds</i> have been modified in a datastore managed by this manager. This signal will not be emitted if the <a href="qorganizermanager.html#dataChanged">dataChanged</a>() signal was previously emitted for these changes.</p>
+<h3 class="fn"><a name="itemsForExport"></a><a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritem.html">QOrganizerItem</a>&gt; QOrganizerManager::itemsForExport ( const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>startDate</i> = QDateTime(), const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>endDate</i> = QDateTime(), const <a href="qorganizeritemfilter.html">QOrganizerItemFilter</a> &amp; <i>filter</i> = QOrganizerItemFilter(), const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemsortorder.html">QOrganizerItemSortOrder</a>&gt; &amp; <i>sortOrders</i> = QList&lt;QOrganizerItemSortOrder&gt; (), const <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a> &amp; <i>fetchHint</i> = QOrganizerItemFetchHint() ) const</h3>
+<p>Returns a list of organizer items that match the given <i>filter</i>, sorted according to the given list of <i>sortOrders</i>, for any item which occurs (or has an occurrence which occurs) in the range specified by the given <i>startDate</i> and <i>endDate</i>. A default-constructed (invalid) <i>startDate</i> specifies an open start date (matches anything which occurs up until the <i>endDate</i>), and a default-constructed (invalid) <i>endDate</i> specifies an open end date (matches anything which occurs after the <i>startDate</i>). If both the <i>startDate</i> and <i>endDate</i> are invalid, this function will return all items which match the <i>filter</i> criteria.</p>
+<p>This function will only return parent items and persisted exceptions which match the specified criteria; not generated occurrences.</p>
+<p>Depending on the manager implementation, this filtering operation might be slow and involve retrieving all organizer items and testing them against the supplied filter - see the <a href="qorganizermanager.html#isFilterSupported">isFilterSupported</a>() function.</p>
+<p>The <i>fetchHint</i> parameter describes the optimization hints that a manager may take. If the <i>fetchHint</i> is the default constructed hint, all existing details and relationships in the matching organizer items will be returned. A client should not make changes to an organizer item which has been retrieved using a fetch hint other than the default fetch hint. Doing so will result in information loss when saving the organizer item back to the manager (as the &quot;new&quot; restricted organizer item will replace the previously saved organizer item in the backend).</p>
+<p>See also <a href="qorganizeritemfetchhint.html">QOrganizerItemFetchHint</a>.</p>
+<h3 class="fn"><a name="itemsRemoved"></a>void QOrganizerManager::itemsRemoved ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemid.html">QOrganizerItemId</a>&gt; &amp; <i>itemIds</i> )<tt> [signal]</tt></h3>
+<p>This signal is emitted at some point once the items identified by <i>itemIds</i> have been removed from a datastore managed by this manager. This signal will not be emitted if the <a href="qorganizermanager.html#dataChanged">dataChanged</a>() signal was previously emitted for these changes.</p>
+<h3 class="fn"><a name="managerName"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QOrganizerManager::managerName () const</h3>
+<p>Returns the manager name for this <a href="qorganizermanager.html">QOrganizerManager</a></p>
+<h3 class="fn"><a name="managerParameters"></a><a href="http://qt.nokia.com/doc/4.6/qmap.html">QMap</a>&lt;<a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>, <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>&gt; QOrganizerManager::managerParameters () const</h3>
+<p>Return the parameters relevant to the creation of this <a href="qorganizermanager.html">QOrganizerManager</a></p>
+<h3 class="fn"><a name="managerUri"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QOrganizerManager::managerUri () const</h3>
+<p>Return the uri describing this <a href="qorganizermanager.html">QOrganizerManager</a>, consisting of the manager name and any parameters.</p>
+<h3 class="fn"><a name="managerVersion"></a>int QOrganizerManager::managerVersion () const</h3>
+<p>Returns the engine backend implementation version number</p>
+<h3 class="fn"><a name="parseUri"></a>bool QOrganizerManager::parseUri ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i>, <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> * <i>pManagerId</i>, <a href="http://qt.nokia.com/doc/4.6/qmap.html">QMap</a>&lt;<a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>, <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>&gt; * <i>pParams</i> )<tt> [static]</tt></h3>
+<p>Splits the given <i>uri</i> into the manager, store, and parameters that it describes, and places the information into the memory addressed by <i>pManagerId</i> and <i>pParams</i> respectively. Returns true if <i>uri</i> could be split successfully, otherwise returns false</p>
+<h3 class="fn"><a name="removeCollection"></a>bool QOrganizerManager::removeCollection ( const <a href="qorganizercollectionid.html">QOrganizerCollectionId</a> &amp; <i>collectionId</i> )</h3>
+<p>Removes the collection identified by the given <i>collectionId</i> (and all items in the collection) from the manager if the given <i>collectionId</i> exists. Returns true on success, false on failure.</p>
+<p>Attempting to remove the default collection will fail and calling <a href="qorganizermanager.html#error">error</a>() will return <a href="qorganizermanager.html#Error-enum">QOrganizerManager::PermissionsError</a>.</p>
+<h3 class="fn"><a name="removeDetailDefinition"></a>bool QOrganizerManager::removeDetailDefinition ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>definitionName</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>organizeritemType</i> )</h3>
+<p>Removes the detail definition identified by <i>definitionName</i> from the database, which is valid for organizer items whose type is the given <i>organizeritemType</i>. Returns true if the definition was removed successfully, otherwise returns false</p>
+<h3 class="fn"><a name="removeItem"></a>bool QOrganizerManager::removeItem ( const <a href="qorganizeritemid.html">QOrganizerItemId</a> &amp; <i>organizeritemId</i> )</h3>
+<p>Remove the organizer item identified by <i>organizeritemId</i> from the database. Returns true if the organizer item was removed successfully, otherwise returns false.</p>
+<h3 class="fn"><a name="removeItems"></a>bool QOrganizerManager::removeItems ( const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritemid.html">QOrganizerItemId</a>&gt; &amp; <i>organizeritemIds</i> )</h3>
+<p>Remove every organizer item whose id is contained in the list of organizer item ids <i>organizeritemIds</i>. Returns true if all organizer items were removed successfully, otherwise false.</p>
+<p>Calling <a href="qorganizermanager.html#errorMap">errorMap</a>() will return the per-input errors for the latest batch function. The <a href="qorganizermanager.html#error">QOrganizerManager::error</a>() function will only return <tt>QOrganizerManager::NoError</tt> if all organizer items were removed successfully.</p>
+<p>If the given list of organizer item ids <i>organizeritemIds</i> is empty, the function will return false and calling <a href="qorganizermanager.html#error">error</a>() will return <tt>QOrganizerManager::BadArgumentError</tt>. If the list is non-empty and contains ids which do not identify a valid organizer item in the manager, the function will remove any organizer items which are identified by ids in the <i>organizeritemIds</i> list, insert <tt>QOrganizerManager::DoesNotExist</tt> entries into the error map for the indices of invalid ids in the <i>organizeritemIds</i> list, return false, and set the overall operation error to <tt>QOrganizerManager::DoesNotExistError</tt>.</p>
+<p>See also <a href="qorganizermanager.html#removeItem">QOrganizerManager::removeItem</a>().</p>
+<h3 class="fn"><a name="saveCollection"></a>bool QOrganizerManager::saveCollection ( <a href="qorganizercollection.html">QOrganizerCollection</a> * <i>collection</i> )</h3>
+<p>Saves the given <i>collection</i> in the manager. Returns true on success, false on failure.</p>
+<p>Some managers do not allow modifications to collections, and thus attempting to save a collection will always fail when attempted in such a manager.</p>
+<p>Some managers do not allow adding new collections, and thus attempting to save a new collection will always fail when attempted in such a manager.</p>
+<p>Some managers provide front-ends to read-only datastores, and attempting to save a new collection in such a manager will always fail.</p>
+<p>Most managers will require a valid value for the <tt>QOrganizerCollection::KeyName</tt> meta data key to be set in a collection, before the collection can be saved correctly. Clients can call <a href="qorganizermanager.html#compatibleCollection">compatibleCollection</a>() to retrieve a pruned or updated version of the collection which is compatible with the manager.</p>
+<p>See also <a href="qorganizermanager.html#compatibleCollection">compatibleCollection</a>().</p>
+<h3 class="fn"><a name="saveDetailDefinition"></a>bool QOrganizerManager::saveDetailDefinition ( const <a href="qorganizeritemdetaildefinition.html">QOrganizerItemDetailDefinition</a> &amp; <i>def</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>organizeritemType</i> )</h3>
+<p>Persists the given definition <i>def</i> in the database, which is valid for organizer items whose type is the given <i>organizeritemType</i>. Returns true if the definition was saved successfully, otherwise returns false</p>
+<h3 class="fn"><a name="saveItem"></a>bool QOrganizerManager::saveItem ( <a href="qorganizeritem.html">QOrganizerItem</a> * <i>organizeritem</i> )</h3>
+<p>Adds the given <i>organizeritem</i> to the database if <i>organizeritem</i> has a default-constructed id, or an id with the manager URI set to the URI of this manager and a id of zero. It will be saved in the collection whose id is reported by calling item-&gt;collectionId() if the specified collection exists, or if no collectionId is specified in the item, or the collectionId is the default collection id, it will be saved in the collection in which the item is currently saved (if it is not a new item) or in the default collection (if it is a new item). As such, an item may be moved between collections with this save operation.</p>
+<p>If the manager URI of the id of the <i>organizeritem</i> is neither empty nor equal to the URI of this manager, or id of the <i>organizeritem</i> is non-zero but does not exist in the manager, the operation will fail and calling <a href="qorganizermanager.html#error">error</a>() will return <tt>QOrganizerManager::DoesNotExistError</tt>.</p>
+<p>Alternatively, the function will update the existing organizer item in the database if <i>organizeritem</i> has a non-zero id and currently exists in the database.</p>
+<p>If the <i>organizeritem</i> contains one or more details whose definitions have not yet been saved with the manager, the operation will fail and calling <a href="qorganizermanager.html#error">error</a>() will return <tt>QOrganizerManager::UnsupportedError</tt>.</p>
+<p>Returns false on failure, or true on success. On successful save of an organizer item with a null id, its id will be set to a new, valid id with the manager URI set to the URI of this manager, and the id set to a new, valid id. On successful save of an organizer item with a null collection id, the collection id will be set to the id of the default collection of the manager. The manager is not required to fetch updated details of the organizer item on save, and as such, clients should fetch an organizer item if they want the most up-to-date information by calling <a href="qorganizermanager.html#item">QOrganizerManager::item</a>().</p>
+<p>See also <a href="qorganizermanager.html#managerUri">managerUri</a>().</p>
+<h3 class="fn"><a name="saveItems"></a>bool QOrganizerManager::saveItems ( <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qorganizeritem.html">QOrganizerItem</a>&gt; * <i>organizeritems</i> )</h3>
+<p>Adds the list of organizer items given by <i>organizeritems</i> list to the database. Each item in the list will be saved in the collection whose id is reported by calling item-&gt;collectionId() if the specified collection exists, or if no collectionId is specified in the item, or the collectionId is the default collection id, it will be saved in the collection in which the item is currently saved (if it is not a new item) or in the default collection (if it is a new item). As such, an item may be moved between collections with this save operation. Returns true if the organizer items were saved successfully, otherwise false.</p>
+<p>Calling <a href="qorganizermanager.html#errorMap">errorMap</a>() will return the per-input errors for the latest batch function. The <a href="qorganizermanager.html#error">QOrganizerManager::error</a>() function will only return <tt>QOrganizerManager::NoError</tt> if all organizer items were saved successfully.</p>
+<p>For each newly saved organizer item that was successful, the id of the organizer item in the <i>organizeritems</i> list will be updated with the new value. If a failure occurs when saving a new item, the id will be cleared.</p>
+<p>See also <a href="qorganizermanager.html#saveItem">QOrganizerManager::saveItem</a>().</p>
+<h3 class="fn"><a name="supportedItemTypes"></a><a href="http://qt.nokia.com/doc/4.6/qstringlist.html">QStringList</a> QOrganizerManager::supportedItemTypes () const</h3>
+<p>Returns the list of organizer item types which are supported by this manager. This is a convenience function, equivalent to retrieving the allowable values for the <tt>QOrganizerItemType::FieldType</tt> field of the <a href="qorganizeritemtype.html">QOrganizerItemType</a> definition which is valid in this manager.</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

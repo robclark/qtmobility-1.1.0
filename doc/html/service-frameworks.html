@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- sf.qdoc -->
+  <title>Qt Mobility 1.1: Qt Service Framework</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li>Qt Service Framework</li>            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#namespace">Namespace</a></li>
+<li class="level1"><a href="#introduction">Introduction</a></li>
+<li class="level1"><a href="#overview">Overview</a></li>
+<li class="level1"><a href="#using-the-framework">Using the Framework</a></li>
+<li class="level2"><a href="#verbose-lookup">Verbose Lookup</a></li>
+<li class="level2"><a href="#default-lookup">Default Lookup</a></li>
+<li class="level3"><a href="#qobject-based-services"><b>QObject based services</b></a></li>
+<li class="level3"><a href="#typed-services"><b>Typed services</b></a></li>
+<li class="level1"><a href="#service-scope">Service Scope</a></li>
+<li class="level2"><a href="#user-scope">User Scope</a></li>
+<li class="level2"><a href="#system-scope">System Scope</a></li>
+<li class="level1"><a href="#adding-and-removing-of-services">Adding and Removing of Services</a></li>
+<li class="level2"><a href="#xml-format">XML Format</a></li>
+<li class="level1"><a href="#tools-for-xml-generation">Tools for XML Generation</a></li>
+<li class="level1"><a href="#installing-the-service-at-runtime">Installing the Service at Runtime</a></li>
+<li class="level1"><a href="#identifying-services">Identifying Services</a></li>
+<li class="level2"><a href="#upgrading-services">Upgrading Services</a></li>
+<li class="level1"><a href="#out-of-process-services">Out of Process Services</a></li>
+<li class="level2"><a href="#d-bus-services">D-Bus Services</a></li>
+<li class="level3"><a href="#limitations">Limitations</a></li>
+<li class="level3"><a href="#service-autostart">Service Autostart</a></li>
+<li class="level2"><a href="#symbian-client-server-framework">Symbian Client-Server Framework</a></li>
+<li class="level3"><a href="#limitations">Limitations</a></li>
+<li class="level3"><a href="#service-autostart">Service Autostart</a></li>
+<li class="level3"><a href="#service-registration">Service registration</a></li>
+<li class="level4"><a href="#automatic-registration">Automatic Registration</a></li>
+<li class="level4"><a href="#secure-registration">Secure Registration</a></li>
+<li class="level4"><a href="#rom-build-registration">ROM build registration</a></li>
+<li class="level3"><a href="#service-security-filters">Service security filters</a></li>
+<li class="level3"><a href="#error-handling">Error handling</a></li>
+<li class="level2"><a href="#local-socket">Local Socket</a></li>
+<li class="level3"><a href="#limitations">Limitations</a></li>
+<li class="level3"><a href="#service-autostart">Service Autostart</a></li>
+<li class="level3"><a href="#service-registration">Service Registration</a></li>
+<li class="level3"><a href="#service-security-filters">Service security filters</a></li>
+<li class="level2"><a href="#error-handling">Error handling</a></li>
+<li class="level1"><a href="#main-classes">Main Classes</a></li>
+<li class="level1"><a href="#qml-classes">QML Classes</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+</ul>
+</div>
+<h1 class="title">Qt Service Framework</h1>
+<span class="subtitle"></span>
+<div class="descr"/>
+<p>The Qt Service Framework allows clients to discover and instantiate arbitrary services.</p>
+<a name="namespace"></a>
+<h2>Namespace</h2>
+<p>The QtMobility APIs are placed into the <i>QtMobility</i> namespace. This is done to facilitate the future migration of Mobility APIs into Qt. See the <a href="quickstart.html">Quickstart guide</a> for an example on how the namespace impacts on application development.</p>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>The Qt Service Framework defines a unified way of finding, implementing and accessing services across multiple platforms.</p>
+<p>Due to the service frameworks knowledge of service interfaces, their versions and <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>-based introspection it may even be used to unify and access multiple platform specific service implementations via the same Qt-based client application.</p>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>A service is an independent component that allows a client to perform a well-defined operation. Clients can find services based on their name and version as well as the interface that is implemented by the service object. Once the service has been identified the framework starts the service and returns a pointer to it. <a href="qservicemanager.html">QServiceManager</a> is the main interface through which clients can access the mentioned framework functionality. In addition services themselves may also act as clients to the service framework by requesting other services installed on the system.</p>
+<p>Service provider are implemented via plug-ins. <a href="qserviceplugininterface.html">QServicePluginInterface</a> defines the main interface for each plug-in. In order to avoid that clients have to link against service specific libraries each service object must be derived from <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>. Therefore the <a href="http://qt.nokia.com/doc/4.6/qmetaobject.html">QMetaObject</a> system can be used to dynamically discover and invoke the service's capabilities. To achieve the best level of access via the Qt meta object system services should be implemented in such a way that their entire functionality is accessible via the signals, slots, properties or invokable functions (see <a href="http://qt.nokia.com/doc/4.6/qobject.html#Q_INVOKABLE">Q_INVOKABLE</a> macro for more details).</p>
+<p>Each service plug-in implements one service only but can provide multiple implementations for multiple interfaces. Therefore a service (plug-in) can retain a certain level of backwards compatibility even if the main service interface breaks in such a way that a new interface name has to be used. Existing clients can still use the previous version of service interface whereas new clients can utilize the new interface.</p>
+<p>Services can also include remote processes. By registering with the service manager processes can communicate via signals, slots, invokable functions and properties as if they were local objects. Services can choose to be either shared between all clients, or unique to that client.</p>
+<a name="using-the-framework"></a>
+<h2>Using the Framework</h2>
+<p>This section assumes that the user wants to access the <i>FileStorage</i> service which offers an implementation for the <i>com.nokia.qt.examples.FileStorage</i> interface The service framework enables multiple ways of accessing those implementations.</p>
+<p><a href="qservicemanager.html">QServiceManager</a> is the main class to lookup and instantiate services. Services can be found by constraining the search via service meta data or by using the default lookup mechanism.</p>
+<a name="verbose-lookup"></a>
+<h3>Verbose Lookup</h3>
+<p>The client code has precise knowledge of the service and its interfaces.</p>
+<pre class="highlightedCode brush: cpp"> QServiceManager manager;
+ QServiceFilter filter(&quot;com.nokia.qt.examples.FileStorage&quot;);
+ filter.setServiceName(&quot;FileStorage&quot;);
+
+<span class="comment"> // find services complying with filter</span>
+ QList&lt;QServiceInterfaceDescriptor&gt; foundServices;
+ foundServices = manager.findInterfaces(filter);
+ Q_ASSERT(foundServices.count());
+
+<span class="comment"> // instantiate the FileStorage object</span>
+ QObject *fileStorage;
+ fileStorage = manager.loadInterface(foundServices.at(0));</pre>
+<a name="default-lookup"></a>
+<h3>Default Lookup</h3>
+<p>It is assumed that the client has knowledge of the interface but does not really care about the specific type or version of the service implementing the interface. In such cases the default service lookup can be utilized to create a service object instance.</p>
+<pre class="highlightedCode brush: cpp"> QServiceManager manager;
+ manager.setInterfaceDefault(&quot;FileStorageService&quot;, &quot;com.nokia.qt.examples.FileStorage&quot;);</pre>
+<p>The above call to <a href="qservicemanager.html#setInterfaceDefault">QServiceManager::setInterfaceDefault</a>() registers the <i>FileStorageService</i> as default implementation. Whenever a client asks for an implementation of <i>com.nokia.qt.examples.FileStorage</i> the <i>FileStorageService</i> service will be loaded. If (at the time of this call) the <i>FileStorageService</i> provides multiple registered implementations/versions for the same interface the latest version becomes the default. Therefore subsequent versions of the same interface must always be binary compatible to previous versions.</p>
+<p>The current scope of the service manager object determines whether the default assignment is valid for all users or whether it is valid for the current user only. The system default is used if the user scope has not been defined. This enables users to customize their personal preferences. By default the first service installing a so far unknown interface becomes the system wide default selection.</p>
+<a name="qobject-based-services"></a>
+<h4><b>QObject based services</b></h4>
+<p>This is the most common way of interacting with services.</p>
+<pre class="highlightedCode brush: cpp"> storage = manager.loadInterface(&quot;com.nokia.qt.examples.FileStorage&quot;);
+ if (storage)
+     QMetaObject::invokeMethod(storage, &quot;deleteFile&quot;, Q_ARG(QString, &quot;/tmp/readme.txt&quot;));</pre>
+<p>The above invocation of the file storage object's deleteFile() function is done via the service's <a href="http://qt.nokia.com/doc/4.6/qmetaobject.html">QMetaObject</a>. The client does not require any knowledge of the objects actual type and therefore does not have to link against a service specific library.</p>
+<a name="typed-services"></a>
+<h4><b>Typed services</b></h4>
+<p>So far all lookup mechanism returned a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> pointer. This pointer can be utilized by introspecting the object, using Qt's meta object system. However in some use cases it may be more convenient to directly interact with the service object by including the service header and/or linking against the service provider. The main advantage is compile time checking. Its disadvantage is that client and service must share the implementation of the service object via a library they link against or via a common header file. Note that such sharing breaks the fundamental ServiceFramework principle of separating clients from service as changes of the service type may require changes to both, services and clients.</p>
+<p>The subsequent code snippet demonstrates how this may look like:</p>
+<pre class="highlightedCode brush: cpp"> #include &lt;filestorage.h&gt;
+ ...
+ QServiceManager manager;
+ FileStorage *storage = 0;
+ ...
+ storage = manager.loadLocalTypedInterface&lt;FileStorage&gt;(&quot;com.nokia.qt.examples.FileStorage&quot;);
+ if (storage)
+     storage-&gt;deleteFile(&quot;/tmp/readme.txt&quot;);</pre>
+<a name="service-scope"></a>
+<h2>Service Scope</h2>
+<p>The <a href="qservicemanager.html">QServiceManager</a> operates in either <a href="qservice.html#Scope-enum">User scope</a> or <a href="qservice.html#Scope-enum">System scope</a>. By default, it operates in user scope. The choice of scope affects whether registered services are available system-wide or only to the current user, and whether service and interface lookups are limited to system-wide service or whether the current user's together with system service configurations are considered.</p>
+<a name="user-scope"></a>
+<h3>User Scope</h3>
+<p>In user scope, services are registered in a storage location specific to the current user. When a default service is set for an interface using <a href="qservicemanager.html#setInterfaceDefault">setInterfaceDefault()</a>, the referenced service can be either a user-specific or system-wide service.</p>
+<p>For service and interface lookups, a manager will first search the user-specific services; if the requested component is not found, the manager then searches the system-wide services, if the user has sufficient permissions to do so.</p>
+<p>The <a href="qservicemanager.html#serviceAdded">QServiceManager::serviceAdded</a>() and <a href="qservicemanager.html#serviceRemoved">QServiceManager::serviceRemoved</a>() notifications are emitted when services are added or removed from either the user-specific or system-wide services. These signals have a <tt>scope</tt> parameter to indicate the scope in which the service was added or removed. (Note the system-wide service notifications are only available if the user has sufficient permissions to access the system-wide service storage.)</p>
+<a name="system-scope"></a>
+<h3>System Scope</h3>
+<p>In system scope, services are registered in a system-wide storage location. The manager does not access user-specific services for any operations. Service and interface lookups fail if the requested services are not found in the system-wide service storage. Service registration is performed in the system-wide storage.</p>
+<p>If <a href="qservicemanager.html#setInterfaceDefault">setInterfaceDefault()</a> is called for a user-specific service, the operation fails.</p>
+<p>Also, the <a href="qservicemanager.html#serviceAdded">QServiceManager::serviceAdded</a>() and <a href="qservicemanager.html#serviceRemoved">QServiceManager::serviceRemoved</a>() notifications are only emitted for system-wide services.</p>
+<a name="adding-and-removing-of-services"></a>
+<h2>Adding and Removing of Services</h2>
+<p>New services can be installed and removed at runtime. An XML file is used to describe the service meta data and links the service code to its meta description.</p>
+<a name="xml-format"></a>
+<h3>XML Format</h3>
+<p>Services are installed via an XML file which describes the meta data and location of the service. The XML file can be described via the following DTD:</p>
+<pre class="highlightedCode brush: cpp"> &lt;!ELEMENT SFW ( service ) &gt;
+ &lt;!ATTLIST SFW version (1.0|1.1) #REQUIRED &gt;
+ &lt;!ELEMENT service ( name, filepath | ipcaddress, description?, interface+ ) &gt;
+ &lt;!ELEMENT description ( #CDATA ) &gt;
+ &lt;!ELEMENT filepath ( #PCDATA ) &gt;
+ &lt;!ELEMENT ipcaddress ( #PCDATA ) &gt;
+ &lt;!ELEMENT interface ( name, version, description?, capabilities?, customproperty* ) &gt;
+ &lt;!ELEMENT capabilities ( #PCDATA ) &gt;
+ &lt;!ELEMENT name ( #PCDATA ) &gt;
+ &lt;!ELEMENT version ( #PCDATA ) &gt;
+ &lt;!ELEMENT customproperty ( #CDATA ) &gt;
+ &lt;!ATTLIST customproperty key NMTOKEN #REQUIRED &gt;</pre>
+<p>The elements and attributes have the following meanings:</p>
+<table class="generic">
+<thead><tr class="qt-style topAlign"><th>Element</th><th>SubElement</th><th>Description</th></tr></thead>
+<tr class="odd topAlign"><td><p>SFW</p></td><td><p></p></td><td><p>The service framework XML version tag that encapsulates the service XML. Must provide the version attribute that follows the <i>major.minor</i> notation and must equate to supported Qt Service Framework versions. This means the minimum version is 1.0 however users are recommended to always specify the highest available version.</p></td></tr>
+<tr class="even topAlign"><td><p>service</p></td><td><p></p></td><td><p>The <i>service</i> tag can contain an arbitrary number of <i>interface</i> tags and one description tag.</p></td></tr>
+<tr class="odd topAlign"><td><p>&quot;</p></td><td><p>description</p></td><td><p>A user readable description of the purpose of the service.</p></td></tr>
+<tr class="even topAlign"><td><p>&quot;</p></td><td><p>filepath</p></td><td><p>The absolute path and name of the plug-in to be loaded when this service is requested. Alternatively if the plug-in name only is provided the standard library paths (see <a href="http://qt.nokia.com/doc/4.6/qcoreapplication.html#libraryPaths">QCoreApplication::libraryPaths</a>()) are used to find the plug-in. Note that if the plugin name is given only, platform specific parts such as the suffix &quot;.dll&quot; and &quot;.so&quot; or plugin prefix &quot;lib&quot; should be removed to enable cross platform resolution. <a href="http://qt.nokia.com/doc/4.6/qlibrary.html">QLibrary</a> is used to determine the platform specific parts of the plugin.</p></td></tr>
+<tr class="odd topAlign"><td><p>&quot;</p></td><td><p>ipcaddress</p></td><td><p>The socket name or path that the inter-process service will be published on that will provide clients with remote access. Should be the same name as the executable for the service without any suffix such as &quot;.exe&quot; etc.</p></td></tr>
+<tr class="even topAlign"><td><p>&quot;</p></td><td><p>name</p></td><td><p>The name of the service.</p></td></tr>
+<tr class="odd topAlign"><td><p>interface</p></td><td><p></p></td><td><p>The <i>interface</i> describes the properties of the interface.</p></td></tr>
+<tr class="even topAlign"><td><p>&quot;</p></td><td><p>capabilities</p></td><td><p>This property is a list of arbitrary strings which are interpreted as permissions/capabilities. The list elements are comma-separated and spaces after commas are not permitted. This list can be empty.</p></td></tr>
+<tr class="odd topAlign"><td><p>&quot;</p></td><td><p>name</p></td><td><p>The name of the interface using the Java class name notation. (e.g&#x2e; com.nokia.qt.TestService)</p></td></tr>
+<tr class="even topAlign"><td><p>&quot;</p></td><td><p>version</p></td><td><p>This property contains the interface and implementation version. The version tag follows the <i>major.minor</i> notation. The major version indicates the interface version the minor version the implementation version.<p>The version number <b>must</b> be greater than 1.0&#x2e; The version cannot be less than 1.0 because the Service Framework is dependent on the fact that services must be binary compatible between major versions, and services with versions less than 1.0 are unlikely to be binary compatible with later versions.</p>
+</p></td></tr>
+<tr class="odd topAlign"><td><p>&quot;</p></td><td><p>description</p></td><td><p>A user readable description of the purpose of the interface.</p></td></tr>
+<tr class="even topAlign"><td><p>&quot;</p></td><td><p>customproperty</p></td><td><p>An implementation specific key value pair which can be used for filtering or as description.</p></td></tr>
+</table>
+<p>An example for a valid XML service description could be the following <i>TestService</i>:</p>
+<pre class="highlightedCode brush: cpp"> &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+ &lt;SFW version=&quot;1.1&quot;&gt;
+ &lt;service&gt;
+     &lt;name&gt;TestService&lt;/name&gt;
+     &lt;filepath&gt;testserviceplugin&lt;/filepath&gt;
+     &lt;description&gt;Test service description&lt;/description&gt;
+     &lt;interface&gt;
+         &lt;name&gt;com.nokia.qt.ILocation&lt;/name&gt;
+         &lt;version&gt;1.4&lt;/version&gt;
+         &lt;capabilities&gt;&lt;/capabilities&gt;
+         &lt;description&gt;Interface that provides location support&lt;/description&gt;
+     &lt;/interface&gt;
+     &lt;interface&gt;
+         &lt;name&gt;com.nokia.qt.ILocation&lt;/name&gt;
+         &lt;version&gt;1.5&lt;/version&gt;
+         &lt;capabilities&gt;&lt;/capabilities&gt;
+         &lt;description&gt;Interface that provides location support&lt;/description&gt;
+     &lt;/interface&gt;
+     &lt;interface&gt;
+         &lt;name&gt;com.nokia.qt.ISysInfo&lt;/name&gt;
+         &lt;capabilities&gt;ReadUserData&lt;/capabilities&gt;
+         &lt;version&gt;2.3&lt;/version&gt;
+         &lt;description&gt;Interface that provides system information support&lt;/description&gt;
+         &lt;customproperty key=&quot;key1&quot;&gt;value1&lt;/customproperty&gt;
+         &lt;customproperty key=&quot;key2&quot;&gt;value2&lt;/customproperty&gt;
+     &lt;/interface&gt;
+ &lt;/service&gt;
+ &lt;/SFW&gt;</pre>
+<a name="tools-for-xml-generation"></a>
+<h2>Tools for XML Generation</h2>
+<p>The framework includes a GUI tool under <tt>tools/servicexmlgen</tt> for generating and inspecting service XML files. This makes it easy to enter service metadata and interface details and generate the appropriate XML to describe the plugin or IPC based service. It can also be used to load and inspect existing service XML files.</p>
+<p>Note that the tool will default to the highest known existing Qt Service Framework version as the XML version attribute and subsequent saves on loaded files will enforce this default version.</p>
+<p>Here is a screenshot of the application, loaded with the <i>TestService</i> XML description provided above.</p>
+<p class="centerAlign"><img src="images/servicexmlgen.png" /></p><a name="installing-the-service-at-runtime"></a>
+<h2>Installing the Service at Runtime</h2>
+<p>New services can be added and removed at any time via <a href="qservicemanager.html#addService">QServiceManager::addService</a>() and <a href="qservicemanager.html#removeService">QServiceManager::removeService</a>().</p>
+<p>On Symbian devices a service can be installed using the Symbian package installer. More details about this process can be found in the <a href="service-framework-on-symbian.html">Qt Service Framework on Symbian</a> documentation.</p>
+<a name="identifying-services"></a>
+<h2>Identifying Services</h2>
+<p>Each implementation is identified by a service name, an interface name and its version. This information is encapsulated by <a href="qserviceinterfacedescriptor.html">QServiceInterfaceDescriptor</a> which can be used to request references to service objects.</p>
+<p><a href="qservicefilter.html">QServiceFilter</a> simplifies the lookup of already installed services. Developers specifies the criteria used during the meta data lookup. The subsequent example demonstrates the interaction between <a href="qserviceinterfacedescriptor.html">QServiceInterfaceDescriptor</a> and <a href="qservicefilter.html">QServiceFilter</a> by creating references to all services that implement the interface <i>com.nokia.qt.ILocation</i>:</p>
+<pre class="highlightedCode brush: cpp"> QServiceManager mgr;
+ QServiceFilter filter;
+ filter.setInterface(&quot;com.nokia.qt.ILocation&quot;);
+ QList&lt;QServiceInterfaceDescriptor&gt; list = mgr.findInterfaces(filter);
+ for(int i = 0; i &lt; list.size(); i++) {
+     QObject *serviceObject;
+     serviceObject = mgr.loadInterface(list[i]);
+
+     <span class="comment">// returned object owned by client</span>
+     if (serviceObject)
+         serviceObject-&gt;setParent(this);
+ }</pre>
+<a name="upgrading-services"></a>
+<h3>Upgrading Services</h3>
+<p>There are two ways in which to upgrade a service. The first is an incremental approach whereby <a href="qservicemanager.html#addService">QServiceManager::addService</a>() is used to register an XML descriptor whose service name already exists but defines new interface implementations. For example an already existing service, &quot;ovi&quot; may define version 1.0 of interface,&quot;IDownload&quot;. <a href="qservicemanager.html#addService">QServiceManager::addService</a>() is then called with an XML descriptor that declares itself as belonging the &quot;ovi&quot; service, but implements version 1.1 of the interface &quot;IDownload&quot;. Both implementation versions will be available for use.</p>
+<p>The second method is a replacement approach whereby an existing service is completely removed and replaced by a new service.</p>
+<p>As an example the already existing &quot;ovi&quot; service may implement interface &quot;IDownload&quot; version 1.0, the new &quot;ovi&quot; service may implement &quot;IDownload&quot; version 1.0 and version 1.1&#x2e; In this case the old service implementation must be first be removed using <a href="qservicemanager.html#removeService">QServiceManager::removeService</a>() to make way for the new service implementation.</p>
+<a name="out-of-process-services"></a>
+<h2>Out of Process Services</h2>
+<p>Qt Service Framework provides a mechanism for out of process services so that clients can remotely load interfaces. These inter-process services are deployed similarly to local services, using the IPC address tag from the XML description and calling <a href="qremoteserviceregister.html#publishEntries">QRemoteServiceRegister::publishEntries</a>() to add the service to the remote services manager. Clients access services via the metaobject similarly to in-process services and each remote service is represented as a <a href="qremoteserviceregister-entry.html">QRemoteServiceRegister::Entry</a> by using <a href="qremoteserviceregister.html#createEntry">QRemoteServiceRegister::createEntry</a>(). The <a href="sfwecho.html">Echo Client Example</a> demonstrates how remote services can be instantiated and used.</p>
+<p>Inter-process services are deployed using a variety of different IPC mechanisms available on the current platform and as such may inherit several limitations. For Symbian, IPC is handled by the Symbian Client-Server Framework whereas for other environments services are published using <a href="http://qt.nokia.com/doc/4.6/qtdbus.html">QtDBus</a> if it is available otherwise falls back on <a href="http://qt.nokia.com/doc/4.6/qlocalsocket.html">QLocalSocket</a> for inter-process communication.</p>
+<a name="d-bus-services"></a>
+<h3>D-Bus Services</h3>
+<p>The <a href="http://qt.nokia.com/doc/4.6/qtdbus.html">QtDBus</a> module is used to provide IPC in correspondance to the Qt Service Framework architecture and provides access to signals, slots, invokable methods and properties.</p>
+<a name="limitations"></a>
+<h4>Limitations</h4>
+<p>A current known limitation for Qt Service Framework using <a href="http://qt.nokia.com/doc/4.6/qtdbus.html">QtDBus</a> for IPC is that enumerators cannot be read due to lack of support on D-Bus. This will be added in future versions once the <a href="http://qt.nokia.com/doc/4.6/qtdbus.html">QtDBus</a> module enables enumerator support. A current known workaround is to manually define and use integers as demonstrated in the <a href="declarative-sfw-dialer.html">Declarative Serviceframework Dialer</a> example. Furthermore, due to the nature of IPC, pointers to objects cannot be passed between services and clients. Unfortunately, this also means that anything wrapped in a typedef macro cannot be communicated effectively between processes.</p>
+<a name="service-autostart"></a>
+<h4>Service Autostart</h4>
+<p>D-Bus services inherit automatic start support by providing .service files to the D-Bus daemon search paths. Aside from producing these files manually, the servicefw tool provides an option to generate the corresponding files inside the local user D-Bus folder for convenience. This will allow all client requests to automatically startup the service if it isn't already running. Consequently, once every client has closed its service instance the service will be automatically terminated after invoking any slots connected to notification signals.</p>
+<p>Running the following command will enable rendezvous for D-Bus IPC.</p>
+<pre class="highlightedCode brush: cpp"> ./servicefw dbusservice &lt;service-xml-file&gt; &lt;service-file&gt;</pre>
+<p>The .service files will typically be generated in the $home/.local/share/dbus-1/services directory unless the $$XDG_DATA_HOME environment variable is set. If the --system option is used the tool will generate the file inside /usr/share/dbus-1/services if the user permissions are met.</p>
+<p>Note that in order for the autostart feature to function correctly, the service needs to be either pre-registered or registered at run-time so that clients can use a <a href="qservicemanager.html">QServiceManager</a> to discover the IPC interfaces that invoke the D-Bus service files. This is usually done on deployment by adding services through the servicefw tool.</p>
+<a name="symbian-client-server-framework"></a>
+<h3>Symbian Client-Server Framework</h3>
+<a name="limitations"></a>
+<h4>Limitations</h4>
+<p>Pointers to objects, and anything wrapped in a typedef cannot be passed between services and clients. It's recommended that IPC messages be kept small on Symbian when possible. Symbian Client-Server IPC mandates a fixed buffer size, currently set at 255 bytes. Messages that are large will cause a large number of context switches. This may cause a system performance pentalty if a lot of very large messages are transfered frequently.</p>
+<a name="service-autostart"></a>
+<h4>Service Autostart</h4>
+<p>Symbian IPC will automatically start the server process if required when the client calls loadInterface. The executable name must be the same as the name provided &lt;ipcaddress&gt; tag in the xml registration file. For example &lt;ipcaddress&gt;xyzabc&lt;/ipcaddress&gt; should have the executable for the service called xyzabc.exe.</p>
+<a name="service-registration"></a>
+<h4>Service registration</h4>
+<p>All services must be registered for clients to be able to locate and use them. Symbian provides 3 different methods to register services.</p>
+<ul>
+<li><a href="#automatic-registration">Automatic registration</a></li>
+<li><a href="#secure-registration">Secure registration</a></li>
+<li><a href="#rom-build-registration">ROM build registration</a></li>
+</ul>
+<a name="automatic-registration"></a>
+<h5>Automatic Registration</h5>
+<p>Automatic registration is the prefered method for services that are not Symbian Signed and don't require high levels of security. The XML file is copied into the import directory of the IPC backend. In Qt project files this can be done by:</p>
+<pre class="highlightedCode brush: cpp"> xmlautoimport.path = /private/2002AC7F/import/
+ xmlautoimport.sources = &lt;service xml file&gt;.xml
+ DEPLOYMENT += xmlautoimport</pre>
+<p>Or in a symbian .pkg file by:</p>
+<pre class="highlightedCode brush: cpp"> &quot;/epoc32/data/z/private/2002AC7F/import/&lt;service xml file&gt;.xml&quot; - &quot;c:\private\2002AC7F\import\&lt;service xml file&gt;.xml&quot;</pre>
+<a name="secure-registration"></a>
+<h5>Secure Registration</h5>
+<p>For services that are Symbian Signed and require a higher level of security they may chose to use a post install program. The authenticity check of the service is done during registration using the VID/SID. If the installer defines the VID it is stored in the registration database, and only the same VID maybe used to remove the service or reinstall it. If the VID is undefined then the SID is used. The VID/SID remain in the registration database after unregistration locking the name to the VID/SID. Only installers using the same VID/SID may register a service of the same name.</p>
+<p>An example project can be found at <tt>examples/serviceinstaller_sfw_symbian</tt>.</p>
+<p>More info about VID and SID can be found from:</p>
+<ul>
+<li><a href="http://developer.symbian.org/wiki/index.php/Platform_Security_%28Fundamentals_of_Symbian_C%2B%2B%29#VendorID">VendorID</a></li>
+<li><a href="http://developer.symbian.org/wiki/index.php/Platform_Security_%28Fundamentals_of_Symbian_C%2B%2B%29#SecureID">SecureID</a></li>
+</ul>
+<a name="rom-build-registration"></a>
+<h5>ROM build registration</h5>
+<p>For Symbian application built into the rom image registration must be done at build time using the host tool servicedbgen. To register a service run the command:</p>
+<pre class="highlightedCode brush: cpp"> servicedbgen -tall add &lt;service xml file&gt;</pre>
+<p>Appropriate iby files, and settings are required for including the service executable and related files in the rom image.</p>
+<a name="service-security-filters"></a>
+<h4>Service security filters</h4>
+<p>Services can install a filter function to check the credentials of a client on initial connection and then terminate connections if desired. The filter is a function:</p>
+<pre class="highlightedCode brush: cpp"> bool securityFilter(const void *p)
+ {
+     const RMessage2 *aMessage = reinterpret_cast&lt;const RMessage2*&gt;(p);
+     if(check_security) {
+         return true; <span class="comment">// accept connection</span>
+     }
+     else {
+         retun false; <span class="comment">// reject connection</span>
+     }
+ }</pre>
+<p>Returning true returns CPolicyServer::EPass and false returns CPolicyServer::EFail to the Client-Server secuity check. Registration of the filter is done by calling <a href="qremoteserviceregister.html#setSecurityFilter">QRemoteServiceRegister::setSecurityFilter</a>(). The Symbian Policy Server API can be used to work with the RMessage2 to extract security policy details, such as RMessage2::HasCapability or RMessage2::VendorId().</p>
+<a name="error-handling"></a>
+<h4>Error handling</h4>
+<p>IPC errors can occur. QObjects returned by the service manager have an additional signal created, errorUnrecoverableIPCFault(<a href="qservice.html#UnrecoverableIPCError-enum">QService::UnrecoverableIPCError</a>) which the client must connect to. If an error occurs the object must be destroyed; no further calls can be made. The error recovery is left up to the client application.</p>
+<a name="local-socket"></a>
+<h3>Local Socket</h3>
+<p>On platforms that do not provide D-Bus or the Symbian Client-Server Framework, the underlying IPC mechanism utilized is a local socket based protocol.</p>
+<a name="limitations"></a>
+<h4>Limitations</h4>
+<p>Similar to the other IPC mechanisms, passing object pointers or typedefs will not work on local socket. Local socket also requires the executable for the service to be installed somewhere in your PATH for autostart to work. Not all platforms support all fields on the QRemoteServiceResgiterCredentials and will return -1 in unsupported fields.</p>
+<a name="service-autostart"></a>
+<h4>Service Autostart</h4>
+<p>This mechanism provides automatic service startup. The &lt;ipcaddress&gt; tag must be set to the executable filename. For example &lt;ipcaddress&gt;xyzabc&lt;/ipcaddress&gt; must be used if the executable is xyzabc, or xyzabc.exe on windows systems. The PATH is searched for the executable. If the executable is not found, or the service does not start, then the error is reported to the client.</p>
+<a name="service-registration"></a>
+<h4>Service Registration</h4>
+<p>All services must be registered. The 'servicefw' tool registers xml files. It must be run before a service can be used. For example:</p>
+<pre class="highlightedCode brush: cpp"> servicefw add &lt;service xml file&gt;</pre>
+<a name="service-security-filters"></a>
+<h4>Service security filters</h4>
+<p>The service can install a security filter to reject connections from some clients.</p>
+<pre class="highlightedCode brush: cpp"> bool securityFilter(const void *p)
+ {
+     const QRemoteServiceRegisterCredentials *cr = (const struct QRemoteServiceRegisterCredentials *)p;
+     if(cr-&gt;uid == 0) {
+         return true; <span class="comment">// accept connection</span>
+     }
+     else {
+         retun false; <span class="comment">// reject connection</span>
+     }
+ }
+
+ struct QRemoteServiceRegisterCredentials {
+     int fd;
+     int pid;
+     int uid;
+     int gid;
+ };</pre>
+<p>Returning true accepts the connect, false terminates it. Certain platforms do not provide all the results, and undefined values are set to -1. Registration of the filter is done by calling <a href="qremoteserviceregister.html#setSecurityFilter">QRemoteServiceRegister::setSecurityFilter</a>(). Only 1 filter maybe installed at one time.</p>
+<a name="error-handling"></a>
+<h3>Error handling</h3>
+<p>Out of process services behave similarly to local services, with one exception. There can be IPC errors, or the remote service can terminate unexpectedly. QObjects returned by the service manager for out of process services have an additional signal created, errorUnrecoverableIPCFault(<a href="qservice.html#UnrecoverableIPCError-enum">QService::UnrecoverableIPCError</a>) which the client must connect to. If an error occurs the object must be destroyed; no further calls can be made. The error recovery is left up to the client application.</p>
+<a name="main-classes"></a>
+<h2>Main Classes</h2>
+<table class="annotated">
+<tr class="odd topAlign"><td><p><a href="qabstractsecuritysession.html">QAbstractSecuritySession</a></p></td><td><p>Generic mechanism to enable permission checks for services</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qremoteserviceregister.html">QRemoteServiceRegister</a></p></td><td><p>Manages instances of remote service objects</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qservice.html">QService</a></p></td><td><p>Contains miscellaneous identifiers used throughout the Qt Service framework library</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qservicecontext.html">QServiceContext</a></p></td><td><p>Context information to services</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qservicefilter.html">QServiceFilter</a></p></td><td><p>Defines criteria for defining a sub-set of all available services</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qserviceinterfacedescriptor.html">QServiceInterfaceDescriptor</a></p></td><td><p>Identifies a service implementation</p></td></tr>
+<tr class="odd topAlign"><td><p><a href="qservicemanager.html">QServiceManager</a></p></td><td><p>Enables the loading of service plugins and the (de)registration of services</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qserviceplugininterface.html">QServicePluginInterface</a></p></td><td><p>Defines the interface that every plug-in based service must implement</p></td></tr>
+</table>
+<a name="qml-classes"></a>
+<h2>QML Classes</h2>
+<p>The Qt Service Framework offers discovery and selection of services through declarative UI by providing service and service list elements. Detailed information can be found at <a href="qml-serviceframework.html">QML Service Framework Plugin</a>.</p>
+<table class="annotated">
+<tr class="odd topAlign"><td><p><a href="qml-service.html">QML Service Element</a></p></td><td><p>The Service element holds an instance of a service object.</p></td></tr>
+<tr class="even topAlign"><td><p><a href="qml-servicelist.html">QML ServiceList Element</a></p></td><td><p>The ServiceList element holds a list of Service elements.</p></td></tr>
+</table>
+<a name="examples"></a>
+<h2>Examples</h2>
+<ul>
+<li><a href="servicebrowser.html">Service Browser Example</a></li>
+<li><a href="filemanagerplugin.html">File Manager Plugin Example</a></li>
+<li><a href="bluetoothtransferplugin.html">Bluetooth Transfer Plugin Example</a></li>
+<li><a href="notesmanagerplugin.html">Notes Manager Plugin Example</a></li>
+<li><a href="sfw-notes.html">Notes Manager Example</a></li>
+<li><a href="sfwecho.html">Echo Client Example</a></li>
+<li><a href="declarative-sfw-notes.html">Declarative Notes Manager</a></li>
+<li><a href="declarative-sfw-dialer.html">Declarative Serviceframework Dialer</a></li>
+</ul>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

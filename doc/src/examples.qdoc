@@ -1,0 +1,137 @@
+/****************************************************************************
+**
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in a
+** written agreement between you and Nokia.
+**
+** GNU Free Documentation License
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+** If you have questions regarding the use of this file, please contact
+** Nokia at qt-info@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \page all-examples.html
+    \title Qt Mobility Examples
+
+    Qt Mobility comes with a variety of examples that cover the entire range of the Qt Mobility
+    APIs. Note that some examples require Qt declarative which can by obtain via \l {http://qt.gitorious.org/qt}.
+
+    \section2 Bearer Management
+
+    \list
+    \o \l{bearercloud}{Bearer Cloud}
+    \o \l{bearermonitor}{Bearer Monitor}
+    \endlist
+
+    \section2 Contacts
+
+    \list
+    \o \l{samplephonebook}{Sample Phonebook}
+    \endlist
+
+    \section2 Document Gallery
+
+    \list
+    \o \l{mediabrowser}{Media Browser}
+    \o \l{documentproperties}{Document Properties}
+    \o \l{declarative-music-browser}{QML Music Browser}
+    \endlist
+
+    \section2 Feedback
+
+    \list
+    \o \l{hapticsplayer}{Haptics Player}
+    \o \l{hapticsquare}{Haptic Square}
+    \endlist
+
+    \section2 Location
+
+    \list
+    \o \l{logfilepositionsource}{Log File Position Source}
+    \o \l{weatherinfo}{Weather Info}
+    \o \l{lightmaps}{LightMaps}
+    \o \l{flickrdemo}{Flickr Demo}
+    \o \l{landmarkbrowser}{Landmark Browser}
+    \o \l{mapviewer}{Map Viewer}
+    \o \l{geoservicedemo}{Geo Service Demo}
+    \o \l{declarative-location/landmarkmap}{Landmark Map}
+    \o \l{declarative-location/flickr}{Declarative Location Flickr}
+    \o \l{declarative-location/mapviewer}{Declarative Map Viewer}
+    \endlist
+
+    \section2 Messaging
+
+    \list
+    \o \l{keepintouch}{Keep in Touch}
+    \o \l{serviceactions}{Service Actions}
+    \endlist
+
+    \section2 Multimedia
+
+    \list
+    \o \l{audiorecorder}{Audio Recorder}
+    \o \l{audiodevices}{Audio Devices}
+    \o \l{player}{Player}
+    \o \l{radio}{Radio}
+    \o \l{slideshow}{Slideshow}
+    \o \l{declarative-camera}{Declarative Camera}
+    \endlist
+
+    \section2 Organizer
+
+    \list
+    \o \l{calendardemo}{Calendar Demo}
+    \omit \o \l{qmlorganizer}{QML Organizer} \endomit
+    \o \l{todo}{ToDo Example}
+    \endlist
+
+    \section2 Publish and Subscribe
+
+    \list
+    \o \l{publish-subscribe}{Publish and Subscribe}
+    \o \l{battery-charge}{Accessing Publish and Subscribe from QML}
+    \endlist
+
+    \section2 Service Framework
+
+    \list
+    \o \l{servicebrowser}{Service Browser}
+    \o \l{bluetoothtransferplugin}{Bluetooth Transfer Plugin}
+    \o \l{filemanagerplugin}{File Manager Plugin}
+    \o \l{notesmanagerplugin}{Notes Manager Plugin}
+    \o \l{sfw-notes}{Notes Manager}
+    \o \l{declarative-sfw-notes}{Declarative Notes Manager}
+    \o \l{declarative-sfw-dialer}{Declarative Dialer}
+    \o \l{sfwecho}{Echo Client}
+    \endlist
+
+    \section2 System Information
+
+    \list
+    \o \l{sysinfo}{System Information}
+    \endlist
+
+    \section2 Sensors
+
+    \list
+    \o \l{sensors/grueplugin}{Grue Plugin}
+    \omit \o \l{sensors/grueapp}{Grue Application} \endomit
+    \endlist
+*/
+

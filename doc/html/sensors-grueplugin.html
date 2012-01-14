@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- sensors.qdoc -->
+  <title>Qt Mobility 1.1: Grue Plugin</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li><a href="all-examples.html">Examples</a></li>              <li><a href="examples-sensors.html"></a></li>              <li>Grue Plugin</li>            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#grue-sensor-type">Grue Sensor Type</a></li>
+<li class="level1"><a href="#grue-sensor-backend">Grue Sensor Backend</a></li>
+<li class="level1"><a href="#grue-sensor-plugin">Grue Sensor Plugin</a></li>
+</ul>
+</div>
+<h1 class="title">Grue Plugin</h1>
+<span class="subtitle"></span>
+<div class="descr"/>
+<p>Files:</p>
+<ul>
+<li><a href="sensors-grueplugin-gruesensor-cpp.html">sensors/grueplugin/gruesensor.cpp</a></li>
+<li><a href="sensors-grueplugin-gruesensor-h.html">sensors/grueplugin/gruesensor.h</a></li>
+<li><a href="sensors-grueplugin-gruesensor-p-h.html">sensors/grueplugin/gruesensor_p.h</a></li>
+<li><a href="sensors-grueplugin-gruesensorimpl-cpp.html">sensors/grueplugin/gruesensorimpl.cpp</a></li>
+<li><a href="sensors-grueplugin-gruesensorimpl-h.html">sensors/grueplugin/gruesensorimpl.h</a></li>
+<li><a href="sensors-grueplugin-main-cpp.html">sensors/grueplugin/main.cpp</a></li>
+<li><a href="sensors-grueplugin-grueplugin-pro.html">sensors/grueplugin/grueplugin.pro</a></li>
+</ul>
+<p>The Grue plugin example demonstrates the creation of a new sensor type, a sensor backend and plugin for the sensors library.</p>
+<a name="grue-sensor-type"></a>
+<h2>Grue Sensor Type</h2>
+<p>The files for this are:</p>
+<ul>
+<li>gruesensor.h</li>
+<li>gruesensor_p.h</li>
+<li>gruesensor.cpp</li>
+</ul>
+<p>First up is the sensor type. This is the interface for sensors that report on your likelihood of being eaten by a Grue. Such sensors are very important to adventurers, particularly if they are going into dark places as this is where Grues live.</p>
+<p>The interface is a simple one. It provides only 1 bit of information, your chance of being eaten. For the details on how this is property should be interpreted please see the documentation in gruesensor.cpp.</p>
+<p>This example was created using the make_sensor.pl script which can be found in src/sensors. As such, it contains some generated code that defines the convenience classes GrueFilter and GrueSensor.</p>
+<a name="grue-sensor-backend"></a>
+<h2>Grue Sensor Backend</h2>
+<p>The files for this are:</p>
+<ul>
+<li>gruesensorimpl.h</li>
+<li>gruesensorimpl.cpp</li>
+</ul>
+<p>The Grue sensor needs a backend before it can be used. The backend provided is rather basic and it relies on some kind of light sensor to work but it gets the job done. If new hardware that can detect the actual presence of Grues becomes available a backend could be created that supports this hardware and applications using the Grue sensor would be able to use it without any changes.</p>
+<p>There are a few mandatory parts to a backend. They are the start and stop methods and the setReading call. The start and stop methods are used to start and stop any underlying hardware. In the case of this backend they start and stop a light sensor. In the start method, the backend should be sure to call the sensorStopped() or sensorBusy() methods if it cannot start.</p>
+<pre class="highlightedCode brush: cpp">     lightSensor-&gt;setDataRate(sensor()-&gt;dataRate());
+     lightSensor-&gt;start();
+     <span class="comment">// If the light sensor doesn't work we don't work either</span>
+     if (!lightSensor-&gt;isActive())
+         sensorStopped();
+     if (lightSensor-&gt;isBusy())
+         sensorBusy();</pre>
+<p>The setReading method is needed so that the sensors library knows where the readings are coming from. This backend has a local copy of the reading so it passes a pointer to the function.</p>
+<pre class="highlightedCode brush: cpp">     <span class="comment">// Register our reading instance</span>
+     setReading&lt;GrueSensorReading&gt;(&amp;m_reading);</pre>
+<p>However it is also possible to pass null to the setReading method in which case the sensors library will create an instance and return a pointer.</p>
+<pre class="highlightedCode brush: cpp"> // Create a reading instance for us to use
+ m_reading = setReading&lt;GrueSensorReading&gt;(0);</pre>
+<p>The Grue sensor backend also supplies some metadata.</p>
+<p>The backend checks 2 things, how dark it is and how long you have been in the dark. It uses the readingChanged() signal to know when to check the light sensor's value. Once it is dark, it uses a timer to increase your chance of being eaten.</p>
+<a name="grue-sensor-plugin"></a>
+<h2>Grue Sensor Plugin</h2>
+<p>The files for this are:</p>
+<ul>
+<li>main.cpp</li>
+</ul>
+<p>The Grue sensor backend is delivered as a plugin. The plugin has a factory object that registers the types available and does the actual instantiation of the backend.</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

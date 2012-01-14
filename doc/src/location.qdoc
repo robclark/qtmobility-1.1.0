@@ -1,0 +1,543 @@
+/****************************************************************************
+**
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in a
+** written agreement between you and Nokia.
+**
+** GNU Free Documentation License
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+** If you have questions regarding the use of this file, please contact
+** Nokia at qt-info@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+
+
+
+/*!
+    \group location
+    \title Location API
+
+    The Location API provides a library for location positioning, landmark
+    management, and mapping and navigation.
+*/
+
+/*!
+\page location-overview.html
+
+\title Location
+\brief The Location API provides a library for location positioning, landmark management
+and mapping and navigation.
+
+\ingroup mobility
+
+The Location API provides a library for location positioning, landmark management
+and mapping and navigation.
+
+\tableofcontents
+
+\section1 Namespace
+
+The QtMobility APIs are placed into the \i{QtMobility} namespace. This is done
+to facilitate the future migration of Mobility APIs into Qt. See the
+\l {Quickstart Example}{Quickstart guide} for an example on how the
+namespace impacts on application development.
+
+\section1 Location Positioning
+
+Location data involves a precisely specified position on the Earth's
+surface \unicode {0x2014} as provided by a latitude-longitude coordinate
+\unicode {0x2014} along with associated data, such as:
+
+    \list
+    \o The date and time at which the position was reported
+    \o The velocity of the device that reported the position
+    \o The altitude of the reported position (height above sea level)
+    \o The bearing of the device in degrees, relative to true north
+    \endlist
+
+This data can be extracted through a variety of methods. One of the most
+well known methods of positioning is GPS (Global Positioning System), a
+publicly available system that uses radiowave signals received from
+Earth-orbiting satellites to calculate the precise position and time of
+the receiver. Another popular method is Cell ID positioning, which uses
+the cell ID of the cell site that is currently serving the receiving
+device to calculate its approximate location. These and other positioning
+methods can all be used with the Location API; the only requirement for a
+location data source within the API is that it provides a
+latitude-longitude coordinate with a date/time value, with the option of
+providing the other attributes listed above.
+
+
+Location data sources are created by subclassing QGeoPositionInfoSource and
+providing QGeoPositionInfo objects through the
+QGeoPositionInfoSource::positionUpdated() signal. Clients that require
+location data can connect to the
+\l{QGeoPositionInfoSource::positionUpdated()}{positionUpdated()} signal and
+call \l{QGeoPositionInfoSource::startUpdates()}{startUpdates()} or
+\l{QGeoPositionInfoSource::requestUpdate()}{requestUpdate()} to trigger the
+distribution of location data.
+
+A default position source may be available on some platforms. Call
+QGeoPositionInfoSource::createDefaultSource() to create an instance of the default
+position source; the method returns 0 if no default source is available for
+the platform.
+
+The QGeoAreaMonitor class enables client applications to be notified when
+the receiving device has moved in or out of a particular area, as specified
+by a coordinate and radius. If the platform provides built-in support for
+area monitoring, QGeoAreaMonitor::createDefaultMonitor() returns an instance of
+the default area monitor.
+
+Satellite information can also be distributed through the
+QGeoSatelliteInfoSource class. Call QGeoSatelliteInfoSource::createDefaultSource() to
+create an instance of the default satellite data source for the platform,
+if one is available. Alternatively, clients can subclass it to provide a
+custom satellite data source.
+
+\section2 Requesting location data from data sources
+
+To receive data from a source, connect to its
+\l{QGeoPositionInfoSource::positionUpdated()}{positionUpdated()} signal,
+then call either \l{QGeoPositionInfoSource::startUpdates()}{startUpdates()}
+or \l{QGeoPositionInfoSource::requestUpdate()}{requestUpdate()} to begin.
+
+Here is an example of a client that receives data from the default location
+data source, as returned by QGeoPositionInfoSource::createDefaultSource():
+
+\code
+class MyClass : public QObject
+{
+    Q_OBJECT
+public:
+    MyClass(QObject *parent = 0)
+        : QObject(parent)
+    {
+        QGeoPositionInfoSource *source = QGeoPositionInfoSource::createDefaultSource(this);
+        if (source) {
+            connect(source, SIGNAL(positionUpdated(QGeoPositionInfo)),
+                    this, SLOT(positionUpdated(QGeoPositionInfo)));
+            source->startUpdates();
+        }
+    }
+
+private slots:
+    void positionUpdated(const QGeoPositionInfo &info)
+    {
+        qDebug() << "Position updated:" << info;
+    }
+};
+
+\endcode
+
+\section2 Controlling aspects of data sources
+
+The QGeoPositionInfoSource::setUpdateInterval() method can be used to
+control the rate at which position updates are received. For example, if
+the client application only requires updates once every 30 seconds, it can
+call \c setUpdateInterval(30000). (If no update interval is set, or
+\l {QGeoPositionInfoSource::}{setUpdateInterval()} is called with a value of 0, the source uses a default
+interval or some other internal logic to determine when updates should be
+provided.)
+
+QGeoPositionInfoSource::setPreferredPositioningMethods() enables client
+applications to request that a certain type of positioning method be used.
+For example, if the application prefers to use only satellite positioning,
+which offers fairly precise outdoor positioning but can be a heavy user of
+power resources, it can call this method with the
+QGeoPositionInfoSource::SatellitePositioningMethods value. However, this
+method should only be used in specialized client applications; in most
+cases, the default positioning methods should not be changed, as a source
+may internally use a variety of positioning methods that can be useful to
+the application.
+
+\section2 Reading NMEA data
+
+\l {http://en.wikipedia.org/wiki/NMEA_0183}{NMEA} is a common text-based
+protocol for specifying navigational data. For convenience, the
+QNmeaPositionInfoSource is provided to enable client applications to read
+and distribute NMEA data in either real-time mode (for example, when
+streaming from a GPS device) or simulation mode (for example, when reading
+from a NMEA log file). In simulation mode, the source will emit updates
+according to the time stamp of each NMEA sentence to produce a "replay"
+of the recorded data.
+
+
+\section2 Example: Creating a custom location data source
+
+Generally, the capabilities provided by the default position source as
+returned by QGeoPositionInfoSource::createDefaultSource(), along with the
+QNmeaPositionInfoSource class, are sufficient for retrieving location
+data. However, in some cases developers may wish to write their own custom
+location data sources.
+
+The \c LogFilePositionSource class in \c examples/logfilepositionsource
+shows how to subclass QGeoPositionInfoSource to create a custom location
+data source.
+
+This example class reads location data from a text file, \i log.txt. The
+file specifies location data using a simple text format: it contains one
+location update per line, where each line contains a date/time, a latitude
+and a longitude, separated by spaces. The date/time is in ISO 8601 format
+and the latitude and longitude are in degrees decimal format. Here is an
+excerpt from \i log.txt:
+
+    \code
+    2009-08-24T22:25:01 -27.576082 153.092415
+    2009-08-24T22:25:02 -27.576223 153.092530
+    2009-08-24T22:25:03 -27.576364 153.092648
+    \endcode
+
+The class reads this data and distributes it via the
+\l{QGeoPositionInfoSource::positionUpdated()}{positionUpdated()} signal.
+
+Here is the definition of the \c LogFilePositionSource class:
+
+    \quotefromfile logfilepositionsource/logfilepositionsource.h
+    \skipto class LogFilePositionSource
+    \printuntil };
+
+The main methods overrided by the subclass are:
+
+    \list
+    \o \l{QGeoPositionInfoSource::startUpdates()}{startUpdates()}: called by client applications to start regular position updates
+    \o \l{QGeoPositionInfoSource::stopUpdates()}{stopUpdates()}: called by client applications to stop regular position updates
+    \o \l{QGeoPositionInfoSource::requestUpdate()}{requestUpdate()}: called by client applications to request a single update, with a specified timeout
+    \endlist
+
+When a position update is available, the subclass emits the
+\l{QGeoPositionInfoSource::positionUpdated()}{positionUpdated()} signal.
+
+Here are the key methods in the class implementation:
+
+    \quotefromfile logfilepositionsource/logfilepositionsource.cpp
+    \skipto LogFilePositionSource::LogFilePositionSource
+    \printuntil /^\}/
+    \skipto LogFilePositionSource::startUpdates
+    \printuntil /^\}/
+    \skipto LogFilePositionSource::stopUpdates
+    \printuntil /^\}/
+    \skipto LogFilePositionSource::requestUpdate
+    \printuntil /^\}/
+    \printuntil LogFilePositionSource::readNextPosition
+    \printuntil /^\}/
+
+
+The example includes a \c ClientApplication class that requests updates
+from the \c LogFilePositionSource class. Run the example to see the data
+that is received by \c ClientApplication.
+
+Before running the example, make sure you have done both \tt make
+and \tt {make install}.
+
+\section2 Examples
+
+\section3 \bold{Flickr Demo}
+
+The \l{flickrdemo}{Flickr Demo} uses the Location to download thumbnail
+images from Flickr relevant to the current location.
+
+\section3 \bold{Weather Info Demo}
+The \l{weatherinfo}{Weather Info demo} uses Location display data about the
+weather for the current location.
+
+\section3 \bold{Light Maps Demo}
+The \l{lightmaps}{Light Maps demo} uses Location display a street map for
+the current location.
+
+\section2 Location classes
+
+\annotatedlist location
+
+\target Landmarks
+\section1 Landmarks
+The Landmarks portion of the Location API facilitates the creation,
+retrieval, updating and deletion of landmarks from arbitrary data stores.
+
+A landmark is a location of some significance, also known as a point of interest
+and are represented as QLandmark objects.  Related landmarks may be grouped into
+categories(QLandmarkCategory) such as restaurants or accommodation and each landmark can belong to more
+than one category.
+
+A landmark datastore is represented by a QLandmarkManager. The QLandmarkManager
+may be used to save, fetch and remove both landmarks and categories.  When fetching
+landmarks we can provide various filters and sort orders to define the searching
+criteria and the order in which landmarks are returned.  The QLandmarkManager also
+provides functionality to import and export landmarks as well as provide notifications
+whenever changes are detected.  It should be noted that the Landmarks API provides
+both synchronous and asynchronous mechanisms to perform the above operations.
+Synchronous operations are provided the QLandmarkManager itself while the asynchronous
+operations are provided by various  \l {Asynchronous Landmark Requests} {request classes}.
+It is generally recommended that the asynchronous \l {Asynchronous Landmark Requests} {request classes} classes be used as they are not subject to blocking which can be an issue if
+a datastore contains a significantly large number of landmarks or if the datastore is being accessed over a network.
+
+
+\section2 Landmark operation examples
+
+For more details see the \l {Landmark Examples} {Landmark Examples} page for:
+\list
+    \o \l {Creating/Saving categories and landmarks}
+    \o \l {Retrieving categories and landmarks}
+    \o \l {Deleting categories and landmarks}
+    \o \l {Importing landmarks}
+    \o \l {Exporting landmarks}
+\endlist
+
+\section3 Managers and plugins.
+Landmark managers are identified by their manager name.  Each manager name corresponds to a specific plugin/backend
+that implements the manager functionality.  The manager name is typically a reverse domain  string such as
+"com.nokia.qt.landmarks.engines.symbian".  Typically a developer does not need to deal with the manager name
+as the default manager will be used when instantiating a QLandmarkManager without construction parameters.
+
+To implment your own plugin, you need to subclass QLandmarkManagerEngine and provide the implmementations
+for the virtual functions, and then create a QLandmarkMangerEngineFactory subclass that will instantiate
+your particular engine implementation.
+
+The following table shows names of the default managers for each platform.
+\table
+\header
+    \o Manager name
+    \o Platform
+\row
+    \o com.nokia.qt.landmarks.engines.symbian
+    \o S60 3.1,3.2,5.0, Symbian^3
+\row
+    \o com.nokia.qt.landmarks.engines.sqlite
+    \o Maemo5, WindowsXp/Vista,Linux
+\endtable
+
+
+\section3 Importing and Exporting Landmarks
+The landmarks API supports import and exporting of landmarks.  The file formats that are supported depends on the particular manager.
+The following table outline the formats that may be used for the default manager on each platform.  You may also query the supported formats through the
+QLandmarkManager::supportedFormats() function.
+
+\table
+\header
+    \o Platform
+    \o Import formats
+    \o Export formats
+\row
+    \o  S60 3.1,3.2
+    \o  Lmx
+    \o  Lmx
+\row
+    \o  S60 5.0
+    \o  Gpx, Lmx
+    \o  Lmx
+\row
+    \o  Symbian ^3
+    \o  Gpx, Lmx, Kml, Kmz
+    \o  Lmx
+\row
+    \o Maemo 5, windows, linux
+    \o Lmx, Gpx(version 1.1 only)
+    \o Lmx, Gpx(vesion 1.1 only)
+\endtable
+
+During an import operation, every landmark from the import source will result in the creation of a new landmark, however any categories
+defined in the import source will be mapped to existing categories if possible.  If a mappping cannot be found then a new category
+is created.
+
+During an import or export operation,the QLandmarkManager::TransferOption can be used to decide what to do with category data,
+provided the given format supports them.  (For formats such as gpx which do not support categories, the transfer option is ignored).
+Typically, any categories are included as is with QLandmarkManager::IncludeCategoryData being the default option.  You may choose
+to ignore any categories by providing using QLandmarkManager::ExcludeCategoryData.  For an import operation, you can use
+QLandmarkManager::AttachSingleCategory in conjunction with a QLandmarkCategoryId, to have all imported landmarks be assigned
+to that category(any exisiting category associations defined in the import source are ignored).
+
+The export operation by default exports all landmarks within the manager.  If you wish to export only a subset you can
+provide a list of landmark ids to do so.  One caveat with exporting landmarks to gpx format is that the gpx does not support
+landmarks which have NaN latitude and longitude values.  If you try to export all landmarks, then those landmarks with NaN values
+are skipped over.  However if you provide a list of ids of landmarks to export, the export operation will fail if any one
+of those landmarks have NaN latitude or longitude values.
+
+
+\section2 Landmark classes
+
+\section3 \bold{Main Landmark Classes}
+
+\annotatedlist landmarks-main
+
+\section3 \bold{Landmark Selection classes}
+
+Landmark selection is facilitated by filter and sort order classes.  The filter classes
+define what criteria that landmarks must match and the sort order classes specify how
+the returned landmarks are sorted.  Please note that sorting by
+distance is facilitated by the QLandmarkProximity class.  Providing a QLandmarkProximity
+filter in an intersection filter will sort results in order of ascending distance
+(on the condition only a default sort order class is used in conjunction). The filter and sort order classes are used with either
+the QLandmarkManager class (for synchronous landmark selection) or the request classes
+for (asynchronous landmark selection)
+
+\section3 \bold{Filters}
+
+\annotatedlist landmarks-filter
+
+\section3 \bold{SortOrders}
+
+\annotatedlist landmarks-sort
+
+\target Asynchronous Landmark Requests
+\section3 \bold{Asynchronous Requests}
+
+Asynchronous operations are facilitates by the request classes listed below:
+
+\annotatedlist landmarks-request
+
+\section3 \bold{Implementing backends}
+
+A manager backend may be implemented by subclassing QLandmarkManagerEngine, and providing
+a QLandmarkManagerEngineFactory which can instantiate it when required.
+
+\annotatedlist landmarks-backend
+
+\section1 Maps and Navigation
+
+The Maps and Navigation API is based on plugins.
+
+Since most providers of mapping, geocoding and routing information offer
+no guarantees that their data is interoperable with the data provided by
+other services, the plugins are used to group the functionality per
+service provider.
+
+The plugins are accessed via QGeoServiceProvider, and a Nokia based plugin
+is part of Qt Mobility.  See the section \l{The Nokia plugin} for more details.
+
+\code
+    QGeoMappingManager *mappingManager = 0;
+    QGeoRoutingManager *routingManager = 0;
+    QGeoSearchManager *searchManager = 0;
+
+    QGeoServiceProvider serviceProvider("plugin name");
+
+    if (serviceProvider.error() == QGeoServiceProvider::NoError) {
+        mappingManager = serviceProvider.mappingManager();
+        routingManager = serviceProvider.routingManager();
+        searchManager = serviceProvider.searchManager();
+    }
+\endcode
+
+\section2 Common classes
+
+\annotatedlist maps
+
+\section2 Mapping
+
+The QGraphicsGeoMap class is the main class used for displaying and interacting
+with maps. It is designed for use within the Graphics View Framework, and is
+a subclass of QGraphicsWidget.
+
+The QGeoMappingManager provides most of the functionality required by
+QGraphicsGeoMap.  The details of QGeoMappingManager are mostly only important
+to plugin implementers, as regular users should not need to make use of
+QGeoMappingManager outside of the QGraphicsGeoMap constructor:
+\code
+    QGraphicsGeoMap *map = new QGraphicsGeoMap(mappingManager);
+\endcode
+
+\annotatedlist maps-mapping
+
+\section3 \bold{Map objects}
+
+QGeoMapObject and its subclasses provide the ability to add graphics to the map
+specified in terms of coordinates and distances. QGeoMapObject instances can
+also be grouped into heirarchies in order to simplify the process of creating
+compound objects and managing groups of objects.
+
+\annotatedlist maps-mapping-objects
+
+\section2 Routing
+
+QGeoRoutingManager handles requests for routing information.
+
+The requests are created as QGeoRouteRequest instances, which are
+passed to QGeoRoutingManager::calculateRoute().  The returned
+QGeoRouteReply instance will contain the result of the request when
+it is completed.
+
+The QGeoRoute class describes the resulting route.  Each route is
+broken up into a number of QGeoRouteSegment instances, with the division
+usually occurring at either user specified waypoints or at changes in the
+mode of transport, like when changing from a train to a bus.
+
+Each QGeoRouteSegment has a QGeoNavigationInstruction instance which
+describes the instructions that would be issued to a user attempting
+to follow a route.  These instructions a location, which is typically
+somewhere near the end of the associated QGeoRouteSegment, and
+instruction text describing how the next QGeoRouteSegment should be reached.
+
+\annotatedlist maps-routing
+
+\section2 Geocoding and searching for places
+
+QGeoSearchManager handles geocoding, reverse geocoding and free-text
+search for places.
+
+The free-text search will attempt to geocode text that looks like an
+address while simultaneously searching any landmark databases that the
+service pro.
+It is even possibly to add additional QLandmarkManager instances to
+the soures of data, so that users can search online databases alongside
+their personal offline landmarks store.
+
+\annotatedlist maps-places
+
+\section2 The Nokia plugin
+
+Qt Mobility ships with a Maps and Navigation API plugin which accesses
+the relevant Ovi services provided Nokia.  The use of these services
+is governed by the terms and conditions available in the file
+plugins/geoservices/nokia/OVI_SERVICES_TERMS_AND_CONDITIONS.txt.
+
+The Ovi services plugin can be loaded by using the plugin key "nokia".
+
+Note that accepting the terms and conditions only applies those terms and conditions to the use of the Ovi Maps Services plugin and does not limit the use of the other maps and navigation API plugins that may be included with the Qt Mobility package.
+
+\section2 Implementing plugins
+
+A plugin implementer needs to subclass QGeoServiceProviderFactory and as
+many of the ManagerEngine classes as they want to provide implementations for.
+
+Subclassing QGeoServiceProviderFactory will only involve exposing a name and
+a version by overriding QGeoServiceProviderFactory::providerName() and
+QGeoServiceProviderFactory::providerVersion(), and overriding
+QGeoServiceProviderFactory::createSearchManagerEngine(),
+QGeoServiceProviderFactory::createMappingManagerEngine() and
+QGeoServiceProviderFactory::createRoutingManagerEngine() as appropriate.
+
+\annotatedlist maps-impl
+
+\section3 Tile-based map convenience classes
+
+Most of the current tile based mapping APIs are very similar, and so we
+provide a number of classes intended to make writing tile based mapping
+plugins much simpler.
+
+If the Mercator projection and the most common tile addressing scheme is used this will mainly involve subclassing QGeoTiledMappingManagerEngine and providing an implementation of QGeoTiledMappingManagerEngine::getTileImage().
+
+\annotatedlist maps-impl-tiled
+
+\section1 QML support
+
+For details on the QML support provided for the Location API see the documentation for the \l {Location QML Plugin}.
+
+\note At the time of the Qt Mobility 1.1.0 release the QML support for the Maps and Navigation API is incomplete and likely to be refined and improved in the next patch release.
+      Also note that on Symbian (as at Qt Mobility 1.1.0), the QML for the Landmarks API may not behave as expected due to a bug described in QTMOBILITY-611.  There may be problems in updating a
+      LandmarkAbstractModel element.
+*/
+

@@ -1,0 +1,125 @@
+/****************************************************************************
+**
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in a
+** written agreement between you and Nokia.
+**
+** GNU Free Documentation License
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+** If you have questions regarding the use of this file, please contact
+** Nokia at qt-info@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \group systeminfo
+    \title System Information Classes
+
+    A set of APIs that supplies that supplies system information.
+ */
+
+/*!
+\page systeminfo.html
+
+\title System Information
+\brief A set of APIs to discover system related information and capabilities.
+
+\ingroup mobility
+
+\tableofcontents
+
+\section1 Namespace
+
+The QtMobility APIs are placed into the \i{QtMobility} namespace. This is done
+to facilitate the future migration of Mobility APIs into Qt. See the
+\l {Quickstart Example}{Quickstart guide} for an example on how the
+namespace impacts on application development.
+
+\annotatedlist systeminfo
+
+
+\section1 System Information
+
+The System Information API provides a set of APIs to discover system
+related information and capabilities.
+
+\section1 Overview
+The System Information API returns the system information related to a
+number of categories.
+
+\section2 Information Categories
+
+\section3 \bold{Version}
+
+Contains version information for a range of supporting software on the
+device. For example, from the Operating System and Firmware to the version
+of WebKit, Qt and the Service Framework.
+
+\section3 \bold{Features (hardware)}
+
+This lists the supported hardware on the device. Features include items
+such as the camera, bluetooth, GPS, FM radio etc.
+
+
+\section3 \bold{Network}
+
+The state of the network connection, and also the type of network e.g.
+gsm, cdma, ethernet etc.
+
+
+\section3 \bold{Display Information}
+
+
+\section3 \bold{Storage Information}
+The presence of various storage devices. Including: none, internal,
+removable, cdrom.
+
+\section3 \bold{Device Information}
+\list
+    \o Battery Status
+    \o Power State
+    \o Profile (silent, vibrating, normal etc)
+    \o Sim
+    \o Input Method (key/buttons, keypad, qwerty, single touch screen,
+multitouch etc)
+\endlist
+
+
+\section3 \bold{Screensaver}
+
+
+\section1 Building and compiling
+
+To build the library, run \tt qmake and \tt make.
+
+Linux supports a NetworkManager based backend and generic backend using
+QNetworkInterface only. By default the generic backend is selected.
+If the NetworkManager backend is required run qmake as follows:
+
+\code
+    qmake BACKEND=NetworkManager
+\endcode
+
+The backend selection is expected to disappear once the API is integrated into Qt. 
+
+\section1 Examples
+
+\section2 System Information Example
+
+The \l{sysinfo}{System Information} example demonstrates how an application can very easily access the system information of the device.
+
+*/

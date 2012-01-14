@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt Mobility 1.1: landmarkmap.qml Example File (declarative-location/landmarkmap/landmarkmap.qml)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<h1 class="title">landmarkmap.qml Example File</h1>
+<span class="small-subtitle">declarative-location/landmarkmap/landmarkmap.qml</span>
+<div class="descr"/>
+<pre class="highlightedCode brush: cpp"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/
+
+ import Qt 4.7
+ import QtMobility.location 1.1
+ import &quot;landmarkmapcommon&quot; as Common
+ import &quot;landmarkmapmobile&quot; as Mobile
+
+ Item {
+     id: page
+     width: 320
+     height: 480
+     focus: true
+
+     PositionSource {
+         id: myPositionSource
+         active: true
+         updateInterval: 2000
+         onPositionChanged: console.log(&quot;Position changed in PositionSource&quot;)
+     }
+     LandmarkBoxFilter {
+         id: boxFilter
+         topLeft: map.toCoordinate(Qt.point(0,0))
+         bottomRight: map.toCoordinate(Qt.point(page.width, page.height))
+     }
+     LandmarkModel {
+         id: landmarkModel
+         autoUpdate: true
+         onModelChanged: {
+             console.log(&quot;Landmark model changed, landmark count: &quot; + count)
+             pinpointViewContainer.opacity = 1.0
+         }
+         filter: boxFilter
+         limit: 50
+     }
+     Component {
+         id: landmarkListDelegate
+         Item {
+             width: 200; height: 80
+             Text {
+                 color: &quot;white&quot;; font.bold: true; style: Text.Raised; styleColor: &quot;black&quot;
+                 id: nameField; text: landmark.name
+             }
+             Text {
+                 color: &quot;white&quot;; font.bold: true; style: Text.Raised; styleColor: &quot;black&quot;
+                 anchors.top:  nameField.bottom
+                 id: latField; text: &quot;    Lat: &quot; + landmark.coordinate.latitude
+             }
+             Text {
+                 color: &quot;white&quot;; font.bold: true; style: Text.Raised; styleColor: &quot;black&quot;
+                 anchors.top:  latField.bottom
+                 id: lonField; text: &quot;    Lon: &quot; + landmark.coordinate.longitude
+             }
+         }
+     }
+
+     Component {
+         id: landmarkMapDelegate
+         Item {
+             width: 50; height: 20
+             x: map.toScreenPosition(landmark.coordinate).x
+             y: map.toScreenPosition(landmark.coordinate).y
+             Image {
+                 id: landmarkIcon
+                 source: &quot;landmarkmapmobile/images/landmarkstar.png&quot;
+                 MouseArea{
+                     anchors.fill: parent
+                     onClicked: {
+                         console.log(&quot;Landmark clicked, setting visible: &quot; + landmark.name)
+                         landmarkNameText.visible = true
+                     }
+                 }
+             }
+             Text {
+                 id: landmarkNameText
+                 anchors.top: landmarkIcon.bottom
+                 text:  landmark.name
+                 visible: false
+             }
+         }
+     }
+
+     //![Category model]
+     LandmarkCategoryModel {
+         id: landmarkCategoryModel
+         autoUpdate: true
+         onModelChanged: console.log(&quot;Category model changed, category count: &quot; + count)
+     }
+
+     Component {
+         id: landmarkCategoryListDelegate
+         Item {
+             width: 200; height: 50
+             Text {
+                 color: &quot;white&quot;; font.bold: true; style: Text.Raised; styleColor: &quot;black&quot;
+                 id: nameField; text: category.name
+             }
+         }
+     }
+     //![Category model]
+
+     Mobile.TitleBar { id: titleBar; z: 5; width: parent.width - statusBar.width; height: 40; opacity: 0.8 }
+     Mobile.StatusBar { id: statusBar; z: 6; width: 80; height: titleBar.height; opacity: titleBar.opacity; anchors.right: parent.right}
+
+     Rectangle {
+         id: dataArea
+         anchors.top: titleBar.bottom
+         anchors.bottom: toolbar1.bottom
+         width: parent.width
+         color: &quot;#343434&quot;
+         //height: toolbar1.y - titleBar.height
+         Image { source: &quot;landmarkmapmobile/images/stripes.png&quot;; fillMode: Image.Tile; anchors.fill: parent; opacity: 0.3 }
+
+         MouseArea {
+             anchors.fill: parent
+
+             property bool mouseDown : false
+             property int lastX : -1
+             property int lastY : -1
+
+             onPressed : {
+                 mouseDown = true
+                 // While panning, its better not to actively udpate the model
+                 // as it results in poor performance. Instead set opacity to make
+                 // it more obvious that the landmark positions are not valid.
+                 landmarkModel.autoUpdate = false
+                 pinpointViewContainer.opacity = 0.3
+                 lastX = mouse.x
+                 lastY = mouse.y
+             }
+             onReleased : {
+                 mouseDown = false
+                 //pinpointViewContainer.opacity = 1.0
+                 landmarkModel.autoUpdate = true
+                 landmarkModel.update()
+                 lastX = -1
+                 lastY = -1
+             }
+             onPositionChanged: {
+                 if (mouseDown) {
+                     var dx = mouse.x - lastX
+                     var dy = mouse.y - lastY
+                     map.pan(-dx, -dy)
+                     page.state = &quot;NoFollowing&quot;
+                     lastX = mouse.x
+                     lastY = mouse.y
+                 }
+             }
+             onDoubleClicked: {
+                 page.state = &quot;NoFollowing&quot;
+                 map.center = map.toCoordinate(Qt.point(mouse.x, mouse.y))
+                 if (map.zoomLevel &lt; map.maximumZoomLevel)
+                     map.zoomLevel += 1
+             }
+         }
+
+         ListView {
+             id: landmarkListView;
+             model: landmarkModel;
+             delegate: landmarkListDelegate;
+             width: parent.width - 20;
+             height: parent.height -20;
+             x: -(parent.width * 1.5);
+             highlightFollowsCurrentItem: false
+             focus: true
+         }
+
+         //![Category model]
+         ListView {
+             id: landmarkCategoryListView;
+             model: landmarkCategoryModel;
+             delegate: landmarkCategoryListDelegate;
+             width: parent.width - 20;
+             height: parent.height -20;
+             x: -(parent.width * 1.5);
+             highlightFollowsCurrentItem: false
+             focus: true
+         }
+         //![Category model]
+         Map {
+             id: map
+             plugin : Plugin {
+                         name : &quot;nokia&quot;
+                     }
+             anchors.fill: parent
+             size.width: parent.width
+             size.height: parent.height
+             zoomLevel: 1
+             center: Coordinate {latitude: -27; longitude: 153}
+             //center: myPositionSource.position.coordinate
+             onZoomLevelChanged: {
+                 console.log(&quot;Zoom changed&quot;)
+                 updateFilters();
+             }
+             onCenterChanged: {
+                 console.log(&quot;Center changed&quot;)
+                 updateFilters();
+             }
+             function updateFilters () {
+                 // The pixel coordinates used are the map's pixel coordinates, not
+                 // the absolute pixel coordinates of the application. Hence e.g. (0,0) is always
+                 // the top left point
+                 var topLeftCoordinate = map.toCoordinate(Qt.point(0,0))
+                 var bottomRightCoordinate = map.toCoordinate(Qt.point(map.size.width, map.size.height))
+                 boxFilter.topLeft = topLeftCoordinate;
+                 boxFilter.bottomRight = bottomRightCoordinate;
+             }
+         } // map
+
+         Item {
+             id: pinpointViewContainer
+             x: parent.x
+             Repeater {
+                 id: landmarkPinpointView
+                 model: landmarkModel
+                 delegate: landmarkMapDelegate
+             }
+         }
+         Mobile.Floater {
+             id : dataFloater
+             latitude: myPositionSource.position.coordinate.latitude
+             longitude:  myPositionSource.position.coordinate.longitude
+             landmarks: landmarkModel.count
+             categories: landmarkCategoryModel.count
+         }
+     } // dataArea
+
+     Item {
+         id: sliderContainer
+         anchors {bottom: toolbar1.top;}
+         height:  40
+         width: parent.width
+
+         Common.Slider {
+             id: zoomSlider;
+             minimum: 1; maximum: 18;
+             anchors {
+                 fill: parent
+                 bottomMargin: 5; rightMargin: 5; leftMargin: 5
+             }
+             onValueChanged: {
+                 console.log(&quot;Zoom slider value changed to: &quot; + value)
+                 map.zoomLevel = value
+             }
+         }
+     }
+
+     Mobile.ToolBar {
+         id: toolbar1
+         opacity: titleBar.opacity
+         height: 40; width: parent.width
+         anchors.bottom: toolbar2.top
+         z: 6
+         button1Label: &quot;map&quot;; button2Label: &quot;landmarks&quot;; button3Label: &quot;categories&quot;
+         onButton1Clicked: {
+             if (page.state != &quot;&quot;)
+                 page.state = &quot;&quot;
+         }
+         onButton2Clicked: {
+             if (page.state != &quot;LandmarkView&quot;)
+                 page.state = &quot;LandmarkView&quot;
+         }
+         onButton3Clicked: {
+             if (page.state != &quot;CategoryView&quot;)
+                 page.state = &quot;CategoryView&quot;
+         }
+     }
+
+     Mobile.ToolBar {
+         id: toolbar2
+         opacity: toolbar1.opacity
+         height: 40; width: parent.width
+         anchors.bottom: parent.bottom
+         z: 6
+         button1Label: &quot;nmealog.txt&quot;; button2Label: &quot;mylm.lmx&quot;; button3Label: &quot;follow me&quot;
+         button3FontColor: &quot;pink&quot;
+         onButton1Clicked: {
+             console.log(&quot;Clicked, setting nmea log as source&quot;);
+             myPositionSource.nmeaSource = &quot;nmealog.txt&quot;
+             myPositionSource.start()
+         }
+         onButton2Clicked: {
+             console.log(&quot;Clicked, setting import file to get landmarks, count was: &quot; + landmarkModel.count);
+             landmarkModel.importFile = &quot;mylm.lmx&quot;
+         }
+         onButton3Clicked: {
+             console.log(&quot;Clicked, setting map center to follow (rebind map center to myPosition&quot;);
+             //if (page.state == &quot;&quot; || page.state == &quot;Following&quot;)
+                 page.state = &quot;Following&quot;
+                 //map.center = myPositionSource.position.coordinate
+         }
+     }
+     // states of page
+     states: [State {
+             name: &quot;CategoryView&quot;
+             PropertyChanges { target: map; x: -dataArea.width }
+             PropertyChanges { target: map; x: -dataArea.width }
+             PropertyChanges { target: sliderContainer; x: -dataArea.width}
+             PropertyChanges { target: pinpointViewContainer; x: -dataArea.width - 20;}
+             PropertyChanges { target: landmarkCategoryListView; x: 0 }
+         }, State {
+             name: &quot;LandmarkView&quot;
+             PropertyChanges { target: map; x: -dataArea.width }
+             PropertyChanges { target: sliderContainer; x: -dataArea.width}
+             PropertyChanges { target: pinpointViewContainer; x: -dataArea.width - 20;}
+             PropertyChanges { target: landmarkListView; x: 0 }
+         }, State {
+             name:  &quot;Following&quot;
+             PropertyChanges { target:  map; center: myPositionSource.position.coordinate}
+             PropertyChanges { target: toolbar2; button3FontColor: 'grey'}
+             PropertyChanges { target: toolbar2; button3Label: '(following)'}
+         }, State {
+             name : &quot;NoFollowing&quot;
+             PropertyChanges { target: toolbar2; button3FontColor: 'pink'}
+             PropertyChanges { target: toolbar2; button3Label: 'follow me'}
+         }]
+     // state-transition animations for page
+     transitions: Transition {
+         NumberAnimation { properties: &quot;x&quot;; duration: 500; easing.type: Easing.InOutQuad }
+     }
+ } // page</pre>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

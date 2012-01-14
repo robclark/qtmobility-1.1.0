@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- organizersync.qdoc -->
+  <title>Qt Mobility 1.1: Organizer Synchronous API</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li>Organizer Synchronous API</li>            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#introduction">Introduction</a></li>
+<li class="level1"><a href="#using-the-api">Using The API</a></li>
+<li class="level2"><a href="#organizer-item-manipulation">Organizer Item Manipulation</a></li>
+<li class="level2"><a href="#item-collection-manipulation">Item Collection Manipulation</a></li>
+<li class="level2"><a href="#schema-manipulation">Schema Manipulation</a></li>
+<li class="level2"><a href="#error-reporting">Error Reporting</a></li>
+</ul>
+</div>
+<h1 class="title">Organizer Synchronous API</h1>
+<span class="subtitle"></span>
+<div class="descr"/>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>The Organizer Items Synchronous API enables a client to synchronously fetch, update, or remove item data from an item manager. A synchronous API is of most use to clients who wish to perform simple requests where user interface responsiveness is not critical. Synchronous calls to an item manager will block until they are completed, and therefore should not be performed in the GUI thread (especially if the manager is a frontend to an online service or long-latency datastore). The main advantage of the synchronous API is its simplicity and convenience.</p>
+<p>Most operations which may be performed using the synchronous API may also be performed using the asynchronous API. It is recommended for most applications that the asynchronous API be used where possible.</p>
+<a name="using-the-api"></a>
+<h2>Using The API</h2>
+<p>The synchronous API offered by the Organizer Items module is available through the <a href="qorganizermanager.html">QOrganizerManager</a> class. It consists of three major categories:</p>
+<ul>
+<li>Organizer Item Manipulation</li>
+<li>Item Collection Manipulation</li>
+<li>Schema Manipulation</li>
+</ul>
+<a name="organizer-item-manipulation"></a>
+<h3>Organizer Item Manipulation</h3>
+<p>The most common type of operation that clients will perform involves retrieval or modification of organizer items. For in-depth information about item manipulation, please refer to the main <a href="organizer.html">Organizer</a> API page.</p>
+<p>The <a href="qorganizermanager.html">QOrganizerManager</a> class provides API for accessing the IDs of items which are stored in the manager:</p>
+<ul>
+<li><a href="qorganizermanager.html#itemIds">QOrganizerManager::itemIds</a>()</li>
+</ul>
+<p>The synchronous, singular item manipulation functions offered by the <a href="qorganizermanager.html">QOrganizerManager</a> class are:</p>
+<ul>
+<li><a href="qorganizermanager.html#item">QOrganizerManager::item</a>()</li>
+<li><a href="qorganizermanager.html#saveItem">QOrganizerManager::saveItem</a>()</li>
+<li><a href="qorganizermanager.html#removeItem">QOrganizerManager::removeItem</a>()</li>
+</ul>
+<p>The synchronous, batch item manipulation functions offered by the <a href="qorganizermanager.html">QOrganizerManager</a> class are:</p>
+<ul>
+<li><a href="qorganizermanager.html#items">QOrganizerManager::items</a>() which returns persistent and generated items within a given time period</li>
+<li><a href="qorganizermanager.html#itemsForExport">QOrganizerManager::itemsForExport</a>() which returns only persistent items</li>
+<li><a href="qorganizermanager.html#itemOccurrences">QOrganizerManager::itemOccurrences</a>() which returns the occurrences of a specific recurring item</li>
+<li><a href="qorganizermanager.html#saveItems">QOrganizerManager::saveItems</a>() which may be used to update a recurring item, or save an exceptional occurrence</li>
+<li><a href="qorganizermanager.html#removeItems">QOrganizerManager::removeItems</a>() which may be used to remove a recurring item or exceptional occurrence</li>
+</ul>
+<a name="item-collection-manipulation"></a>
+<h3>Item Collection Manipulation</h3>
+<p>Every item is saved in a collection in a manager. Each collection has various properties which, if the manager supports such operations, may be modified by clients. For in-depth information about collections, please refer to the main <a href="organizer.html">Organizer</a> API page.</p>
+<p>The synchronous API offers the following functions to manipulate collections:</p>
+<ul>
+<li><a href="qorganizermanager.html#defaultCollection">QOrganizerManager::defaultCollection</a>() returns the default collection of the manager</li>
+<li><a href="qorganizermanager.html#collections">QOrganizerManager::collections</a>() returns all collections in the manager</li>
+<li><a href="qorganizermanager.html#saveCollection">QOrganizerManager::saveCollection</a>() updates an existing collection or adds a new collection</li>
+<li><a href="qorganizermanager.html#removeCollection">QOrganizerManager::removeCollection</a>() removes an existing collection (and deletes any items it contains)</li>
+</ul>
+<p>It also offers a convenience function which returns a collection with a given collection id.</p>
+<a name="schema-manipulation"></a>
+<h3>Schema Manipulation</h3>
+<p>The schema supported by a engine is the list of detail definitions which are supported by the engine. For in-depth information about the schema, please refer to the main <a href="organizerschema.html">Qt Organizer Schema</a> page.</p>
+<p>The synchronous API offers several functions to retrieve or modify the schema supported by an engine. Engines which support these types of operations must report to clients that they support the <a href="qorganizermanager.html#ManagerFeature-enum">QOrganizerManager::MutableDefinitions</a> feature.</p>
+<ul>
+<li><a href="qorganizermanager.html#detailDefinitions">QOrganizerManager::detailDefinitions</a>() returns all definitions in the schema for a particular item type</li>
+<li><a href="qorganizermanager.html#detailDefinition">QOrganizerManager::detailDefinition</a>() returns the definition of a particular name from the schema for a particular item type</li>
+<li><a href="qorganizermanager.html#saveDetailDefinition">QOrganizerManager::saveDetailDefinition</a>() which updates or adds a definition to the schema for a particular item type</li>
+<li><a href="qorganizermanager.html#removeDetailDefinition">QOrganizerManager::removeDetailDefinition</a>() which removes a definition from the schema for a particular item type</li>
+</ul>
+<a name="error-reporting"></a>
+<h3>Error Reporting</h3>
+<p>When a synchronous operation fails, clients need to be able to retrieve error information associated with that synchronous operation. You can call the <a href="qorganizermanager.html#error">QOrganizerManager::error</a>() function directly after a failing synchronous operation to determine why it failed.</p>
+<p>For some synchronous operations (for example, batch save or remove operations) it is possible that multiple errors may occur during the operation. In those cases, clients can call <a href="qorganizermanager.html#errorMap">QOrganizerManager::errorMap</a>() to retrieve a map of input index to error, which will be filled by the function as required. The <a href="qorganizermanager.html#error">QOrganizerManager::error</a>() function will report the overall operation error.</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

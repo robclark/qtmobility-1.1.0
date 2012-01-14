@@ -1,0 +1,67 @@
+/****************************************************************************
+**
+** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in a
+** written agreement between you and Nokia.
+**
+** GNU Free Documentation License
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of this
+** file.
+**
+** If you have questions regarding the use of this file, please contact
+** Nokia at qt-info@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+\page preview.html
+
+\title Technology Preview
+
+\brief The Technology Preview of additional APIs under development.
+
+\target {Management of Versit Documents}
+\section1 Management of Versit Documents
+
+\l{Versit}{Versit API Documentation}
+
+An overview is available for the \l{versit.html}{Versit API}
+
+Versit Classes.
+\annotatedlist versit
+
+\target {Sensor Classes}
+\section1 Sensor API
+
+An overview is available for the \l{sensors-api.html}{Sensor API}
+
+\section2 Main Classes
+If you want to use the sensors on a device, these are the classes to use.
+\annotatedlist sensors
+
+\section2 Helper Classes
+These classes provide convenience wrappers that reduce the need for casting.
+\annotatedlist sensors_helpers
+
+\section2 Backend Classes
+If you are making sensors available through the Sensors API, these are the
+classes to use.
+\annotatedlist sensors_backend
+
+
+
+*/
+
+

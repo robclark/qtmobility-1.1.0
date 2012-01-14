@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository target="CRepository" uidValue="0x48151623">
+  <key ref="sensors/accelerometer/x" name="accelerometer/x" int="0x0"/>
+  <key ref="sensors/accelerometer/y" name="accelerometer/y" int="0x1"/>
+  <key ref="sensors/accelerometer/z" name="accelerometer/z" int="0x2"/>
+</repository>

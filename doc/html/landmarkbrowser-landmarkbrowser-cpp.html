@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt Mobility 1.1: landmarkbrowser.cpp Example File (landmarkbrowser/landmarkbrowser.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<h1 class="title">landmarkbrowser.cpp Example File</h1>
+<span class="small-subtitle">landmarkbrowser/landmarkbrowser.cpp</span>
+<div class="descr"/>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** You may use this file under the terms of the BSD license as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+ **     the names of its contributors may be used to endorse or promote
+ **     products derived from this software without specific prior written
+ **     permission.
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;qlandmarkfilter.h&gt;
+ #include &lt;qlandmark.h&gt;
+
+ #include &lt;QModelIndex&gt;
+ #include &lt;QFileDialog&gt;
+ #include &lt;QFile&gt;
+ #include &lt;QMessageBox&gt;
+ #include &lt;QProgressDialog&gt;
+ #include &lt;QProgressBar&gt;
+ #include &lt;QDebug&gt;
+ #include &lt;QTimer&gt;
+
+ #include &quot;landmarkbrowser.h&quot;
+ #include &quot;landmarkadddialog.cpp&quot;
+ #include &quot;categoryadddialog.h&quot;
+
+ QTM_USE_NAMESPACE
+
+ LandmarkBrowser::LandmarkBrowser(QWidget *parent, Qt::WindowFlags flags)
+     :currentLandmarkOffset(0),
+      currentCategoryOffset(0),
+      limit(20), filterDialog(0), progress(0), manager(0),
+      landmarkFetch(0), landmarkExport(0), landmarkRemove(0),
+      landmarkSave(0), categoryFetch(0)
+
+ {
+     setupUi(this);
+
+     categoryTable-&gt;removeColumn(2);
+     categoryTable-&gt;hideColumn(1);
+     categoryTable-&gt;setHorizontalHeaderItem(0, new QTableWidgetItem(&quot;Name&quot;));
+
+     manager = new QLandmarkManager(this);
+     if (manager-&gt;error() == QLandmarkManager::InvalidManagerError) {
+         QMessageBox::warning(this,&quot;Warning&quot;, &quot;Manager is invalid closing application, please view any warnings &quot;
+                              &quot;on the the console&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+         QTimer::singleShot(0, this,SLOT(close()));
+         return;
+     }
+
+     landmarkFetch = new QLandmarkFetchRequest(manager, this);
+     QObject::connect(landmarkFetch, SIGNAL(stateChanged(QLandmarkAbstractRequest::State)),
+                 this,SLOT(fetchHandler(QLandmarkAbstractRequest::State)));
+
+     landmarkImport = new QLandmarkImportRequest(manager, this);
+     connect(landmarkImport, SIGNAL(stateChanged(QLandmarkAbstractRequest::State)),
+                 this,SLOT(fetchHandler(QLandmarkAbstractRequest::State)));
+
+     landmarkExport = new QLandmarkExportRequest(manager, this);
+     QObject::connect(landmarkExport, SIGNAL(stateChanged(QLandmarkAbstractRequest::State)),
+                 this,SLOT(fetchHandler(QLandmarkAbstractRequest::State)));
+
+     landmarkRemove = new QLandmarkRemoveRequest(manager, this);
+     QObject::connect(landmarkRemove, SIGNAL(stateChanged(QLandmarkAbstractRequest::State)),
+                 this,SLOT(fetchHandler(QLandmarkAbstractRequest::State)));
+
+      landmarkSave = new QLandmarkSaveRequest(manager, this);
+      QObject::connect(landmarkSave, SIGNAL(stateChanged(QLandmarkAbstractRequest::State)),
+                 this,SLOT(fetchHandler(QLandmarkAbstractRequest::State)));
+
+      categoryFetch = new QLandmarkCategoryFetchRequest(manager, this);
+      QObject::connect(categoryFetch, SIGNAL(stateChanged(QLandmarkAbstractRequest::State)),
+                       this,SLOT(fetchHandler(QLandmarkAbstractRequest::State)));
+
+     table-&gt;setSelectionBehavior(QAbstractItemView::SelectRows);
+     categoryTable-&gt;setSelectionBehavior(QAbstractItemView::SelectRows);
+
+     table-&gt;setHorizontalHeaderItem(0, new QTableWidgetItem(&quot;Lat&quot;));
+     table-&gt;setHorizontalHeaderItem(1, new QTableWidgetItem(&quot;Long&quot;));
+     table-&gt;setHorizontalHeaderItem(2, new QTableWidgetItem(&quot;Name&quot;));
+
+     prevLandmarkButton-&gt;setEnabled(false);
+
+     filterDialog = new LandmarkFilterDialog(landmarkFetch, manager, this);
+     connect(filterDialog,SIGNAL(doFetchAll()), this, SLOT(doFetchAll()));
+
+     progress = new QProgressDialog (tr(&quot;Please wait...&quot;),tr(&quot;Cancel&quot;),0,0, this);
+     progress-&gt;setWindowTitle(tr(&quot;Loading Landmarks&quot;));
+     QObject::connect(progress,SIGNAL(canceled()), this, SLOT(cancel()));
+
+     landmarkFetch-&gt;setLimit(limit);
+     landmarkFetch-&gt;setOffset(currentLandmarkOffset);
+     landmarkFetch-&gt;setSorting(QLandmarkNameSort());
+     if (!landmarkFetch-&gt;start() &amp;&amp; landmarkFetch-&gt;error() == QLandmarkManager::InvalidManagerError) {
+         QMessageBox::warning(this,&quot;Warning&quot;, &quot;Manager is invalid closing application&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+         QTimer::singleShot(0, this,SLOT(close()));
+         return;
+     }
+
+     categoryFetch-&gt;setLimit(limit);
+     categoryFetch-&gt;setOffset(currentCategoryOffset);
+     categoryFetch-&gt;start();
+
+     progress-&gt;show();
+
+     #ifdef Q_OS_SYMBIAN
+         gpxRadioButton-&gt;setEnabled(false);
+         gpxRadioButton-&gt;setVisible(false);
+     #endif
+
+         connect(manager, SIGNAL(landmarksAdded(QList&lt;QLandmarkId&gt;)),this,SLOT(landmarksAdded(QList&lt;QLandmarkId&gt;)));
+         connect(manager,SIGNAL(landmarksChanged(QList&lt;QLandmarkId&gt;)), this, SLOT(landmarksChanged()));
+         connect(manager, SIGNAL(landmarksRemoved(QList&lt;QLandmarkId&gt;)),this,SLOT(landmarksRemoved()));
+
+         connect(manager, SIGNAL(categoriesAdded(QList&lt;QLandmarkCategoryId&gt;)), this, SLOT(categoriesAdded()));
+         connect(manager, SIGNAL(categoriesChanged(QList&lt;QLandmarkCategoryId&gt;)), this,SLOT(categoriesChanged()));
+         connect(manager, SIGNAL(categoriesRemoved(QList&lt;QLandmarkCategoryId&gt;)), this,SLOT(categoriesRemoved()));
+
+         connect(manager, SIGNAL(dataChanged()),this, SLOT(dataChanged()));
+ }
+
+ LandmarkBrowser::~LandmarkBrowser()
+ {
+     delete filterDialog;
+      filterDialog =0;
+
+     delete landmarkFetch;
+     landmarkFetch =0;
+     delete landmarkImport;
+     landmarkImport =0;
+     delete landmarkExport;
+     landmarkExport =0;
+     delete landmarkRemove;
+     landmarkRemove =0;
+     delete landmarkSave;
+     landmarkSave =0;
+     delete categoryFetch;
+     categoryFetch = 0;
+
+     delete progress;
+     progress =0;
+
+     delete manager;
+     manager=0;
+ }
+
+ void LandmarkBrowser::on_importLandmarks_clicked()
+ {
+     QString fileFilterString;
+
+     #ifdef Q_OS_SYMBIAN
+         fileFilterString = tr(&quot;Landmark files (*.lmx *)&quot;);
+     #else
+         fileFilterString = tr(&quot;Landmark files (*.gpx *.lmx *)&quot;);
+     #endif
+
+     QString fileName = QFileDialog::getOpenFileName(this,tr(&quot;Import File&quot;),&quot;.&quot;,fileFilterString);
+     if (!fileName.isEmpty()) {
+         landmarkImport-&gt;setFileName(fileName);
+         landmarkImport-&gt;start();
+         progress-&gt;setWindowTitle(tr(&quot;Importing Landmarks&quot;));
+         progress-&gt;show();
+     }
+ }
+
+ void LandmarkBrowser::on_exportLandmarks_clicked()
+ {
+     QString fileFilterString;
+     #ifdef Q_OS_SYMBIAN
+         fileFilterString = tr(&quot;Landmark files (*.lmx *)&quot;);
+     #else
+         fileFilterString = tr(&quot;Landmark files (*.gpx *.lmx *)&quot;);
+     #endif
+
+     QString fileName = QFileDialog::getSaveFileName(this,tr(&quot;Export File&quot;),&quot;.&quot;,fileFilterString);
+     if (!fileName.isEmpty()) {
+         landmarkExport-&gt;setFileName(fileName);
+         if (lmxRadioButton-&gt;isChecked())
+             landmarkExport-&gt;setFormat(QLandmarkManager::Lmx);
+         else
+             landmarkExport-&gt;setFormat(QLandmarkManager::Gpx);
+         landmarkExport-&gt;start();
+         progress-&gt;setWindowTitle(tr(&quot;Exporting Landmarks&quot;));
+         progress-&gt;show();
+     }
+ }
+
+ void LandmarkBrowser::on_deleteLandmarksButton_clicked()
+ {
+     QItemSelectionModel *selection  = table-&gt;selectionModel();
+     QModelIndexList selectedIndexes = selection-&gt;selectedRows();
+
+     QList&lt;QLandmarkId&gt; deleteIds;
+
+     QLandmarkId id;
+     QModelIndex index;
+
+     while(selectedIndexes.count() &gt; 0) {
+         index = selectedIndexes.takeLast();
+         deleteIds.append(landmarks.at(index.row()).landmarkId());
+         table-&gt;removeRow(index.row());
+         landmarks.removeAt(index.row());
+         selectedIndexes = table-&gt;selectionModel()-&gt;selectedRows();
+     }
+
+     if (deleteIds.count() == 0)
+         return;
+
+     manager-&gt;removeLandmarks(deleteIds);
+     QList&lt;QLandmark&gt; newLandmarks = manager-&gt;landmarks(QLandmarkFilter(), deleteIds.count(), currentLandmarkOffset+table-&gt;rowCount());
+
+     updateTable(newLandmarks);
+     updateRowLabels();
+     landmarks.append(newLandmarks);
+
+     if (table-&gt;rowCount() &lt; limit)
+         nextLandmarkButton-&gt;setEnabled(false);
+ }
+
+ void LandmarkBrowser::on_setFilterButton_clicked()
+ {
+     if (!filterDialog-&gt;exec()) {
+         return;
+     }
+
+     currentLandmarkOffset =0;
+     landmarkFetch-&gt;setOffset(currentLandmarkOffset);
+     landmarkFetch-&gt;start();
+     progress-&gt;setWindowTitle(tr(&quot;Loading Landmarks&quot;));
+     progress-&gt;show();
+ }
+
+ void LandmarkBrowser::on_deleteCategoriesButton_clicked()
+ {
+     QItemSelectionModel *selection  = categoryTable-&gt;selectionModel();
+     QModelIndexList selectedIndexes = selection-&gt;selectedRows();
+
+     QList&lt;QLandmarkCategoryId&gt; deleteIds;
+
+     QLandmarkCategoryId id;
+     QModelIndex index;
+     bool alreadyWarned = false;
+     while(selectedIndexes.count() &gt; 0) {
+         index = selectedIndexes.takeLast();
+         id.setManagerUri(manager-&gt;managerUri());
+         id.setLocalId(categoryTable-&gt;item(index.row(),1)-&gt;text());
+         if (manager-&gt;isReadOnly(id)) {
+             if (!alreadyWarned) {
+                 QMessageBox::warning(this,&quot;Warning&quot;, &quot;Cannot delete a global category&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+                 alreadyWarned = true;
+             }
+
+             selection-&gt;setCurrentIndex(index, QItemSelectionModel::Deselect);
+             categoryTable-&gt;setSelectionModel(selection);
+
+         } else {
+             deleteIds.append(id);
+             categoryTable-&gt;removeRow(index.row());
+         }
+
+         selectedIndexes = categoryTable-&gt;selectionModel()-&gt;selectedRows();
+     }
+
+     if (deleteIds.count() == 0)
+         return;
+
+     for (int i =0;i &lt; deleteIds.count(); ++i)
+         manager-&gt;removeCategory(deleteIds.at(i));
+
+     updateCategoryTable(manager-&gt;categories(deleteIds.count(), currentCategoryOffset+categoryTable-&gt;rowCount()));
+     updateCategoryRowLabels();
+     if (categoryTable-&gt;rowCount() &lt; limit)
+         nextCategoryButton-&gt;setEnabled(false);
+ }
+
+ void LandmarkBrowser::on_addLandmark_clicked()
+ {
+     LandmarkAddDialog addDialog(this);
+ #ifndef Q_OS_SYMBIAN
+     addDialog.resize(this-&gt;width(), this-&gt;height());
+ #endif
+     if (!addDialog.exec()) {
+         return;
+     }
+
+     QLandmark lm = addDialog.landmark();
+     manager-&gt;saveLandmark(&amp;lm);
+ }
+
+ void LandmarkBrowser::on_editLandmarkButton_clicked()
+ {
+     QItemSelectionModel *selection = table-&gt;selectionModel();
+     QModelIndexList selectedIndexes = selection-&gt;selectedRows();
+     if (selectedIndexes.count()  &gt; 0) {
+         LandmarkAddDialog addDialog(this, 0, landmarks.at(selectedIndexes.at(0).row()));
+
+         if (!addDialog.exec()) {
+             return;
+         }
+
+         QLandmark lm = addDialog.landmark();
+         manager-&gt;saveLandmark(&amp;lm);
+     }
+ }
+
+ void LandmarkBrowser::on_addCategoryButton_clicked()
+ {
+     CategoryAddDialog categoryAddDialog(this);
+     if (!categoryAddDialog.exec()) {
+         return;
+     }
+     QLandmarkCategory category = categoryAddDialog.category();
+     manager-&gt;saveCategory(&amp;category);
+     if (manager-&gt;error() == QLandmarkManager::AlreadyExistsError) {
+         QMessageBox::warning(this,&quot;Warning&quot;, &quot;Add Category Failed: category already Exists&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+         return;
+     }
+ }
+
+ void LandmarkBrowser::fetchHandler(QLandmarkAbstractRequest::State state)
+ {
+     if (state == QLandmarkAbstractRequest::FinishedState)
+     {
+         QLandmarkAbstractRequest *request = qobject_cast&lt;QLandmarkAbstractRequest*&gt; (sender());
+         if (!request)
+             return;
+         switch (request-&gt;type()) {
+             case QLandmarkAbstractRequest::ImportRequest : {
+                     if (request-&gt;error() == QLandmarkManager::NoError) {
+                         landmarkFetch-&gt;setOffset(currentLandmarkOffset);
+                         landmarkFetch-&gt;start();
+                     } else if (request-&gt;error() == QLandmarkManager::CancelError) {
+                             <span class="comment">// do nothing</span>
+                     } else {
+                         QMessageBox::warning(this,&quot;Warning&quot;, &quot;Import Failed&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+                         progress-&gt;hide();
+                     }
+                 break;
+             }
+             case QLandmarkAbstractRequest::ExportRequest : {
+                 if (request-&gt;error() == QLandmarkManager::NoError) {
+                     progress-&gt;hide();
+                     QMessageBox::information(this,&quot;Finished&quot;, &quot;Export Successful&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+
+                 } else if (request-&gt;error() == QLandmarkManager::CancelError) {
+                     <span class="comment">// do nothing</span>
+                 } else {
+                     QMessageBox::warning(this,&quot;Warning&quot;, &quot;Export Failed&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+                     progress-&gt;hide();
+                 }
+                 break;
+             }
+             case QLandmarkAbstractRequest::LandmarkFetchRequest: {
+                     if (landmarkFetch-&gt;error() == QLandmarkManager::NoError) {
+                         if (currentLandmarkOffset &lt; limit)
+                             prevLandmarkButton-&gt;setEnabled(false);
+                         else
+                             prevLandmarkButton-&gt;setEnabled(true);
+
+                         if (landmarkFetch-&gt;landmarks().count() &lt; limit)
+                             nextLandmarkButton-&gt;setEnabled(false);
+                         else
+                             nextLandmarkButton-&gt;setEnabled(true);
+
+                         table-&gt;setUpdatesEnabled(false);
+                         for(int i = table-&gt;rowCount() -1;  i &gt;= 0; --i) {
+                             if (i %20 == 0)
+                                 qApp-&gt;processEvents();
+                             table-&gt;removeRow(i);
+                         }
+
+                         landmarks = landmarkFetch-&gt;landmarks();
+                         updateTable(landmarks);
+
+                         table-&gt;setUpdatesEnabled(true);
+                     }  else {
+                         QMessageBox::warning(this,&quot;Warning&quot;, &quot;Fetch Failed&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+                     }
+                     updateRowLabels();
+                     delete progress;
+                     progress = new QProgressDialog (tr(&quot;Please wait...&quot;),tr(&quot;Cancel&quot;),0,0, this);
+                     QObject::connect(progress,SIGNAL(canceled()), this, SLOT(cancel()));
+                 break;
+             }
+         case QLandmarkAbstractRequest::CategoryFetchRequest: {
+                 if (categoryFetch-&gt;error() == QLandmarkManager::NoError) {
+                     if (currentCategoryOffset &lt; limit)
+                         prevCategoryButton-&gt;setEnabled(false);
+                     else
+                         prevCategoryButton-&gt;setEnabled(true);
+
+                     if (categoryFetch-&gt;categories().count() &lt; limit)
+                         nextCategoryButton-&gt;setEnabled(false);
+                     else
+                         nextCategoryButton-&gt;setEnabled(true);
+
+                     categoryTable-&gt;setUpdatesEnabled(false);
+                     for (int i = categoryTable-&gt;rowCount() -1; i&gt;=0; --i) {
+                         if (i %20 ==0)
+                             qApp-&gt;processEvents();
+                         categoryTable-&gt;removeRow(i);
+                     }
+
+                     QList&lt;QLandmarkCategory&gt; cats;
+                     cats = categoryFetch-&gt;categories();
+                     updateCategoryTable(cats);
+
+                     categoryTable-&gt;setUpdatesEnabled(true);
+                 } else {
+                     QMessageBox::warning(this, &quot;Warning&quot;, &quot;Category Fetch Failed&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+                 }
+                 updateCategoryRowLabels();
+                 if (tabWidget-&gt;currentIndex() == 1) {
+                     <span class="comment">//progress-&gt;hide();</span>
+                     delete progress;
+                     progress = new QProgressDialog (tr(&quot;Please wait...&quot;),tr(&quot;Cancel&quot;),0,0, this);
+                     QObject::connect(progress,SIGNAL(canceled()), this, SLOT(cancel()));
+                 }
+             }
+         }
+     }
+ }
+
+<span class="comment"> //this is invoked when we delete category and we are filtering by that category</span>
+<span class="comment"> //we need to do fetch all from scratch</span>
+ void LandmarkBrowser::doFetchAll()
+ {
+     currentLandmarkOffset =0;
+     landmarkFetch-&gt;setOffset(currentLandmarkOffset);
+     landmarkFetch-&gt;start();
+     progress-&gt;setWindowTitle(tr(&quot;Loading Landmarks&quot;));
+     progress-&gt;show();
+ }
+
+ void LandmarkBrowser::cancel()
+ {
+     if (landmarkImport-&gt;isActive())
+         landmarkImport-&gt;cancel();
+     else if (landmarkExport-&gt;isActive())
+         landmarkExport-&gt;cancel();
+ }
+
+ void LandmarkBrowser::landmarksAdded(QList&lt;QLandmarkId&gt; ids)
+ {
+     QMessageBox::information(this, &quot;Information&quot;, &quot;Landmark(s) have been added&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+     reloadingLandmarks();
+ }
+
+ void LandmarkBrowser::landmarksChanged()
+ {
+     QMessageBox::information(this, &quot;Information&quot;, &quot;Landmark(s) have been edited&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+     reloadingLandmarks();
+ }
+
+ void LandmarkBrowser::landmarksRemoved()
+ {
+     QMessageBox::information(this, &quot;Information&quot;, &quot;Landmark(s) have been removed&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+     reloadingLandmarks();
+ }
+
+ void LandmarkBrowser::categoriesAdded()
+ {
+     QMessageBox::information(this, &quot;Information&quot;, &quot;Category(/ies) have been added&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+     reloadingCategories();
+ }
+
+ void LandmarkBrowser::categoriesChanged()
+ {
+     QMessageBox::information(this, &quot;Information&quot;, &quot;Category(/ies) have been changed&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+     reloadingCategories();
+ }
+
+ void LandmarkBrowser::categoriesRemoved()
+ {
+     QMessageBox::information(this, &quot;Information&quot;, &quot;Category(/ies) have been removed&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+     reloadingCategories();
+ }
+
+ void LandmarkBrowser::dataChanged()
+ {
+     QMessageBox::information(this, &quot;Information&quot;, &quot;Database has undergone major modifications, most likely an import operation&quot;, QMessageBox::Ok, QMessageBox::NoButton);
+     reloadingLandmarks();
+     reloadingCategories();
+ }
+
+ void LandmarkBrowser::updateRowLabels()
+ {
+     QStringList labels;
+     for (int i=0; i &lt; table-&gt;rowCount(); ++i)
+         labels &lt;&lt; QString::number(currentLandmarkOffset + i);
+     table-&gt;setVerticalHeaderLabels(labels);
+ }
+
+ void LandmarkBrowser::updateCategoryRowLabels()
+ {
+     QStringList labels;
+     for (int i=0; i &lt; categoryTable-&gt;rowCount(); ++i)
+         labels &lt;&lt; QString::number(currentCategoryOffset + i);
+     categoryTable-&gt;setVerticalHeaderLabels(labels);
+ }
+
+ void LandmarkBrowser::on_nextLandmarkButton_clicked()
+ {
+     currentLandmarkOffset = currentLandmarkOffset + limit;
+     landmarkFetch-&gt;setOffset(currentLandmarkOffset);
+     landmarkFetch-&gt;start();
+     progress-&gt;setWindowTitle(tr(&quot;Loading Landmarks&quot;));
+     progress-&gt;show();
+ }
+
+ void LandmarkBrowser::on_prevLandmarkButton_clicked()
+ {
+     currentLandmarkOffset = currentLandmarkOffset - limit;
+     if (currentLandmarkOffset &lt; 0)
+         currentLandmarkOffset = 0;
+     landmarkFetch-&gt;setOffset(currentLandmarkOffset);
+     landmarkFetch-&gt;start();
+     progress-&gt;setWindowTitle(tr(&quot;Loading Landmarks&quot;));
+     progress-&gt;show();
+ }
+
+ void LandmarkBrowser::on_nextCategoryButton_clicked()
+ {
+     currentCategoryOffset = currentCategoryOffset + limit;
+     categoryFetch-&gt;setOffset(currentCategoryOffset);
+     categoryFetch-&gt;start();
+     progress-&gt;setWindowTitle(tr(&quot;Loading Categories&quot;));
+     progress-&gt;show();
+ }
+
+ void LandmarkBrowser::on_prevCategoryButton_clicked()
+ {
+     currentCategoryOffset = currentCategoryOffset - limit;
+     if (currentCategoryOffset &lt; 0)
+         currentCategoryOffset = 0;
+     categoryFetch-&gt;setOffset(currentLandmarkOffset);
+     categoryFetch-&gt;start();
+
+     progress-&gt;setWindowTitle(tr(&quot;Loading Categories&quot;));
+     progress-&gt;show();
+ }
+
+ void LandmarkBrowser::updateTable(const QList&lt;QLandmark&gt; &amp;lms)
+ {
+     QLandmark lm;
+     for ( int i =0; i &lt; lms.count(); ++i) {
+         lm = lms.at(i);
+         table-&gt;insertRow(table-&gt;rowCount());
+         table-&gt;setItem(table-&gt;rowCount()-1,0,new QTableWidgetItem(QString::number(lm.coordinate().latitude(),'f',2)));
+         table-&gt;setItem(table-&gt;rowCount()-1,1,new QTableWidgetItem(QString::number(lm.coordinate().longitude(),'f',2)));
+         table-&gt;setItem(table-&gt;rowCount()-1,2,new QTableWidgetItem(lm.name()));
+
+         if (i %20)
+             qApp-&gt;processEvents();
+     }
+ }
+
+ void LandmarkBrowser::updateCategoryTable(const QList&lt;QLandmarkCategory&gt; &amp;cats)
+ {
+     QLandmarkCategory cat;
+     for ( int i =0; i &lt; cats.count(); ++i) {
+         cat = cats.at(i);
+         categoryTable-&gt;insertRow(categoryTable-&gt;rowCount());
+         if(manager-&gt;isReadOnly(cat.categoryId())) {
+             categoryTable-&gt;setItem(categoryTable-&gt;rowCount()-1,0,new QTableWidgetItem(cat.name() + &quot;(global)&quot;));
+         } else {
+             categoryTable-&gt;setItem(categoryTable-&gt;rowCount()-1,0,new QTableWidgetItem(cat.name()));
+         }
+         categoryTable-&gt;setItem(categoryTable-&gt;rowCount()-1,1,new QTableWidgetItem(cat.categoryId().localId()));
+
+         if (i %20)
+             qApp-&gt;processEvents();
+     }
+ }
+
+ void LandmarkBrowser::reloadingLandmarks()
+ {
+     landmarkFetch-&gt;setOffset(currentLandmarkOffset);
+     landmarkFetch-&gt;start();
+     if (tabWidget-&gt;currentIndex() == 0) {
+         progress-&gt;setWindowTitle(tr(&quot;Loading Landmarks&quot;));
+         progress-&gt;show();
+     }
+ }
+
+ void LandmarkBrowser::reloadingCategories() {
+     categoryFetch-&gt;setOffset(currentLandmarkOffset);
+     categoryFetch-&gt;start();
+     if (tabWidget-&gt;currentIndex() == 1) {
+         progress-&gt;setWindowTitle(tr(&quot;Loading    Categories&quot;));
+         progress-&gt;show();
+     }
+ }</pre>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

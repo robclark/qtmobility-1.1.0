@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository xmlns="http://www.s60.com/xml/cenrep/1" uidValue="0x815316">
+  <keyRange ref="PIM/Contact" name="Contact" firstInt="0x07000001" lastInt="0x07ffffff" indexBits="0x00ff0000" firstIndex="2" countInt="0x07000000">
+    <desc></desc>
+    <key ref="firstName" name="firstName" int="0x1" type="string"/>
+    <key ref="lastName" name="lastName" int="0x2" type="string"/>
+    <key ref="group" name="group" int="0xF00F" type="int"/>
+  </keyRange>
+</repository>

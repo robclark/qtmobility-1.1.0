@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository xmlns="http://www.s60.com/xml/cenrep/1" uidValue="0x12345678">
+  <key name="Stations" int="0x1" type="real">
+    <bit ref="Dharma/Swan">1</bit>
+    <bit ref="Dharma/Pearl">2</bit>
+    <bit ref="Dharma/Hydra">32</bit>
+    <bit ref="Dharma/LookingGlass">4</bit>
+  </key>
+</repository>

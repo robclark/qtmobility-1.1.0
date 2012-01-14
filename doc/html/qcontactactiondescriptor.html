@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qcontactactiondescriptor.cpp -->
+  <title>Qt Mobility 1.1: QContactActionDescriptor Class Reference</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li><a href="modules.html">Modules</a></li>              <li><a href="qtcontacts.html">QtContacts</a></li>
+              <li>QContactActionDescriptor</li>
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<h1 class="title">QContactActionDescriptor Class Reference</h1>
+<p>The QContactActionDescriptor class provides information that uniquely identifies a specific implementation of an action <a href="#details">More...</a></p>
+<pre class="highlightedCode brush: cpp"> #include &lt;QContactActionDescriptor&gt;</pre><ul>
+<li><a href="qcontactactiondescriptor-members.html">List of all members, including inherited members</a></li>
+</ul>
+<hr />
+<a name="public-functions"></a>
+<h2>Public Functions</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#QContactActionDescriptor">QContactActionDescriptor</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#QContactActionDescriptor-2">QContactActionDescriptor</a></b> ( const QContactActionDescriptor &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#dtor.QContactActionDescriptor">~QContactActionDescriptor</a></b> ()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#actionIdentifier">actionIdentifier</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#actionName">actionName</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QContactFilter </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#contactFilter">contactFilter</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#implementationVersion">implementationVersion</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#isValid">isValid</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#metaData">metaData</a></b> ( const QString &amp; <i>key</i>, const QList&lt;QContactActionTarget&gt; &amp; <i>targets</i>, const QVariantMap &amp; <i>parameters</i> = QVariantMap() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#metaData-2">metaData</a></b> ( const QString &amp; <i>key</i>, const QVariantMap &amp; <i>parameters</i> = QVariantMap() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#metaData-3">metaData</a></b> ( const QString &amp; <i>key</i>, const QContactActionTarget &amp; <i>target</i>, const QVariantMap &amp; <i>parameters</i> = QVariantMap() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#metaData-4">metaData</a></b> ( const QString &amp; <i>key</i>, const QContact &amp; <i>contact</i>, const QContactDetail &amp; <i>detail</i> = QContactDetail(), const QVariantMap &amp; <i>parameters</i> = QVariantMap() ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#serviceName">serviceName</a></b> () const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;QContactActionTarget&gt; </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#supportedTargets">supportedTargets</a></b> ( const QContact &amp; <i>contact</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#supportsContact">supportsContact</a></b> ( const QContact &amp; <i>contact</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#operator-not-eq">operator!=</a></b> ( const QContactActionDescriptor &amp; <i>other</i> ) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QContactActionDescriptor &amp; </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#operator-eq">operator=</a></b> ( const QContactActionDescriptor &amp; <i>other</i> )</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#operator-eq-eq">operator==</a></b> ( const QContactActionDescriptor &amp; <i>other</i> ) const</td></tr>
+</table>
+<hr />
+<a name="static-public-members"></a>
+<h2>Static Public Members</h2>
+<table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#MetaDataIcon-var">MetaDataIcon</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#MetaDataLabel-var">MetaDataLabel</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#MetaDataMandatoryParameterKeys-var">MetaDataMandatoryParameterKeys</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#MetaDataOptionalParameterKeys-var">MetaDataOptionalParameterKeys</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QLatin1Constant </td><td class="memItemRight bottomAlign"><b><a href="qcontactactiondescriptor.html#MetaDataSecondLabel-var">MetaDataSecondLabel</a></b></td></tr>
+</table>
+<a name="details"></a>
+<hr />
+<div class="descr"/>
+<h2>Detailed Description</h2>
+<p>The QContactActionDescriptor class provides information that uniquely identifies a specific implementation of an action</p>
+</div>
+<hr />
+<div class="func"/>
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QContactActionDescriptor"></a>QContactActionDescriptor::QContactActionDescriptor ()</h3>
+<p>Constructs a new, invalid action descriptor</p>
+<h3 class="fn"><a name="QContactActionDescriptor-2"></a>QContactActionDescriptor::QContactActionDescriptor ( const QContactActionDescriptor &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> action descriptor</p>
+<h3 class="fn"><a name="dtor.QContactActionDescriptor"></a>QContactActionDescriptor::~QContactActionDescriptor ()</h3>
+<p>Cleans up any memory in use by the action descriptor</p>
+<h3 class="fn"><a name="actionIdentifier"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QContactActionDescriptor::actionIdentifier () const</h3>
+<p>Returns the identifier of the action, within the service.</p>
+<h3 class="fn"><a name="actionName"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QContactActionDescriptor::actionName () const</h3>
+<p>Returns the name of the action which is identified by the action descriptor</p>
+<h3 class="fn"><a name="contactFilter"></a><a href="qcontactfilter.html">QContactFilter</a> QContactActionDescriptor::contactFilter () const</h3>
+<p>Returns a filter which will match contacts for which this action has at least one supported action target</p>
+<h3 class="fn"><a name="implementationVersion"></a>int QContactActionDescriptor::implementationVersion () const</h3>
+<p>Returns the service-specified version of the action implementation which is identified by the action descriptor</p>
+<h3 class="fn"><a name="isValid"></a>bool QContactActionDescriptor::isValid () const</h3>
+<p>Returns false if either the name, service and version of the descriptor are missing from the descriptor, or if the descriptor is not associated with a valid action factory which can create instances of an action. An empty descriptor cannot uniquely identify an action.</p>
+<h3 class="fn"><a name="metaData"></a><a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> QContactActionDescriptor::metaData ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i>, const <a href="http://qt.nokia.com/doc/4.6/qlist.html">QList</a>&lt;<a href="qcontactactiontarget.html">QContactActionTarget</a>&gt; &amp; <i>targets</i>, const <a href="http://qt.nokia.com/doc/4.6/qvariant.html#QVariantMap-typedef">QVariantMap</a> &amp; <i>parameters</i> = QVariantMap() ) const</h3>
+<p>Returns the meta data for the given meta data key <i>key</i> for the the given action targets <i>targets</i> with the given invocation parameters <i>parameters</i>.</p>
+<h3 class="fn"><a name="metaData-2"></a><a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> QContactActionDescriptor::metaData ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i>, const <a href="http://qt.nokia.com/doc/4.6/qvariant.html#QVariantMap-typedef">QVariantMap</a> &amp; <i>parameters</i> = QVariantMap() ) const</h3>
+<p>Returns the meta data for the given meta data key <i>key</i> with the given invocation parameters <i>parameters</i>.</p>
+<h3 class="fn"><a name="metaData-3"></a><a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> QContactActionDescriptor::metaData ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i>, const <a href="qcontactactiontarget.html">QContactActionTarget</a> &amp; <i>target</i>, const <a href="http://qt.nokia.com/doc/4.6/qvariant.html#QVariantMap-typedef">QVariantMap</a> &amp; <i>parameters</i> = QVariantMap() ) const</h3>
+<p>Returns the meta data for the given meta data key <i>key</i> for the <i>target</i>, with the given invocation parameters <i>parameters</i>.</p>
+<h3 class="fn"><a name="metaData-4"></a><a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> QContactActionDescriptor::metaData ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i>, const <a href="qcontact.html">QContact</a> &amp; <i>contact</i>, const <a href="qcontactdetail.html">QContactDetail</a> &amp; <i>detail</i> = QContactDetail(), const <a href="http://qt.nokia.com/doc/4.6/qvariant.html#QVariantMap-typedef">QVariantMap</a> &amp; <i>parameters</i> = QVariantMap() ) const</h3>
+<p>Returns the meta data for the given meta data key <i>key</i> for a target identified by <i>contact</i> and <i>detail</i>, with the given invocation parameters <i>parameters</i>.</p>
+<h3 class="fn"><a name="serviceName"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QContactActionDescriptor::serviceName () const</h3>
+<p>Returns the name of the service of the action implementation which is identified by the action descriptor</p>
+<h3 class="fn"><a name="supportedTargets"></a><a href="http://qt.nokia.com/doc/4.6/qset.html">QSet</a>&lt;<a href="qcontactactiontarget.html">QContactActionTarget</a>&gt; QContactActionDescriptor::supportedTargets ( const <a href="qcontact.html">QContact</a> &amp; <i>contact</i> ) const</h3>
+<p>Returns the set of action targets which are supported by this action for the given contact <i>contact</i></p>
+<h3 class="fn"><a name="supportsContact"></a>bool QContactActionDescriptor::supportsContact ( const <a href="qcontact.html">QContact</a> &amp; <i>contact</i> ) const</h3>
+<p>Returns true if the action which this descriptor describes supports at least one action target for the given <i>contact</i></p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QContactActionDescriptor::operator!= ( const QContactActionDescriptor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the action name, service name or service-specified implementation version specified by this action descriptor are different to that specified by <i>other</i></p>
+<h3 class="fn"><a name="operator-eq"></a>QContactActionDescriptor &amp; QContactActionDescriptor::operator= ( const QContactActionDescriptor &amp; <i>other</i> )</h3>
+<p>Assigns this action descriptor to be equal to <i>other</i></p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QContactActionDescriptor::operator== ( const QContactActionDescriptor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the action identified by this descriptor is the same as the action identified by the <i>other</i> descriptor. Note that two actions with the same action name, service name and implementation version may in fact be different (for example, they may have different metaData), so using this function is the only way for clients to tell whether or not the action descriptors identify different actions.</p>
+</div>
+<hr />
+<div class="vars"/>
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="MetaDataIcon-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactActionDescriptor::MetaDataIcon</h3>
+<p>The meta data key which corresponds to the meta data value which contains the icon which should be displayed for this action.</p>
+<p>See also <a href="qcontactactiondescriptor.html#metaData">metaData</a>().</p>
+<h3 class="fn"><a name="MetaDataLabel-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactActionDescriptor::MetaDataLabel</h3>
+<p>The meta data key which corresponds to the meta data value which contains the display label for this action.</p>
+<p>See also <a href="qcontactactiondescriptor.html#metaData">metaData</a>().</p>
+<h3 class="fn"><a name="MetaDataMandatoryParameterKeys-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactActionDescriptor::MetaDataMandatoryParameterKeys</h3>
+<p>The meta data key which corresponds to the meta data value which contains the list of keys of parameters which the client must provide at invocation for the action to succeed.</p>
+<p>An example of a mandatory parameter might be a &quot;recipient&quot; parameter to a &quot;send email&quot; action.</p>
+<p>See also <a href="qcontactactiondescriptor.html#metaData">metaData</a>().</p>
+<h3 class="fn"><a name="MetaDataOptionalParameterKeys-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactActionDescriptor::MetaDataOptionalParameterKeys</h3>
+<p>The meta data key which corresponds to the meta data value which contains the list of keys of parameters which the client may provide at invocation time which may affect the action.</p>
+<p>An example of an optional parameter might be an &quot;attachment&quot; parameter to a &quot;send email&quot; action.</p>
+<p>See also <a href="qcontactactiondescriptor.html#metaData">metaData</a>().</p>
+<h3 class="fn"><a name="MetaDataSecondLabel-var"></a>const <a href="qlatin1constant.html">QLatin1Constant</a> QContactActionDescriptor::MetaDataSecondLabel</h3>
+<p>The meta data key which corresponds to the meta data value which contains the second or additional display label for this action.</p>
+<p>See also <a href="qcontactactiondescriptor.html#metaData">metaData</a>().</p>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

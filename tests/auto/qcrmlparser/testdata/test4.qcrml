@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository target="RProperty" uidValue="0x48151623">
+  <key ref="sensors/accelerometer/x" name="accelerometer/x" int="0x0"/>
+  <desc>Accelerometer repository</desc>
+  <meta/>
+  <key ref="sensors/accelerometer/y" name="accelerometer/y" int="0x1">
+    <desc>Acclerometer readings in the x direction</desc>
+    <meta>
+        <info>Meta-information</info>
+        <moreinfo>More meta-information</moreinfo>
+    </meta>
+    <access type="rw" capabilities="AlwaysPass"/>
+  </key>
+<key ref="sensors/accelerometer/z" name="accelerometer/z" int="0x2"/>
+</repository>

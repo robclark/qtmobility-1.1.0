@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Qt Mobility 1.1: mainwindow.cpp Example File (mapviewer/mainwindow.cpp)</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<h1 class="title">mainwindow.cpp Example File</h1>
+<span class="small-subtitle">mapviewer/mainwindow.cpp</span>
+<div class="descr"/>
+<pre class="highlightedCode brush: cpp"><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
+ ** All rights reserved.
+ ** Contact: Nokia Corporation (qt-info@nokia.com)
+ **
+ ** This file is part of the Qt Mobility Components.
+ **
+ ** $QT_BEGIN_LICENSE:LGPL$
+ ** Commercial Usage
+ ** Licensees holding valid Qt Commercial licenses may use this file in
+ ** accordance with the Qt Commercial License Agreement provided with
+ ** the Software or, alternatively, in accordance with the terms
+ ** contained in a written agreement between you and Nokia.
+ **
+ ** GNU Lesser General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU Lesser
+ ** General Public License version 2.1 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.LGPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU Lesser General Public License version 2.1 requirements
+ ** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+ **
+ ** In addition, as a special exception, Nokia gives you certain additional
+ ** rights.  These rights are described in the Nokia Qt LGPL Exception
+ ** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
+ **
+ ** GNU General Public License Usage
+ ** Alternatively, this file may be used under the terms of the GNU
+ ** General Public License version 3.0 as published by the Free Software
+ ** Foundation and appearing in the file LICENSE.GPL included in the
+ ** packaging of this file.  Please review the following information to
+ ** ensure the GNU General Public License version 3.0 requirements will be
+ ** met: http://www.gnu.org/copyleft/gpl.html.
+ **
+ ** If you are unsure which license is appropriate for your use, please
+ ** contact the sales department at qt-sales@nokia.com.
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;mapwidget.h&quot;
+
+ #include &lt;QApplication&gt;
+ #include &lt;QPointF&gt;
+ #include &lt;QNetworkProxy&gt;
+ #include &lt;QNetworkProxyFactory&gt;
+ #include &lt;QMessageBox&gt;
+ #include &lt;QTimer&gt;
+ #include &lt;QAction&gt;
+ #include &lt;QMenuBar&gt;
+ #include &lt;QPainter&gt;
+ #include &lt;QDesktopWidget&gt;
+ #include &lt;QDialog&gt;
+ #include &lt;QProcessEnvironment&gt;
+ #include &lt;QUrl&gt;
+ #include &lt;QSvgRenderer&gt;
+
+ #include &lt;QGridLayout&gt;
+ #include &lt;QFormLayout&gt;
+ #include &lt;QVBoxLayout&gt;
+ #include &lt;QHBoxLayout&gt;
+ #include &lt;QLabel&gt;
+ #include &lt;QLineEdit&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;QToolButton&gt;
+ #include &lt;QRadioButton&gt;
+ #include &lt;QSlider&gt;
+ #include &lt;QSignalMapper&gt;
+
+ #include &lt;qnetworkconfigmanager.h&gt;
+ #include &lt;qgeoboundingcircle.h&gt;
+ #include &lt;qgeocoordinate.h&gt;
+ #include &lt;qgeomaprectangleobject.h&gt;
+ #include &lt;qgeomappixmapobject.h&gt;
+ #include &lt;qgeomappolylineobject.h&gt;
+ #include &lt;qgeomappolygonobject.h&gt;
+ #include &lt;qgeomaprouteobject.h&gt;
+ #include &lt;qgeomaptextobject.h&gt;
+ #include &lt;qgeomapcircleobject.h&gt;
+ #include &lt;qgeorouterequest.h&gt;
+ #include &lt;qgeoboundingbox.h&gt;
+
+ QTM_USE_NAMESPACE
+
+ MainWindow::MainWindow(QWidget *parent) :
+         QMainWindow(parent),
+         m_serviceProvider(0),
+         m_mapWidget(0),
+         m_popupMenu(0),
+         m_controlsVisible(true)
+ {
+     setWindowTitle(tr(&quot;Map Viewer Demo&quot;));
+
+     <span class="comment">// initial ui setup</span>
+     <span class="comment">// setup graphics view containing map widget</span>
+
+     QGraphicsScene* scene = new QGraphicsScene(this);
+     m_qgv = new QGraphicsView(scene, this);
+     m_qgv-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+     m_qgv-&gt;setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+     m_qgv-&gt;setVisible(true);
+     m_qgv-&gt;setInteractive(true);
+
+     <span class="comment">// setup slider control</span>
+
+     m_slider = new QSlider(Qt::Vertical, this);
+     m_slider-&gt;setTickInterval(1);
+     m_slider-&gt;setTickPosition(QSlider::TicksBothSides);
+
+     <span class="comment">// setup lat/lon control</span>
+
+     m_latitudeEdit = new QLineEdit();
+     m_longitudeEdit = new QLineEdit();
+
+     QFormLayout *latitudeLayout = new QFormLayout();
+     QFormLayout *longitudeLayout = new QFormLayout();
+
+ #if defined(Q_OS_SYMBIAN) || defined(Q_OS_WINCE_WM) || defined(Q_WS_MAEMO_5) || defined(Q_WS_MAEMO_6)
+     latitudeLayout-&gt;addRow(tr(&quot;Lat:&quot;), m_latitudeEdit);
+     longitudeLayout-&gt;addRow(tr(&quot;Lng:&quot;), m_longitudeEdit);
+ #else
+     latitudeLayout-&gt;addRow(tr(&quot;Latitude&quot;), m_latitudeEdit);
+     longitudeLayout-&gt;addRow(tr(&quot;Longitude&quot;), m_longitudeEdit);
+ #endif
+
+     m_setCoordsButton = new QPushButton();
+ #if defined(Q_OS_SYMBIAN) || defined(Q_OS_WINCE_WM) || defined(Q_WS_MAEMO_5) || defined(Q_WS_MAEMO_6)
+     m_setCoordsButton-&gt;setText(tr(&quot;Goto coords&quot;));
+ #else
+     m_setCoordsButton-&gt;setText(tr(&quot;Go to coordinates&quot;));
+ #endif
+
+     m_searchEdit = new QLineEdit();
+
+     m_searchButton = new QPushButton();
+     m_searchButton-&gt;setText(tr(&quot;Search&quot;));
+
+     QGridLayout *searchLayout = new QGridLayout();
+     searchLayout-&gt;setColumnStretch(0, 1);
+     searchLayout-&gt;setColumnStretch(1, 0);
+     searchLayout-&gt;addWidget(m_searchEdit, 0, 0);
+     searchLayout-&gt;addWidget(m_searchButton, 0, 1);
+
+     QGridLayout *coordControlLayout = new QGridLayout();
+     coordControlLayout-&gt;addLayout(latitudeLayout, 0, 0);
+     coordControlLayout-&gt;addLayout(longitudeLayout, 0, 1);
+     coordControlLayout-&gt;addWidget(m_setCoordsButton, 1, 1, 1, 2);
+
+     QMenu * coordsMenu = new QMenu(tr(&quot;Coordinates&quot;), this);
+
+     m_captureCoordsAction = new QAction(tr(&quot;Capture&quot;), this);
+     coordsMenu-&gt;addAction(m_captureCoordsAction);
+     m_captureCoordsAction-&gt;setCheckable(true);
+
+     <span class="comment">// Build coordinates dialog</span>
+
+     m_coordControlDialog = new QDialog(this);
+     m_coordControlDialog-&gt;setLayout(coordControlLayout);
+
+     QAction * setCoordsAction = new QAction(tr(&quot;Go to&quot;), this);
+     coordsMenu-&gt;addAction(setCoordsAction);
+     connect(m_setCoordsButton, SIGNAL(clicked()), m_coordControlDialog, SLOT(hide()));
+     connect(setCoordsAction, SIGNAL(triggered(bool)), m_coordControlDialog, SLOT(show()));
+
+     <span class="comment">// Setup map type controls</span>
+
+     QVector&lt;QString&gt; mapTypeNames;
+
+     m_mapControlTypes.append(QGraphicsGeoMap::StreetMap);         mapTypeNames.append(tr(&quot;Street&quot;));
+     m_mapControlTypes.append(QGraphicsGeoMap::SatelliteMapDay);   mapTypeNames.append(tr(&quot;Satellite&quot;));
+     m_mapControlTypes.append(QGraphicsGeoMap::SatelliteMapNight); mapTypeNames.append(tr(&quot;Satellite - Night&quot;));
+     m_mapControlTypes.append(QGraphicsGeoMap::TerrainMap);        mapTypeNames.append(tr(&quot;Terrain&quot;));
+
+     QMenu * mapTypeMenu = new QMenu(tr(&quot;Map type&quot;), this);
+
+     for (int i = 0; i &lt; m_mapControlTypes.size(); ++i) {
+         QAction* action = new QAction(mapTypeNames[i], this);
+         action-&gt;setCheckable(true);
+
+         mapTypeMenu-&gt;addAction(action);
+         m_mapControlActions.append(action);
+     }
+
+     QGridLayout *layout = new QGridLayout();
+     layout-&gt;setRowStretch(0, 1);
+     layout-&gt;setRowStretch(1, 0);
+
+     layout-&gt;setColumnStretch(0, 0);
+     layout-&gt;setColumnStretch(1, 1);
+
+     layout-&gt;addWidget(m_slider, 0, 0, 2, 1);
+     layout-&gt;addWidget(m_qgv, 0, 1);
+     layout-&gt;addLayout(searchLayout, 1, 1);
+
+     m_layout = layout;
+
+     QWidget *widget = new QWidget(this);
+     widget-&gt;setLayout(layout);
+     setCentralWidget(widget);
+
+     menuBar()-&gt;addMenu(mapTypeMenu);
+     menuBar()-&gt;addMenu(coordsMenu);
+
+     <span class="comment">// Set Internet Access Point</span>
+     QNetworkConfigurationManager manager;
+     const bool canStartIAP = (manager.capabilities()
+                               &amp; QNetworkConfigurationManager::CanStartAndStopInterfaces);
+     <span class="comment">// Is there default access point, use it</span>
+     QNetworkConfiguration cfg = manager.defaultConfiguration();
+     if (!cfg.isValid() || (!canStartIAP &amp;&amp; cfg.state() != QNetworkConfiguration::Active)) {
+         QMessageBox::information(this, tr(&quot;Map Viewer Demo&quot;), tr(
+                                      &quot;Available Access Points not found.&quot;));
+         return;
+     }
+
+     m_session = new QNetworkSession(cfg, this);
+     connect(m_session, SIGNAL(opened()), this, SLOT(networkSessionOpened()));
+     connect(m_session,
+             SIGNAL(error(QNetworkSession::SessionError)),
+             this,
+             SLOT(error(QNetworkSession::SessionError)));
+
+     m_session-&gt;open();
+
+     resize(652, 519);
+ }
+
+ MainWindow::~MainWindow()
+ {
+     delete m_serviceProvider;
+ }
+
+ void MainWindow::setupUi()
+ {
+     <span class="comment">// setup exit menu for devices</span>
+ #if defined(Q_OS_SYMBIAN) || defined(Q_OS_WINCE_WM) || defined(Q_WS_MAEMO_5) || defined(Q_WS_MAEMO_6)
+     QAction* exitAction = new QAction(tr(&quot;Exit&quot;), this);
+     menuBar()-&gt;addAction(exitAction);
+     connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
+ #endif
+
+     createPixmapIcon();
+
+     m_mapWidget = new MapWidget(m_mapManager);
+     m_qgv-&gt;scene()-&gt;addItem(m_mapWidget);
+     <span class="comment">//m_mapWidget-&gt;setCenter(QGeoCoordinate(52.5,13.0));</span>
+     <span class="comment">//temporary change for dateline testing</span>
+     m_mapWidget-&gt;setCenter(QGeoCoordinate(-27.0, 152.0));
+     m_mapWidget-&gt;setZoomLevel(5);
+
+ #if defined(Q_OS_SYMBIAN) || defined(Q_OS_WINCE_WM) || defined(Q_WS_MAEMO_5) || defined(Q_WS_MAEMO_6)
+     <span class="comment">// make full-screen button</span>
+
+     QPainterPath path;
+     const int gaps = 5;
+     const int innerwidth = 40;
+     const int innerheight = 20;
+     const int smallbox = 12;
+     path.addRect(0, 0, innerwidth + smallbox + 3*gaps, innerheight + smallbox + 3*gaps);
+     path.addRect(smallbox + 2*gaps, gaps, innerwidth, innerheight);
+     path.addRect(gaps, 2*gaps + innerheight, smallbox, smallbox);
+
+     m_fullScreenButton = new QGraphicsPathItem(path); <span class="comment">// TODO: make member</span>
+     QPen pen;
+     pen.setWidth(2);
+     pen.setColor(QColor(0, 0, 0, 128));
+     pen.setJoinStyle(Qt::MiterJoin);
+     m_fullScreenButton-&gt;setPen(pen);
+     m_fullScreenButton-&gt;setFlag(QGraphicsItem::ItemIsSelectable);
+
+     connect(m_qgv-&gt;scene(), SIGNAL(selectionChanged()), this, SLOT(sceneSelectionChanged()));
+
+     m_qgv-&gt;scene()-&gt;addItem(m_fullScreenButton);
+ #endif
+
+     m_slider-&gt;setMaximum(m_mapManager-&gt;maximumZoomLevel());
+     m_slider-&gt;setMinimum(m_mapManager-&gt;minimumZoomLevel());
+     m_slider-&gt;setSliderPosition(m_mapWidget-&gt;zoomLevel());
+
+     connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(sliderValueChanged(int)));
+     connect(m_mapWidget, SIGNAL(zoomLevelChanged(qreal)), this, SLOT(mapZoomLevelChanged(qreal)));
+
+     <span class="comment">// setup map type control</span>
+     connect(m_mapWidget, SIGNAL(mapTypeChanged(QGraphicsGeoMap::MapType)), this, SLOT(mapTypeChanged(QGraphicsGeoMap::MapType)));
+
+     QSignalMapper * mapper = new QSignalMapper(this);
+     connect(mapper, SIGNAL(mapped(int)), this, SLOT(mapTypeToggled(int)));
+
+     QList&lt;QGraphicsGeoMap::MapType&gt; types = m_mapWidget-&gt;supportedMapTypes();
+     for (int controlIndex = 0; controlIndex &lt; m_mapControlTypes.size(); ++controlIndex) {
+         QAction *action = m_mapControlActions.at(controlIndex);
+         int supportedTypeIndex = types.indexOf(m_mapControlTypes[controlIndex]);
+
+         if (supportedTypeIndex == -1) {
+             action-&gt;setEnabled(false);
+         } else {
+             connect(action, SIGNAL(triggered(bool)), mapper, SLOT(map()));
+             mapper-&gt;setMapping(action, m_mapControlTypes[controlIndex]);
+
+             action-&gt;setEnabled(true);
+             action-&gt;setChecked(m_mapControlTypes[controlIndex] == m_mapWidget-&gt;mapType());
+         }
+
+     }
+
+     connect(m_captureCoordsAction, SIGNAL(toggled(bool)), m_mapWidget, SLOT(setMouseClickCoordQuery(bool)));
+     connect(m_mapWidget, SIGNAL(coordQueryResult(QGeoCoordinate)), this, SLOT(updateCoords(QGeoCoordinate)));
+     connect(m_mapWidget, SIGNAL(coordQueryResult(QGeoCoordinate)), m_coordControlDialog, SLOT(show()));
+     connect(m_setCoordsButton, SIGNAL(clicked()), this, SLOT(setCoordsClicked()));
+     connect(m_searchEdit, SIGNAL(returnPressed()), this, SLOT(searchClicked()));
+     connect(m_searchButton, SIGNAL(clicked()), this, SLOT(searchClicked()));
+
+     m_qgv-&gt;setContextMenuPolicy(Qt::CustomContextMenu);
+     QObject::connect(m_qgv, SIGNAL(customContextMenuRequested(const QPoint&amp;)),
+                      this, SLOT(customContextMenuRequest(const QPoint&amp;)));
+     resizeEvent(0);
+ }
+
+ void MainWindow::sceneSelectionChanged()
+ {
+     if (!m_fullScreenButton-&gt;isSelected())
+         return;
+
+     m_fullScreenButton-&gt;setSelected(false);
+
+     <span class="comment">// toggle hide control mode</span>
+     setControlsVisible(!controlsVisible());
+ }
+
+ bool MainWindow::controlsVisible()
+ {
+     return m_controlsVisible;
+ }
+
+ void MainWindow::setControlsVisible(bool controlsVisible)
+ {
+     if (m_controlsVisible == controlsVisible)
+         return;
+
+     m_controlsVisible = controlsVisible;
+
+     <span class="comment">// obtain a flat item list, containing every widget</span>
+     QList&lt;QLayoutItem*&gt; items;
+     items &lt;&lt; m_layout;
+
+     <span class="comment">// Unroll the list until it is flat. start by assuming it isn't</span>
+     bool flat = false;
+     while (!flat) {
+         QList&lt;QLayoutItem*&gt; newItems;
+
+         <span class="comment">// Before the actual analysis, assume the list is flat.</span>
+         flat = true;
+
+         foreach(QLayoutItem *item, items) {
+             QLayout * layout = item-&gt;layout();
+             if (layout) {
+                 <span class="comment">// We have a sub-layout =&gt; list isn't flat</span>
+                 flat = false;
+
+                 <span class="comment">// loop through all items in that sub-layout</span>
+                 for (int i = 0; ; ++i) {
+                     QLayoutItem * subItem = layout-&gt;itemAt(i);
+                     if (!subItem) break;
+
+                     <span class="comment">// add the sub-layout item to the new flat(ter) list</span>
+                     newItems &lt;&lt; subItem;
+                 }
+             } else {
+                 <span class="comment">// not a layout? simply pass it through</span>
+                 newItems &lt;&lt; item;
+             }
+         }
+
+         <span class="comment">//</span>
+         items = newItems;
+     }
+
+     foreach(QLayoutItem *item, items) {
+         QWidget * widget = item-&gt;widget();
+
+         if (widget != m_qgv)
+             widget-&gt;setVisible(controlsVisible);
+     }
+     m_layout-&gt;activate();
+
+     <span class="comment">// TODO: instead of copypasting from resizeEvent, trigger the resizing on layout changes/qgv size changes.</span>
+     resizeEvent(0);
+ }
+
+ void MainWindow::sliderValueChanged(int zoomLevel)
+ {
+     m_mapWidget-&gt;setZoomLevel(zoomLevel);
+ }
+
+ void MainWindow::mapZoomLevelChanged(qreal zoomLevel)
+ {
+     m_slider-&gt;setSliderPosition(qRound(zoomLevel));
+ }
+
+ void MainWindow::mapTypeToggled(int type)
+ {
+     m_mapWidget-&gt;setMapType((QGraphicsGeoMap::MapType)type);
+ }
+
+ void MainWindow::mapTypeChanged(QGraphicsGeoMap::MapType type)
+ {
+     for (int i = 0; i &lt; m_mapControlTypes.size(); ++i) {
+         QAction *action = m_mapControlActions[i];
+         action-&gt;setChecked(m_mapControlTypes[i] == type);
+     }
+ }
+
+ void MainWindow::setCoordsClicked()
+ {
+     bool ok = false;
+
+     double lat = m_latitudeEdit-&gt;text().toDouble(&amp;ok);
+
+     if (!ok)
+         return;
+
+     double lon = m_longitudeEdit-&gt;text().toDouble(&amp;ok);
+
+     if (!ok)
+         return;
+
+     m_mapWidget-&gt;setCenter(QGeoCoordinate(lat, lon));
+ }
+
+ void MainWindow::updateCoords(const QGeoCoordinate &amp;coords)
+ {
+     if (!coords.isValid())
+         return;
+
+     m_latitudeEdit-&gt;setText(QString::number(coords.latitude()));
+     m_longitudeEdit-&gt;setText(QString::number(coords.longitude()));
+
+     m_captureCoordsAction-&gt;setChecked(false);
+ }
+
+ void MainWindow::setProvider(QString providerId)
+ {
+     if (m_serviceProvider)
+         delete m_serviceProvider;
+     m_serviceProvider = new QGeoServiceProvider(providerId);
+     if (m_serviceProvider-&gt;error() != QGeoServiceProvider::NoError) {
+         QMessageBox::information(this, tr(&quot;MapViewer Example&quot;), tr(
+                                      &quot;Unable to find the %1 geoservices plugin.&quot;).arg(providerId));
+         qApp-&gt;quit();
+         return;
+     }
+
+     m_mapManager = m_serviceProvider-&gt;mappingManager();
+     m_routingManager = m_serviceProvider-&gt;routingManager();
+     m_searchManager = m_serviceProvider-&gt;searchManager();
+ }
+
+ void MainWindow::searchClicked()
+ {
+     QGeoSearchReply *reply = m_searchManager-&gt;search(m_searchEdit-&gt;text());
+
+     QObject::connect(reply, SIGNAL(finished()), this,
+                      SLOT(searchReplyFinished()));
+     QObject::connect(reply,
+                      SIGNAL(error(QGeoSearchReply::Error, QString)), this,
+                      SLOT(resultsError(QGeoSearchReply::Error, QString)));
+
+     m_qgv-&gt;setFocus();
+ }
+
+ void MainWindow::searchReplyFinished()
+ {
+     QGeoSearchReply* reply = static_cast&lt;QGeoSearchReply *&gt;(sender());
+
+     if (reply-&gt;error() != QGeoSearchReply::NoError) {
+         <span class="comment">// Errors are handled in a different slot (resultsError)</span>
+         return;
+     }
+
+     QList&lt;QGeoPlace&gt; places = reply-&gt;places();
+     if (places.length() == 0) {
+         (new QMessageBox(
+              QMessageBox::Information,
+              tr(&quot;MapViewer Example&quot;),
+              tr(&quot;Search did not find anything.&quot;),
+              0,
+              this
+          ))-&gt;show();
+     } else {
+
+         for (int i = 0; i &lt; places.length(); ++i) {
+             QGeoPlace &amp; place = places[i];
+             QGeoMapPixmapObject *marker
+             = new QGeoMapPixmapObject(place.coordinate(),
+                                       m_markerOffset,
+                                       m_markerIcon);
+             m_mapWidget-&gt;addMapObject(marker);
+             m_markerObjects.append(marker); <span class="comment">// TODO: add to different marker list, clear markers from list before searching</span>
+         }
+
+         if (places.length() == 1) {
+             m_mapWidget-&gt;setCenter(places[0].coordinate());
+         } else {
+             QGeoBoundingBox bbox(places.at(0).coordinate(), places.at(0).coordinate());
+             for (int i = 1; i &lt; places.length(); ++i) {
+                 bbox |= QGeoBoundingBox(places.at(i).coordinate(), places.at(i).coordinate());
+             }
+             m_mapWidget-&gt;fitInViewport(bbox);
+         }
+
+         <span class="comment">/*
+         QGeoBoundingArea * viewport = reply-&gt;viewport();
+         if (viewport) {
+             if (viewport-&gt;type() == QGeoBoundingArea::BoxType) {
+                 m_mapWidget-&gt;fitInViewport(*static_cast&lt;QGeoBoundingBox *&gt;(viewport));
+                 reply-&gt;deleteLater();
+                 return;
+             }
+             else if (viewport-&gt;type() == QGeoBoundingArea::CircleType) {
+                 m_mapWidget-&gt;setCenter(static_cast&lt;QGeoBoundingCircle *&gt;(viewport)-&gt;center());
+                 reply-&gt;deleteLater();
+                 return;
+             }
+         }
+         m_mapWidget-&gt;setCenter(places[0].coordinate());
+         */</span>
+     }
+
+     disconnect(reply, SIGNAL(finished()), this,
+                SLOT(searchReplyFinished()));
+     disconnect(reply,
+                SIGNAL(error(QGeoSearchReply::Error, QString)), this,
+                SLOT(resultsError(QGeoSearchReply::Error, QString)));
+     reply-&gt;deleteLater();
+ }
+
+ void MainWindow::resultsError(QGeoSearchReply::Error errorCode, QString errorString)
+ {
+     QObject* reply = static_cast&lt;QGeoSearchReply *&gt;(sender());
+
+     (new QMessageBox(
+          QMessageBox::Information,
+          tr(&quot;MapViewer Example&quot;),
+          tr(&quot;Error #%1 while trying to process your search query.\n\&quot;%2\&quot;&quot;).arg(errorCode).arg(errorString),
+          0,
+          this
+      ))-&gt;show();
+
+     disconnect(reply, SIGNAL(finished()), this,
+                SLOT(searchReplyFinished()));
+     disconnect(reply,
+                SIGNAL(error(QGeoSearchReply::Error, QString)), this,
+                SLOT(resultsError(QGeoSearchReply::Error, QString)));
+     reply-&gt;deleteLater();
+ }
+
+ void MainWindow::resizeEvent(QResizeEvent* event)
+ {
+     m_qgv-&gt;setSceneRect(QRectF(QPointF(0.0, 0.0), m_qgv-&gt;size()));
+     if (m_mapWidget)
+         m_mapWidget-&gt;resize(m_qgv-&gt;size());
+ }
+
+ void MainWindow::showEvent(QShowEvent* event)
+ {
+     resizeEvent(0);
+ }
+
+ void MainWindow::createMenus()
+ {
+     QAction* menuItem;
+     QMenu* subMenuItem;
+     m_popupMenu = new QMenu(this);
+
+     <span class="comment">/*
+
+     // These are gread for testing, but not really what we want in
+     // an example application.
+     // We should probably creating a testing branch which tracks
+     // the master branch and has various &quot;test enabled&quot; versions
+     // of the examples at some point anyhow.
+
+     subMenuItem = new QMenu(tr(&quot;Spawn stuff&quot;), this);
+     m_popupMenu-&gt;addMenu(subMenuItem);
+
+     menuItem = new QAction(tr(&quot;Items near the dateline&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(demo1(bool)));
+
+     menuItem = new QAction(tr(&quot;Regular grid of items&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(demo2(bool)));
+
+     menuItem = new QAction(tr(&quot;Clusters&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(demo3(bool)));
+
+     */</span>
+
+     <span class="comment">//**************************************************************</span>
+     subMenuItem = new QMenu(tr(&quot;Marker&quot;), this);
+     m_popupMenu-&gt;addMenu(subMenuItem);
+
+     menuItem = new QAction(tr(&quot;Set marker&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(drawPixmap(bool)));
+
+     menuItem = new QAction(tr(&quot;Remove markers&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(removePixmaps()));
+
+     menuItem = new QAction(tr(&quot;Select objects&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(selectObjects()));
+
+     <span class="comment">//**************************************************************</span>
+     subMenuItem = new QMenu(tr(&quot;Draw&quot;), this);
+     m_popupMenu-&gt;addMenu(subMenuItem);
+
+     menuItem = new QAction(tr(&quot;Rectangle&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(drawRect(bool)));
+
+     menuItem = new QAction(tr(&quot;Polyline&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(drawPolyline(bool)));
+
+     menuItem = new QAction(tr(&quot;Polygon&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(drawPolygon(bool)));
+
+     menuItem = new QAction(tr(&quot;Circle&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(drawCircle(bool)));
+
+     menuItem = new QAction(tr(&quot;Text&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(drawText(bool)));
+
+     <span class="comment">//**************************************************************</span>
+     subMenuItem = new QMenu(tr(&quot;Route&quot;), this);
+     m_popupMenu-&gt;addMenu(subMenuItem);
+
+     menuItem = new QAction(tr(&quot;Calculate route&quot;), this);
+     subMenuItem-&gt;addAction(menuItem);
+     QObject::connect(menuItem, SIGNAL(triggered(bool)),
+                      this, SLOT(calcRoute(bool)));
+ }
+
+ #define MVTEST_MARK(pos) do { QGeoMapPixmapObject *marker = new QGeoMapPixmapObject(pos, m_markerOffset, m_markerIcon); m_mapWidget-&gt;addMapObject(marker); m_markerObjects.append(marker); } while (0)
+ #define MVTEST_MARK2(lat,lng) MVTEST_MARK(QGeoCoordinate(lat,lng))
+ #define MVTEST_RECT(topleft,bottomright) removePixmaps(); MVTEST_MARK(topleft); MVTEST_MARK(bottomright); drawRect(false);
+ #define MVTEST_RECT2(topleftlat,topleftlng,bottomrightlat,bottomrightlng) MVTEST_RECT(QGeoCoordinate(topleftlat,topleftlng),QGeoCoordinate(bottomrightlat,bottomrightlng))
+ void MainWindow::demo1(bool <span class="comment">/*checked*/</span>)
+ {
+     MVTEST_MARK2(-30, 175);
+     MVTEST_MARK2(-20, 170);
+     MVTEST_MARK2(-25, -175);
+     drawRect(false);
+     drawPolygon(false);
+     drawCircle(false);
+ }
+ void MainWindow::demo2(bool <span class="comment">/*checked*/</span>)
+ {
+     const qreal density = 3; <span class="comment">// 1 object each n degrees lat/lng</span>
+
+     int i = 0;
+     for (qreal lat = -90 + density; lat &lt; 90 - density; lat += density * 3) {
+         for (qreal lng = -180 + density; lng &lt; 180 - density; lng += density * 3) {
+             MVTEST_RECT2(lat - density, lng - density, lat + density, lng + density);
+             i++;
+         }
+     }
+
+     qDebug(&quot;%i items added, %i items total.&quot;, i, m_mapWidget-&gt;mapObjects().count());
+
+     QMessageBox *mb = new QMessageBox(QMessageBox::NoIcon, &quot;MapViewer&quot;, QString::number(i) + &quot; items&quot;);
+     mb-&gt;open();
+
+ }
+ void MainWindow::demo3(bool <span class="comment">/*checked*/</span>)
+ {
+     const qreal density = 10; <span class="comment">// 1 cluster each n degrees lat/lng</span>
+     const qreal clusterSize = 2; <span class="comment">// clusters extend for +/- n degrees lat/lng</span>
+     const qreal clusterDensity = 0.1 * clusterSize; <span class="comment">// 1 object each n degrees lat/lng (as part of a cluster)</span>
+
+     int i = 0;
+     for (qreal latm = -90 + density; latm &lt; 90 - density; latm += density * 3) {
+         for (qreal lngm = -180 + density; lngm &lt; 180 - density; lngm += density * 3) {
+             for (qreal lat = latm - clusterSize + clusterDensity; lat &lt; latm + clusterSize - clusterDensity; lat += clusterDensity * 3) {
+                 for (qreal lng = lngm - clusterSize + clusterDensity; lng &lt; lngm + clusterSize - clusterDensity; lng += clusterDensity * 3) {
+                     MVTEST_RECT2(lat - clusterDensity, lng - clusterDensity, lat + clusterDensity, lng + clusterDensity);
+                     i++;
+                 }
+             }
+         }
+     }
+
+     qDebug(&quot;%i items added, %i items total.&quot;, i, m_mapWidget-&gt;mapObjects().count());
+
+     QMessageBox *mb = new QMessageBox(QMessageBox::NoIcon, &quot;MapViewer&quot;, QString::number(i) + &quot; items&quot;);
+     mb-&gt;open();
+ }
+
+ void MainWindow::drawRect(bool <span class="comment">/*checked*/</span>)
+ {
+     if (m_markerObjects.count() &lt; 2)  return;
+     QGeoMapPixmapObject* p1 = m_markerObjects.at(0);
+     QGeoMapPixmapObject* p2 = m_markerObjects.at(1);
+     QPen pen(Qt::white);
+     pen.setWidth(2);
+     pen.setCosmetic(true);
+     QColor fill(Qt::black);
+     fill.setAlpha(65);
+     QGeoMapRectangleObject *rectangle = new QGeoMapRectangleObject(p1-&gt;coordinate(), p2-&gt;coordinate());
+     rectangle-&gt;setPen(pen);
+     rectangle-&gt;setBrush(QBrush(fill));
+     m_mapWidget-&gt;addMapObject(rectangle);
+ }
+
+ void MainWindow::drawPolyline(bool <span class="comment">/*checked*/</span>)
+ {
+     QList&lt;QGeoCoordinate&gt; path;
+
+     for (int i = 0; i &lt; m_markerObjects.size(); i++) {
+         QGeoMapPixmapObject* p = m_markerObjects.at(i);
+         path.append(p-&gt;coordinate());
+     }
+
+     QPen pen(Qt::white);
+     pen.setWidth(2);
+     pen.setCosmetic(true);
+     QGeoMapPolylineObject *polyline = new QGeoMapPolylineObject();
+     polyline-&gt;setPen(pen);
+     polyline-&gt;setPath(path);
+     m_mapWidget-&gt;addMapObject(polyline);
+ }
+
+ void MainWindow::drawPolygon(bool <span class="comment">/*checked*/</span>)
+ {
+     QList&lt;QGeoCoordinate&gt; path;
+
+     for (int i = 0; i &lt; m_markerObjects.size(); i++) {
+         QGeoMapPixmapObject* p = m_markerObjects.at(i);
+         path.append(p-&gt;coordinate());
+     }
+
+     QPen pen(Qt::white);
+     pen.setWidth(2);
+     pen.setCosmetic(true);
+     QGeoMapPolygonObject *polygon = new QGeoMapPolygonObject();
+     polygon-&gt;setPen(pen);
+     QColor fill(Qt::black);
+     fill.setAlpha(65);
+     polygon-&gt;setBrush(QBrush(fill));
+     polygon-&gt;setPath(path);
+     m_mapWidget-&gt;addMapObject(polygon);
+ }
+
+ void MainWindow::drawCircle(bool <span class="comment">/*checked*/</span>)
+ {
+     if (m_markerObjects.count() &lt; 1) return;
+
+     QGeoMapPixmapObject* p1 = m_markerObjects.at(0);
+
+     <span class="comment">// center of the circle</span>
+     QGeoCoordinate center = p1-&gt;coordinate();
+
+     <span class="comment">// the circle's radius, in meters, defaults to 3000 km</span>
+     qreal radius = 3000000;
+
+     <span class="comment">// if a 2nd marker object is given, evaluate its distance to the first one to get the circle's radius.</span>
+     if (m_markerObjects.count() &gt;= 2) {
+         QGeoMapPixmapObject* p2 = m_markerObjects.at(1);
+
+         radius = center.distanceTo(p2-&gt;coordinate());
+     }
+
+     QPen pen(Qt::white);
+     pen.setWidth(2);
+     pen.setCosmetic(true);
+     QGeoMapCircleObject *circle = new QGeoMapCircleObject(center, radius);
+     circle-&gt;setPen(pen);
+     QColor fill(Qt::black);
+     fill.setAlpha(65);
+     circle-&gt;setBrush(QBrush(fill));
+     m_mapWidget-&gt;addMapObject(circle);
+
+     m_mapWidget-&gt;lastCircle = circle;
+ }
+
+ void MainWindow::drawText(bool <span class="comment">/*checked*/</span>)
+ {
+     if (m_markerObjects.count() &lt; 1) return;
+
+     QGeoMapPixmapObject* p1 = m_markerObjects.at(0);
+
+     <span class="comment">// start of the text</span>
+     QGeoCoordinate start = p1-&gt;coordinate();
+
+     QGeoMapTextObject *text = new QGeoMapTextObject(start, QString(&quot;text&quot;));
+
+     QColor fill(Qt::black);
+     text-&gt;setBrush(QBrush(fill));
+     m_mapWidget-&gt;addMapObject(text);
+ }
+
+ void MainWindow::drawPixmap(bool <span class="comment">/*checked*/</span>)
+ {
+     QGeoMapPixmapObject *marker = new QGeoMapPixmapObject(m_mapWidget-&gt;screenPositionToCoordinate(m_lastClicked),
+             m_markerOffset, m_markerIcon);
+     m_mapWidget-&gt;addMapObject(marker);
+     m_markerObjects.append(marker);
+ }
+
+ void MainWindow::removePixmaps()
+ {
+     while (m_markerObjects.size() &gt; 0) {
+         QGeoMapPixmapObject *marker = m_markerObjects.takeFirst();
+         m_mapWidget-&gt;removeMapObject(marker);
+         marker-&gt;deleteLater();
+     }
+ }
+
+ void MainWindow::customContextMenuRequest(const QPoint&amp; point)
+ {
+     m_lastClicked = point;
+ #ifdef Q_OS_SYMBIAN
+     <span class="comment">// Work around a bug with QGraphicsView's customContextMenuRequested signal on Symbian</span>
+     <span class="comment">// TODO: adjust this #ifdef, so it doesn't break with versions that fix the bug</span>
+     m_lastClicked -= m_qgv-&gt;geometry().topLeft();
+ #endif
+
+     if (focusWidget() == m_qgv) {
+
+         if (!m_popupMenu)
+             createMenus();
+
+         m_popupMenu-&gt;popup(m_qgv-&gt;mapToGlobal(m_lastClicked));
+     }
+ }
+
+ enum MapShapeType {
+     SHAPE_BALLOON = 0,
+     SHAPE_STAR = 1
+ };
+
+ QPair&lt;QPixmap, QPoint&gt; makeStandardMarker(MapShapeType shapeType, const QString &amp; text, const QPen &amp; pen, const QPen &amp; textPen, const QBrush &amp; brush)
+ {
+     QString svgTemplate;
+     QPoint offset;
+     switch (shapeType) {
+         case SHAPE_BALLOON:
+             svgTemplate = &quot;&lt;svg&gt;&quot;
+                           &quot;&lt;path &quot;
+                           &quot;style=\&quot;fill:#000000;fill-opacity:.4\&quot; &quot;
+                           &quot;d=\&quot;m 18.948,33.432051 c 0,1.41694 -2.238,2.567949 -5,2.567949 -2.762,0 -5,-1.151009 -5,-2.567949 0,-1.416939 2.238,-2.567948 5,-2.567948 2.762,-0.002 5,1.149994 5,2.567948\&quot; &quot;
+                           &quot;/&gt;&quot;
+                           &quot;&lt;path &quot;
+                           &quot;style=\&quot;fill:#666\&quot; &quot;
+                           &quot;d=\&quot;M 14 0 C 6.28 0 0 6.3348796 0 14.125 C 0 16.209809 0.4425 18.209911 1.3125 20.09375 L 1.84375 21.125 C 2.96275 23.084964 12.2565 32.190555 13.3125 33.21875 L 14 33.875 L 14.6875 33.21875 C 15.7435 32.188525 25.026 23.109909 26.125 21.1875 L 26.65625 20.15625 C 27.54825 18.225721 28 16.204734 28 14.125 C 28.001 6.3348796 21.72 0 14 0 z M 14 0.90625 C 21.175 0.90625 27 6.7640687 27 14 C 27 15.982294 26.55825 17.873541 25.78125 19.5625 L 25.28125 20.53125 C 24.22125 22.386669 14 32.375 14 32.375 C 14 32.375 3.77875 22.387684 2.71875 20.53125 L 2.21875 19.5625 C 1.43975 17.875571 1 15.982294 1 14 C 1 6.7640687 6.823 0.90625 14 0.90625 z \&quot; &quot;
+                           &quot;/&gt;&quot;
+                           &quot;&lt;path &quot;
+                           &quot;style=\&quot;fill:#fff\&quot; &quot;
+                           &quot;d=\&quot;M 14 0.90625 C 6.823 0.90625 1 6.7640687 1 14 C 1 15.982294 1.43975 17.875571 2.21875 19.5625 L 2.71875 20.53125 C 3.77875 22.387684 14 32.375 14 32.375 C 14 32.375 24.22125 22.386669 25.28125 20.53125 L 25.78125 19.5625 C 26.55825 17.873541 27 15.982294 27 14 C 27 6.7640687 21.175 0.90625 14 0.90625 z M 14 1.90625 C 20.616 1.90625 26 7.3294234 26 14 C 25.910217 16.115917 25.491329 18.196844 24.40625 20.03125 C 23.776565 21.248455 17.937 27.075427 14 30.9375 C 10.063 27.075427 4.206579 21.245609 3.59375 20.0625 C 2.614452 18.171896 1.90079 16.186259 2 14 C 2 7.3294234 7.383 1.90625 14 1.90625 z \&quot; &quot;
+                           &quot;/&gt;&quot;
+                           &quot;&lt;path &quot;
+                           &quot;style=\&quot;fill:%brush%;fill-opacity:%brushOpacity%\&quot; &quot;
+                           &quot;d=\&quot;m 13.996268,1.9105251 c -6.617,0 -12.001,5.4261873 -12.001,12.0967639 -0.09921,2.186259 0.631702,4.174018 1.611,6.064622 0.612829,1.183109 6.453,7.017707 10.39,10.87978 3.937,-3.862073 9.777315,-9.70013 10.407,-10.917335 1.085079,-1.834406 1.503217,-3.91115 1.593,-6.027067 0,-6.6705766 -5.384,-12.0967639 -12,-12.0967639 l 0,0 z\&quot; &quot;
+                           &quot;/&gt;&quot;
+                           &quot;&lt;path style=\&quot;fill:#ffffff;fill-opacity:0.7\&quot; &quot;
+                           &quot;d=\&quot;M 20.968528,6.089997 C 17.785074,3.5240085 13.725682,2.5379787 11.919627,3.8924751 11.436514,4.2548035 11.151528,4.750748 11.073071,5.3665525 c 4.1092,0.6284223 7.111478,2.6511761 8.521564,4.4853881 2.388133,3.1064364 1.967904,3.9515754 1.967904,3.9515754 0.774274,-0.0387 1.422004,-0.242256 1.904023,-0.603757 1.806055,-1.354497 0.684944,-4.5441591 -2.498034,-7.109762 l 0,0 z\&quot; &quot;
+                           &quot;/&gt;&quot;
+                           &quot;&lt;text &quot;
+                           &quot;x=\&quot;14\&quot; y=\&quot;19\&quot; &quot;
+                           &quot;font-size=\&quot;10pt\&quot; font-family=\&quot;arial\&quot; font-weight=\&quot;bold\&quot; text-anchor=\&quot;middle\&quot; &quot;
+                           &quot;fill=\&quot;%textPen%\&quot; &quot;
+                           &quot;textContent = \&quot;%textContent%\&quot;&quot;
+                           &quot;&gt;&quot;
+                           &quot;%text%&quot;
+                           &quot;&lt;/text&gt;&quot;
+                           &quot;&lt;/svg&gt;&quot;;
+             offset = QPoint(-14, -34);
+             break;
+
+         case SHAPE_STAR:
+             svgTemplate = &quot;&lt;svg&gt;&lt;path style=\&quot;fill:%brush%;fill-opacity:%brushOpacity%\&quot; d=\&quot;M 16.00663,.0000019037492 C 7.1692812,.0000019037492 0,7.1692841 0,16.006632 0,24.843981 7.1692812,32 16.00663,32 24.84398,32 32,24.843981 32,16.006632 32,7.1692841 24.84398,.0000019037492 16.00663,.0000019037492 z M 15.847492,0.39784686 L 19.136344,11.484461 30.766679,10.993786 21.178615,17.544966 25.236635,28.379612 16.00663,21.324494 6.8959804,28.512225 10.794861,17.624536 1.1007042,11.232493 12.73104,11.537507 15.847492,0.39784686 z\&quot; /&gt;&lt;path style=\&quot;fill:%pen%;fill-opacity:%penOpacity%\&quot; d=\&quot;M 15.847492,0.39784686 L 19.136344,11.484461 30.766679,10.993786 21.178615,17.544966 25.236635,28.379612 16.00663,21.324494 6.8959804,28.512225 10.794861,17.624536 1.1007042,11.232493 12.73104,11.537507 15.847492,0.39784686 z\&quot; /&gt;&lt;text x=\&quot;16\&quot; y=\&quot;20\&quot; font-size=\&quot;10pt\&quot; font-family=\&quot;arial\&quot; font-weight=\&quot;bold\&quot; text-anchor=\&quot;middle\&quot; fill=\&quot;%textPen%\&quot; textContent = \&quot;%textContent%\&quot;&gt;%text%&lt;/text&gt;&lt;/svg&gt;&quot;;
+             offset = QPoint(-16, -16);
+             break;
+     }
+
+     svgTemplate.replace(&quot;%text%&quot;, text, Qt::CaseSensitive);
+     svgTemplate.replace(&quot;%pen%&quot;, pen.color().name(), Qt::CaseSensitive);
+     svgTemplate.replace(&quot;%penOpacity%&quot;, QString::number(pen.color().alpha() / 255.0), Qt::CaseSensitive);
+     svgTemplate.replace(&quot;%textPen%&quot;, textPen.color().name(), Qt::CaseSensitive);
+     svgTemplate.replace(&quot;%brush%&quot;, brush.color().name(), Qt::CaseSensitive);
+     svgTemplate.replace(&quot;%brushOpacity%&quot;, QString::number(brush.color().alpha() / 255.0), Qt::CaseSensitive);
+     svgTemplate.replace(&quot;%textContent%&quot;, &quot;&quot;, Qt::CaseSensitive);
+
+     QSvgRenderer renderer(svgTemplate.toAscii());
+     QPixmap pixmap(renderer.defaultSize());
+     pixmap.fill(QColor(0, 0, 0, 0));
+     QPainter painter(&amp;pixmap);
+     renderer.render(&amp;painter);
+
+     return qMakePair(pixmap, offset);
+ }
+
+ void MainWindow::createPixmapIcon()
+ {
+     QPair&lt;QPixmap, QPoint&gt; markerPair = makeStandardMarker(SHAPE_BALLOON, &quot;&quot;, QPen(), QPen(QColor(Qt::white)), QBrush(QColor(0, 0, 136)));
+     m_markerIcon = markerPair.first;
+     m_markerOffset = markerPair.second;
+ }
+
+ void MainWindow::calcRoute(bool <span class="comment">/*checked*/</span>)
+ {
+     if (m_markerObjects.count() &lt; 2)
+         return;
+
+     QList&lt;QGeoCoordinate&gt; waypoints;
+
+     for (int i = 0; i &lt; m_markerObjects.count(); i++) {
+         QGeoMapPixmapObject* p = m_markerObjects.at(i);
+         waypoints.append(p-&gt;coordinate());
+     }
+
+     QGeoRouteRequest req(waypoints);
+     QGeoRouteReply *reply = m_routingManager-&gt;calculateRoute(req);
+
+     QObject::connect(reply, SIGNAL(finished()),
+                      this, SLOT(routeFinished()));
+ }
+
+ void MainWindow::routeFinished()
+ {
+     QGeoRouteReply *reply = static_cast&lt;QGeoRouteReply*&gt;(sender());
+
+     if (!reply)
+         return;
+
+     if (reply-&gt;routes().size() &lt; 1)
+         return;
+
+     QGeoMapRouteObject *route = new QGeoMapRouteObject(reply-&gt;routes().at(0));
+     QColor routeColor(Qt::blue);
+     routeColor.setAlpha(127); <span class="comment">//semi-transparent</span>
+     QPen pen(routeColor);
+     pen.setWidth(7);
+     pen.setCosmetic(true);
+     pen.setCapStyle(Qt::RoundCap);
+     route-&gt;setPen(pen);
+     m_mapWidget-&gt;addMapObject(route);
+ }
+
+ void MainWindow::selectObjects()
+ {
+     QList&lt;QGeoMapObject*&gt; allObjects = m_mapWidget-&gt;mapObjects();
+     for (int i = 0; i &lt; allObjects.size(); ++i)
+         allObjects[i]-&gt;setSelected(false);
+
+     if (m_markerObjects.count() &lt; 2)
+         return;
+
+     QGeoMapPixmapObject* bottomRight = m_markerObjects.takeLast();
+     QGeoMapPixmapObject* topLeft = m_markerObjects.takeLast();
+     m_mapWidget-&gt;removeMapObject(topLeft);
+     m_mapWidget-&gt;removeMapObject(bottomRight);
+
+     QList&lt;QGeoMapObject*&gt; selectedObjects = m_mapWidget-&gt;mapObjectsInScreenRect(
+                                                 QRectF(m_mapWidget-&gt;coordinateToScreenPosition(topLeft-&gt;coordinate()),
+                                                        m_mapWidget-&gt;coordinateToScreenPosition(bottomRight-&gt;coordinate()))
+                                             );
+     for (int i = 0; i &lt; selectedObjects.size(); ++i)
+         selectedObjects[i]-&gt;setSelected(true);
+ }
+
+ void MainWindow::networkSessionOpened()
+ {
+     QString urlEnv = QProcessEnvironment::systemEnvironment().value(&quot;http_proxy&quot;);
+     if (!urlEnv.isEmpty()) {
+         QUrl url = QUrl(urlEnv, QUrl::TolerantMode);
+         QNetworkProxy proxy;
+         proxy.setType(QNetworkProxy::HttpProxy);
+         proxy.setHostName(url.host());
+         proxy.setPort(url.port(8080));
+         QNetworkProxy::setApplicationProxy(proxy);
+     } else
+         QNetworkProxyFactory::setUseSystemConfiguration(true);
+
+     setProvider(&quot;nokia&quot;);
+     <span class="comment">// finalize ui setup</span>
+     setupUi();
+ }
+
+ void MainWindow::error(QNetworkSession::SessionError error)
+ {
+     if (error == QNetworkSession::UnknownSessionError) {
+         if (m_session-&gt;state() == QNetworkSession::Connecting) {
+             QMessageBox msgBox(qobject_cast&lt;QWidget *&gt;(parent()));
+             msgBox.setText(&quot;This application requires network access to function.&quot;);
+             msgBox.setInformativeText(&quot;Press Cancel to quit the application.&quot;);
+             msgBox.setIcon(QMessageBox::Information);
+             msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
+             msgBox.setDefaultButton(QMessageBox::Retry);
+             int ret = msgBox.exec();
+             if (ret == QMessageBox::Retry) {
+                 QTimer::singleShot(0, m_session, SLOT(open()));
+             } else if (ret == QMessageBox::Cancel) {
+                 close();
+             }
+         }
+     } else if (error == QNetworkSession::SessionAbortedError) {
+         QMessageBox msgBox(qobject_cast&lt;QWidget *&gt;(parent()));
+         msgBox.setText(&quot;Out of range of network.&quot;);
+         msgBox.setInformativeText(&quot;Move back into range and press Retry, or press Cancel to quit the application.&quot;);
+         msgBox.setIcon(QMessageBox::Warning);
+         msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
+         msgBox.setDefaultButton(QMessageBox::Retry);
+         int ret = msgBox.exec();
+         if (ret == QMessageBox::Retry) {
+             QTimer::singleShot(0, m_session, SLOT(open()));
+         } else if (ret == QMessageBox::Cancel) {
+             close();
+         }
+     }
+ }</pre>
+</div>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>

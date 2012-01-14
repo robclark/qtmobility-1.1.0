@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en_US" lang="en_US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdeclarativecontactmodel.cpp -->
+  <title>Qt Mobility 1.1: QML ContactModel Element</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"
+ />  <!--[if IE]>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta http-equiv="imagetoolbar" content="no">
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="style/style_ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/style_ie8.css">
+<![endif]-->
+  <script src="scripts/jquery.js" type="text/javascript"></script>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+ <script src="./scripts/superfish.js" type="text/javascript"></script>
+ <script src="./scripts/narrow.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style/superfish.css" />  <link rel="stylesheet" type="text/css" href="style/narrow.css" /></head>
+<body class="" onload="CheckEmptyAndLoadList();">
+ <div class="header" id="qtdocheader">
+    <div class="content"> 
+    <div id="nav-logo">
+      <a href="index.html">Home</a></div>
+    <a href="index.html" class="qtref"><span>Qt Mobility Reference Documentation</span></a>
+		<div id="narrowsearch"><form onsubmit="return false;" action="" id="qtdocsearchTop">
+		<fieldset>
+		<input type="text" value="" id="pageType2" name="searchstring"/>
+		 </fieldset>
+		</form></div>
+    <div id="nav-topright">
+      <ul>
+        <li class="nav-topright-home"><a href="http://qt.nokia.com/">Qt HOME</a></li>
+        <li class="nav-topright-dev"><a href="http://developer.qt.nokia.com/">DEV</a></li>
+        <li class="nav-topright-labs"><a href="http://labs.qt.nokia.com/blogs/">LABS</a></li>
+        <li class="nav-topright-doc nav-topright-doc-active"><a href="http://doc.qt.nokia.com/">
+          DOC</a></li>
+        <li class="nav-topright-blog"><a href="http://blog.qt.nokia.com/">BLOG</a></li>
+      </ul>
+    </div>
+    <div id="shortCut">
+      <ul>
+        <li class="shortCut-topleft-inactive"><span><a href="index.html">Mobility 1.1</a></span></li>
+        <li class="shortCut-topleft-active"><a href="http://doc.qt.nokia.com">ALL VERSIONS        </a></li>
+      </ul>
+     </div>
+ <ul class="sf-menu sf-js-enabled sf-shadow" id="narrowmenu"> 
+		 <li><a href="#">API Lookup</a> 
+			 <ul id="topmenuLook"> 
+			   <li><a href="classes.html">Class index</a></li> 
+ 			  <li><a href="functions.html">Function index</a></li> 
+			   <li><a href="modules.html">Modules</a></li> 
+			   </ul> 
+		 </li> 
+		 <li><a href="#">Examples</a> 
+			 <ul id="topmenuexample"> 
+				 <li><a href="all-examples.html">Examples</a></li> 
+			 </ul> 
+		 </li> 
+ </ul> 
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="hd">
+      <span></span>
+    </div>
+    <div class="bd group">
+      <div class="sidebar">
+        <div class="searchlabel">
+          Search index:</div>
+        <div class="search">
+          <form id="qtdocsearch" action="" onsubmit="return false;">
+            <fieldset>
+              <input type="text" name="searchstring" id="pageType" value="" />
+            </fieldset>
+          </form>
+        </div>
+        <div class="box first bottombar" id="lookup">
+          <h2 title="API Lookup"><span></span>
+            API Lookup</h2>
+          <div  id="list001" class="list">
+          <ul id="ul001" >
+              <li class="defaultLink"><a href="classes.html">Class index</a></li>
+              <li class="defaultLink"><a href="functions.html">Function index</a></li>
+              <li class="defaultLink"><a href="modules.html">Modules</a></li>
+              <li class="defaultLink"><a href="index.html#platform-compatibility">Platform Compatibility</a></li>
+              <li class="defaultLink"><a href="qml-plugins.html">QML Plugins</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="box bottombar" id="topics">
+          <h2 title="Qt Topics"><span></span>
+            Qt Topics</h2>
+          <div id="list002" class="list">
+            <ul id="ul002" >
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/">Qt 4.7</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-basic-concepts.html">Basic Qt architecture</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/declarativeui.html">Device UI's &amp; Qt Quick</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/qt-gui-concepts.html">Desktop UI components</a></li>
+              <li class="defaultLink"><a href="http://doc.qt.nokia.com/4.7-snapshot/platform-specific.html">Platform-specific info</a></li>
+            </ul>  
+          </div>
+        </div>
+        <div class="box" id="examples">
+          <h2 title="Examples"><span></span>
+            Examples</h2>
+          <div id="list003" class="list">
+        <ul id="ul003">
+              <li class="defaultLink"><a href="all-examples.html">Examples</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="toolbar">
+          <div class="breadcrumb toolblock">
+            <ul>
+              <li class="first"><a href="index.html">Home</a></li>
+              <!--  Bread crumbs goes here -->
+              <li><a href="qdeclarativeelements.html">QML Elements</a></li>              <li>QML ContactModel Element</li>            </ul>
+          </div>
+          <div class="toolbuttons toolblock">
+            <ul>
+              <li id="smallA" class="t_button">A</li>
+              <li id="medA" class="t_button active">A</li>
+              <li id="bigA" class="t_button">A</li>
+              <li id="print" class="t_button"><a href="javascript:this.print();">
+                <span>Print</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="content">
+<h1 class="title">QML ContactModel Element</h1>
+<span class="subtitle"></span>
+<p>The ContactModel element provides access to contacts from the contacts store. <a href="#details">More...</a></p>
+<a name="Propertiesx"></a>
+<h2>Properties</h2>
+<table class="qmlsummary">
+<tr class="odd topAlign"><ul>
+<li class="fn"><b><b><a href="qml-contactmodel.html#autoUpdate-prop">autoUpdate</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#availableManagers-prop">availableManagers</a></b></b> : list&lt;string&gt;</li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#contacts-prop">contacts</a></b></b> : QDeclarativeListProperty</li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#error-prop">error</a></b></b> : string</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><b><a href="qml-contactmodel.html#fetchHint-prop">fetchHint</a></b></b> : FetchHint</li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#filter-prop">filter</a></b></b> : Filter</li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#manager-prop">manager</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#sortOrders-prop">sortOrders</a></b></b> : QDeclarativeListProperty</li>
+</ul>
+</td></tr>
+</table>
+<a name="Methods"></a>
+<h2>Methods</h2>
+<tr class="even topAlign"><ul>
+<li class="fn"><b><b><a href="qml-contactmodel.html#exportContacts-method">exportContacts</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#fetchContacts-method">fetchContacts</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#importContacts-method">importContacts</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#removeContact-method">removeContact</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#removeContacts-method">removeContacts</a></b></b></li>
+<li class="fn"><b><b><a href="qml-contactmodel.html#saveContact-method">saveContact</a></b></b></li>
+</ul>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>This element is part of the <b>QtMobility.contacts 1.1</b> module.</p>
+<p>ContactModel provides a model of contacts from the contacts store. The contents of the model can be specified with <a href="qml-contactmodel.html#filter-prop">filter</a>, <a href="qml-contactmodel.html#sortOrders-prop">sortOrders</a> and <a href="qml-contactmodel.html#fetchHint-prop">fetchHint</a> properties. Whether the model is automatically updated when the store or <a href="qml-contactmodel.html#contacts-prop">contacts</a> changes, can be controlled with <a href="qml-contactmodel.html#autoUpdate-prop">ContactModel::autoUpdate</a> property.</p>
+<p>There are two ways of accessing the contact data: via model by using views and delegates, or alternatively via <a href="qml-contactmodel.html#contacts-prop">contacts</a> list property. Of the two, the model access is preferred. Direct list access (i.e&#x2e; non-model) is not guaranteed to be in order set by <a href="location-overview.html#sortorders">sortOrder</a>.</p>
+<p>At the moment the model roles provided by ContactModel are display, decoration and <tt>contact</tt>. Through the <tt>contact</tt> role can access any data provided by the Contact element.</p>
+<p>See also <a href="qml-relationshipmodel.html">RelationshipModel</a>, <a href="qml-contact.html">Contact</a>, and <a href="qcontactmanager.html">QContactManager</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="autoUpdate-prop"></a>autoUpdate : bool</td></tr></table></div><div class="qmldoc"><p>This property indicates whether or not the contact model should be updated automatically, default value is true.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="availableManagers-prop"></a><span class="qmlreadonly">read-only</span>availableManagers : list&lt;string&gt;</td></tr></table></div><div class="qmldoc"><p>This property holds the list of available manager names. This property is read only.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="contacts-prop"></a><span class="qmlreadonly">read-only</span>contacts : QDeclarativeListProperty</td></tr></table></div><div class="qmldoc"><p>This property holds a list of contacts.</p>
+<p>See also <a href="qml-contact.html">Contact</a>.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="error-prop"></a><span class="qmlreadonly">read-only</span>error : string</td></tr></table></div><div class="qmldoc"><p>This property holds the latest error code returned by the contact manager.</p>
+<p>This property is read only.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="fetchHint-prop"></a>fetchHint : <a href="qml-fetchhint.html">FetchHint</a></td></tr></table></div><div class="qmldoc"><p>This property holds the fetch hint instance used by the contact model.</p>
+<p>See also <a href="qml-fetchhint.html">FetchHint</a>.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="filter-prop"></a>filter : <a href="qml-filter.html">Filter</a></td></tr></table></div><div class="qmldoc"><p>This property holds the filter instance used by the contact model.</p>
+<p>See also <a href="qml-filter.html">Filter</a>.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="manager-prop"></a>manager : string</td></tr></table></div><div class="qmldoc"><p>This property holds the manager uri of the contact backend engine.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="sortOrders-prop"></a><span class="qmlreadonly">read-only</span>sortOrders : QDeclarativeListProperty</td></tr></table></div><div class="qmldoc"><p>This property holds a list of sort orders used by the organizer model.</p>
+<p>See also <a href="qml-sortorder.html">SortOrder</a>.</p>
+</div></div><br/>
+<h2>Method Documentation</h2>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="exportContacts-method"></a>ContactModel::exportContacts ( url <i>url</i>, list&lt;string&gt; <i>profiles</i> )</p></td></tr></table></div><div class="qmldoc"><p>Export contacts into a vcard file to the given <i>url</i> by optional <i>profiles</i>. At the moment only the local file url is supported in export method.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="fetchContacts-method"></a>ContactModel::fetchContacts ( list&lt;int&gt; <i>contactIds</i> )</p></td></tr></table></div><div class="qmldoc"><p>Fetch a list of contacts from the contacts store by given <i>contactIds</i>.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="importContacts-method"></a>ContactModel::importContacts ( url <i>url</i>, list&lt;string&gt; <i>profiles</i> )</p></td></tr></table></div><div class="qmldoc"><p>Import contacts from a vcard by the given <i>url</i> and optional <i>profiles</i>.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="removeContact-method"></a>ContactModel::removeContact ( int <i>contactId</i> )</p></td></tr></table></div><div class="qmldoc"><p>Remove the contact from the contacts store by given <i>contactId</i>.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="removeContacts-method"></a>ContactModel::removeContacts ( list&lt;int&gt; <i>contactIds</i> )</p></td></tr></table></div><div class="qmldoc"><p>Remove the list of contacts from the contacts store by given <i>contactIds</i>.</p>
+</div></div><br/>
+<div class="qmlitem"><div class="qmlproto"><table class="qmlname"><tr class="odd"><td><p><a name="saveContact-method"></a>ContactModel::saveContact ( <a href="qml-contact.html">Contact</a> <i>contact</i> )</p></td></tr></table></div><div class="qmldoc"><p>Save the given <i>contact</i> into the contacts store. Once saved successfully, the dirty flags of this contact will be reset.</p>
+<p>See also <a href="qml-contact.html#modified-prop">Contact::modified</a>.</p>
+</div></div><br/>
+        <!-- /div -->
+        <div class="feedback t_button">
+          [+] Documentation Feedback</div>
+      </div>
+    </div>
+    <div class="ft">
+      <span></span>
+    </div>
+  </div> 
+  </div> 
+  <div class="footer">
+    <p>
+      <acronym title="Copyright">&copy;</acronym> 2008-2010 Nokia Corporation and/or its
+      subsidiaries. Nokia, Qt and their respective logos are trademarks of Nokia Corporation 
+      in Finland and/or other countries worldwide.</p>
+    <p>
+      All other trademarks are property of their respective owners. <a title="Privacy Policy"
+        href="http://qt.nokia.com/about/privacy-policy">Privacy Policy</a></p>
+  </div>
+  <div id="feedbackBox">
+      <div id="feedcloseX" class="feedclose t_button">X</div>
+    <form id="feedform" action="http://doc.qt.nokia.com/docFeedbck/feedback.php" method="get">
+      <p id="noteHead">Thank you for giving your feedback.</p> <div class="note"><p>Make sure it is related to this specific page. For more general bugs and 
+      requests, please use the <a href="http://bugreports.qt.nokia.com/secure/Dashboard.jspa">Qt Bug Tracker</a>.</p></div>
+      <p><textarea id="feedbox" name="feedText" rows="5" cols="40"></textarea></p>
+      <p><input id="feedsubmit" class="feedclose" type="submit" name="feedback" /></p>
+    </form>
+  </div>
+  <div id="blurpage">
+  </div>
+  </div>
+  <script src="scripts/functions.js" type="text/javascript"></script>
+</body>
+</html>
