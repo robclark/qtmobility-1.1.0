@@ -55,7 +55,7 @@
 
 #include "qvideosurfacegstsink.h"
 
-//#define DEBUG_VIDEO_SURFACE_SINK
+#define DEBUG_VIDEO_SURFACE_SINK
 
 
 Q_DECLARE_METATYPE(QVideoSurfaceFormat)
@@ -511,7 +511,7 @@ gboolean QVideoSurfaceGstSink::set_caps(GstBaseSink *base, GstCaps *caps)
 
 #ifdef DEBUG_VIDEO_SURFACE_SINK
     qDebug() << "set_caps:";
-    qDebug() << gst_caps_to_string(caps);
+    qDebug() << gst_caps_to_string(caps);  // XXX memory leak??
 #endif
 
     if (!caps) {

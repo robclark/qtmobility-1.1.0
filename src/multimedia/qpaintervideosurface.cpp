@@ -1600,6 +1600,7 @@ QPainterVideoSurface::ShaderType QPainterVideoSurface::shaderType() const
 */
 void QPainterVideoSurface::setShaderType(ShaderType type)
 {
+    qDebug() << "setShaderType:" << type << ", supported:" << (type & m_shaderTypes);
     if (!(type & m_shaderTypes))
         type = NoShaders;
 
@@ -1649,6 +1650,7 @@ void QPainterVideoSurface::createPainter()
 #endif
 
 #if !defined(QT_NO_OPENGL) && !defined(QT_OPENGL_ES_1_CL) && !defined(QT_OPENGL_ES_1)
+    qDebug() << "shaderType:" << m_shaderType;
     switch (m_shaderType) {
 #ifndef QT_OPENGL_ES
     case FragmentProgramShader:
@@ -1667,6 +1669,7 @@ void QPainterVideoSurface::createPainter()
         break;
     }
 #else
+#error "doh!!"
     m_painter = new QVideoSurfaceGenericPainter;
 #endif
 }
