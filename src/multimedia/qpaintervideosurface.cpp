@@ -1271,6 +1271,385 @@ QAbstractVideoSurface::Error QVideoSurfaceGlslPainter::paint(
     return QVideoSurfaceGLPainter::paint(target, painter, source);
 }
 
+#define HAS_EGLIMAGE     // TODO figure out how to detect this..
+#define HAS_TI_EGLIMAGE  // TODO figure out how to detect this..
+
+#ifdef HAS_EGLIMAGE
+
+#ifdef HAS_TI_EGLIMAGE
+#ifndef EGL_TI_raw_video
+#  define EGL_TI_raw_video 1
+#  define EGL_RAW_VIDEO_TI                      0x333A  /* eglCreateImageKHR target */
+#  define EGL_GL_VIDEO_FOURCC_TI                0x3331  /* eglCreateImageKHR attribute */
+#  define EGL_GL_VIDEO_WIDTH_TI                 0x3332  /* eglCreateImageKHR attribute */
+#  define EGL_GL_VIDEO_HEIGHT_TI                0x3333  /* eglCreateImageKHR attribute */
+#  define EGL_GL_VIDEO_BYTE_STRIDE_TI           0x3334  /* eglCreateImageKHR attribute */
+#  define EGL_GL_VIDEO_BYTE_SIZE_TI             0x3335  /* eglCreateImageKHR attribute */
+#  define EGL_GL_VIDEO_YUV_FLAGS_TI             0x3336  /* eglCreateImageKHR attribute */
+#endif
+#endif
+
+#ifndef EGLIMAGE_FLAGS_YUV_CONFORMANT_RANGE
+#  define EGLIMAGE_FLAGS_YUV_CONFORMANT_RANGE (0 << 0)
+#  define EGLIMAGE_FLAGS_YUV_FULL_RANGE       (1 << 0)
+#  define EGLIMAGE_FLAGS_YUV_BT601            (0 << 1)
+#  define EGLIMAGE_FLAGS_YUV_BT709            (1 << 1)
+#endif
+
+
+#include <EGL/egl.h>
+#include <EGL/eglext.h>
+#include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
+
+static const char *qt_glsl_eglImageShaderProgram =
+        "#extension GL_OES_EGL_image_external : require\n"
+        "precision mediump float;\n"
+        "uniform samplerExternalOES tex;\n"
+        "varying vec2 textureCoord;\n"
+        "void main()\n"
+        "{\n"
+        "    gl_FragColor = texture2D(tex, textureCoord.st);\n"
+        "}\n";
+
+class QVideoSurfaceEglImagePainter : public QVideoSurfaceGLPainter
+{
+public:
+    QVideoSurfaceEglImagePainter(QGLContext *context);
+
+    QAbstractVideoSurface::Error start(const QVideoSurfaceFormat &format);
+    void stop();
+
+    QAbstractVideoSurface::Error paint(
+            const QRectF &target, QPainter *painter, const QRectF &source);
+
+    QAbstractVideoSurface::Error setCurrentFrame(const QVideoFrame &frame);
+
+private:
+#define QUEUE_SIZE 2
+    struct {
+        QVideoFrame frame;
+        EGLImageKHR img;
+    } m_bufferQueue[QUEUE_SIZE];
+    int m_bufferQueueIndex;
+    void flushQueue(bool del);
+    QGLShaderProgram m_program;
+    QSize m_frameSize;
+    PFNEGLCREATEIMAGEKHRPROC m_eglCreateImageKHR;
+    PFNEGLDESTROYIMAGEKHRPROC m_eglDestroyImageKHR;
+    PFNGLEGLIMAGETARGETTEXTURE2DOESPROC m_glEGLImageTargetTexture2DOES;
+};
+
+QVideoSurfaceEglImagePainter::QVideoSurfaceEglImagePainter(QGLContext *context)
+    : QVideoSurfaceGLPainter(context)
+    , m_program(context)
+{
+	/* TODO.. probably more formats supported.. ideally we'd get this info
+	 * from the extension used to create the eglImage..
+	 */
+    m_imagePixelFormats
+            << QVideoFrame::Format_NV12
+            << QVideoFrame::Format_YV12
+            << QVideoFrame::Format_YUV420P;
+    m_glPixelFormats
+            << QVideoFrame::Format_RGB32
+            << QVideoFrame::Format_ARGB32;
+
+    m_eglCreateImageKHR = (PFNEGLCREATEIMAGEKHRPROC)
+        eglGetProcAddress("eglCreateImageKHR");
+    m_eglDestroyImageKHR = (PFNEGLDESTROYIMAGEKHRPROC)
+        eglGetProcAddress("eglDestroyImageKHR");
+    m_glEGLImageTargetTexture2DOES =
+                (PFNGLEGLIMAGETARGETTEXTURE2DOESPROC)eglGetProcAddress("glEGLImageTargetTexture2DOES");
+
+    flushQueue(false);
+}
+
+QAbstractVideoSurface::Error QVideoSurfaceEglImagePainter::start(const QVideoSurfaceFormat &format)
+{
+    Q_ASSERT(m_textureCount == 0);
+
+    QAbstractVideoSurface::Error error = QAbstractVideoSurface::NoError;
+
+    m_context->makeCurrent();
+
+    /* all eglImage formats use the same shader, and just a single texture..
+     * the shader uses the samplerExternalOES texture sampler which under
+     * the hood handles the YUV->RGB conversion in a way that is optimal
+     * for the gpu..
+     */
+    m_textureCount = 1;
+
+
+    if (!m_program.addShaderFromSourceCode(QGLShader::Vertex, qt_glsl_vertexShaderProgram)) {
+        qWarning("QPainterVideoSurface: Vertex shader compile error %s",
+                 qPrintable(m_program.log()));
+        error = QAbstractVideoSurface::ResourceError;
+    } else if (!m_program.addShaderFromSourceCode(QGLShader::Fragment, qt_glsl_eglImageShaderProgram)) {
+        qWarning("QPainterVideoSurface: Shader compile error %s", qPrintable(m_program.log()));
+        error = QAbstractVideoSurface::ResourceError;
+        m_program.removeAllShaders();
+    } else if(!m_program.link()) {
+        qWarning("QPainterVideoSurface: Shader link error %s", qPrintable(m_program.log()));
+        m_program.removeAllShaders();
+        error = QAbstractVideoSurface::ResourceError;
+    } else {
+        m_handleType = format.handleType();
+        m_scanLineDirection = format.scanLineDirection();
+        m_frameSize = format.frameSize();
+        m_colorSpace = format.yCbCrColorSpace();
+
+        if (m_handleType == QAbstractVideoBuffer::NoHandle)
+            glGenTextures(m_textureCount, m_textureIds);
+    }
+
+    return error;
+}
+
+// TODO: almost same as QVideoSurfaceGlslPainter::stop().. pull up to common base class!
+void QVideoSurfaceEglImagePainter::stop()
+{
+    if (m_context) {
+        m_context->makeCurrent();
+
+        if (m_handleType != QAbstractVideoBuffer::GLTextureHandle)
+            glDeleteTextures(m_textureCount, m_textureIds);
+    }
+
+    m_program.removeAllShaders();
+
+    m_textureCount = 0;
+    m_handleType = QAbstractVideoBuffer::NoHandle;
+
+    // XXX added for QVideoSurfaceEglImagePainter
+    flushQueue(true);
+}
+
+// TODO: same as QVideoSurfaceGlslPainter::paint().. pull up to common base class!
+QAbstractVideoSurface::Error QVideoSurfaceEglImagePainter::paint(
+        const QRectF &target, QPainter *painter, const QRectF &source)
+{
+    const QAbstractVideoBuffer::HandleType h = m_frame.handleType();
+    if (h == QAbstractVideoBuffer::NoHandle || h == QAbstractVideoBuffer::GLTextureHandle) {
+        bool stencilTestEnabled = glIsEnabled(GL_STENCIL_TEST);
+        bool scissorTestEnabled = glIsEnabled(GL_SCISSOR_TEST);
+
+        painter->beginNativePainting();
+
+        if (stencilTestEnabled)
+            glEnable(GL_STENCIL_TEST);
+        if (scissorTestEnabled)
+            glEnable(GL_SCISSOR_TEST);
+
+        const int width = QGLContext::currentContext()->device()->width();
+        const int height = QGLContext::currentContext()->device()->height();
+
+        const QTransform transform = painter->deviceTransform();
+
+        const GLfloat wfactor = 2.0 / width;
+        const GLfloat hfactor = -2.0 / height;
+
+        const GLfloat positionMatrix[4][4] =
+        {
+            {
+                /*(0,0)*/ GLfloat(wfactor * transform.m11() - transform.m13()),
+                /*(0,1)*/ GLfloat(hfactor * transform.m12() + transform.m13()),
+                /*(0,2)*/ 0.0,
+                /*(0,3)*/ GLfloat(transform.m13())
+            }, {
+                /*(1,0)*/ GLfloat(wfactor * transform.m21() - transform.m23()),
+                /*(1,1)*/ GLfloat(hfactor * transform.m22() + transform.m23()),
+                /*(1,2)*/ 0.0,
+                /*(1,3)*/ GLfloat(transform.m23())
+            }, {
+                /*(2,0)*/ 0.0,
+                /*(2,1)*/ 0.0,
+                /*(2,2)*/ -1.0,
+                /*(2,3)*/ 0.0
+            }, {
+                /*(3,0)*/ GLfloat(wfactor * transform.dx() - transform.m33()),
+                /*(3,1)*/ GLfloat(hfactor * transform.dy() + transform.m33()),
+                /*(3,2)*/ 0.0,
+                /*(3,3)*/ GLfloat(transform.m33())
+            }
+        };
+
+        const GLfloat vTop = m_scanLineDirection == QVideoSurfaceFormat::TopToBottom
+                ? target.top()
+                : target.bottom() + 1;
+        const GLfloat vBottom = m_scanLineDirection == QVideoSurfaceFormat::TopToBottom
+                ? target.bottom() + 1
+                : target.top();
+
+
+        const GLfloat vertexCoordArray[] =
+        {
+            GLfloat(target.left())     , GLfloat(vBottom),
+            GLfloat(target.right() + 1), GLfloat(vBottom),
+            GLfloat(target.left())     , GLfloat(vTop),
+            GLfloat(target.right() + 1), GLfloat(vTop)
+        };
+
+        const GLfloat txLeft = source.left() / m_frameSize.width();
+        const GLfloat txRight = source.right() / m_frameSize.width();
+        const GLfloat txTop = m_scanLineDirection == QVideoSurfaceFormat::TopToBottom
+                ? source.top() / m_frameSize.height()
+                : source.bottom() / m_frameSize.height();
+        const GLfloat txBottom = m_scanLineDirection == QVideoSurfaceFormat::TopToBottom
+                ? source.bottom() / m_frameSize.height()
+                : source.top() / m_frameSize.height();
+
+        const GLfloat textureCoordArray[] =
+        {
+            txLeft , txBottom,
+            txRight, txBottom,
+            txLeft , txTop,
+            txRight, txTop
+        };
+
+        m_program.bind();
+
+        m_program.enableAttributeArray("vertexCoordArray");
+        m_program.enableAttributeArray("textureCoordArray");
+        m_program.setAttributeArray("vertexCoordArray", vertexCoordArray, 2);
+        m_program.setAttributeArray("textureCoordArray", textureCoordArray, 2);
+        m_program.setUniformValue("positionMatrix", positionMatrix);
+
+        if (m_textureCount == 3) {
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, m_textureIds[0]);
+            glActiveTexture(GL_TEXTURE1);
+            glBindTexture(GL_TEXTURE_2D, m_textureIds[1]);
+            glActiveTexture(GL_TEXTURE2);
+            glBindTexture(GL_TEXTURE_2D, m_textureIds[2]);
+            glActiveTexture(GL_TEXTURE0);
+
+            m_program.setUniformValue("texY", 0);
+            m_program.setUniformValue("texU", 1);
+            m_program.setUniformValue("texV", 2);
+        } else {
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, m_textureIds[0]);
+
+            m_program.setUniformValue("texRgb", 0);
+        }
+        m_program.setUniformValue("colorMatrix", m_colorMatrix);
+
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+
+        m_program.release();
+
+        painter->endNativePainting();
+
+        return QAbstractVideoSurface::NoError;
+    }
+
+    return QVideoSurfaceGLPainter::paint(target, painter, source);
+}
+
+// TODO this is copied from QVideoSurfaceGstSink.. this should move to
+// QVideoFrame or some common utilities..
+struct YuvFormat
+{
+    QVideoFrame::PixelFormat pixelFormat;
+    uint32_t fourcc;
+    int bitsPerPixel;
+};
+#define FOURCC(a, b, c, d) ((uint32_t)(uint8_t)(a) | ((uint32_t)(uint8_t)(b) << 8) | ((uint32_t)(uint8_t)(c) << 16) | ((uint32_t)(uint8_t)(d) << 24 ))
+static const YuvFormat qt_yuvColorLookup[] =
+{
+    { QVideoFrame::Format_YUV420P, FOURCC('I','4','2','0'), 8 },
+    { QVideoFrame::Format_YV12,    FOURCC('Y','V','1','2'), 8 },
+    { QVideoFrame::Format_UYVY,    FOURCC('U','Y','V','Y'), 16 },
+    { QVideoFrame::Format_YUYV,    FOURCC('Y','U','Y','2'), 16 },
+    { QVideoFrame::Format_NV12,    FOURCC('N','V','1','2'), 8 },
+    { QVideoFrame::Format_NV21,    FOURCC('N','V','2','1'), 8 },
+    { QVideoFrame::Format_AYUV444, FOURCC('A','Y','U','V'), 32 }
+};
+
+static int indexOfYuvColor(QVideoFrame::PixelFormat format)
+{
+    const int count = sizeof(qt_yuvColorLookup) / sizeof(YuvFormat);
+
+    for (int i = 0; i < count; ++i)
+        if (qt_yuvColorLookup[i].pixelFormat == format)
+            return i;
+
+    return -1;
+}
+
+void QVideoSurfaceEglImagePainter::flushQueue(bool del)
+{
+    for (int i = 0; i < QUEUE_SIZE; i++) {
+        if (del && m_bufferQueue[i].img) {
+            m_eglDestroyImageKHR(eglGetCurrentDisplay(),
+                    m_bufferQueue[i].img);
+        }
+        m_bufferQueue[i].img = NULL;
+    }
+    m_bufferQueueIndex = 0;
+}
+
+QAbstractVideoSurface::Error QVideoSurfaceEglImagePainter::setCurrentFrame(const QVideoFrame &frame)
+{
+    // XXX this will unref last frame.. we want to delete eglImage first.. but
+    // probably want a small queue of frames to ensure that we don't stall when
+    // GPU is still rendering frame n-1..
+    m_frame = frame;
+
+    if (m_frame.map(QAbstractVideoBuffer::ReadOnly)) {
+        EGLImageKHR img = EGL_NO_IMAGE_KHR;
+
+#ifdef HAS_TI_EGLIMAGE
+        int index = indexOfYuvColor(frame.pixelFormat());
+        const EGLint attr[] = {
+                EGL_GL_VIDEO_FOURCC_TI,      qt_yuvColorLookup[index].fourcc,
+                EGL_GL_VIDEO_WIDTH_TI,       frame.width(),
+                EGL_GL_VIDEO_HEIGHT_TI,      frame.height(),
+                EGL_GL_VIDEO_BYTE_STRIDE_TI, frame.bytesPerLine(),
+                EGL_GL_VIDEO_BYTE_SIZE_TI,   frame.mappedBytes(),
+                // TODO: pick proper YUV flags..
+                EGL_GL_VIDEO_YUV_FLAGS_TI,   (EGLIMAGE_FLAGS_YUV_CONFORMANT_RANGE |
+                        EGLIMAGE_FLAGS_YUV_BT601),
+                EGL_NONE
+        };
+
+        img = m_eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT,
+                EGL_RAW_VIDEO_TI, (EGLClientBuffer)frame.bits(), attr);
+#endif
+
+        if (img == EGL_NO_IMAGE_KHR) {
+            qDebug() << "eglCreateImageKHR failed";
+            return QAbstractVideoSurface::UnsupportedFormatError;
+        }
+        m_context->makeCurrent();
+
+        int idx = m_bufferQueueIndex++ % QUEUE_SIZE;
+
+        if (m_bufferQueue[idx].img)
+            m_eglDestroyImageKHR(eglGetCurrentDisplay(), m_bufferQueue[idx].img);
+
+        m_bufferQueue[idx].img = img;
+        m_bufferQueue[idx].frame = frame;
+
+        glBindTexture(GL_TEXTURE_2D, m_textureIds[0]);
+
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+        /* bind the texture to the eglImage.. */
+        m_glEGLImageTargetTexture2DOES(GL_TEXTURE_EXTERNAL_OES, (GLeglImageOES)img);
+
+        m_frame.unmap();
+    }
+
+    return QAbstractVideoSurface::NoError;
+}
+
+#endif /* HAS_EGLIMAGE */
+
 #endif
 
 /*!
@@ -1545,6 +1924,13 @@ void QPainterVideoSurface::setGLContext(QGLContext *context)
             m_shaderTypes |= FragmentProgramShader;
 #endif
 
+#ifdef HAS_EGLIMAGE
+        /* TODO detect whether eglImage is actually supported and
+         * whether we have a suitable extension for creating eglImage's
+         */
+        m_shaderTypes |= EglImageShader;
+#endif
+
         if (QGLShaderProgram::hasOpenGLShaderPrograms(m_glContext)
                 && extensions.contains("ARB_shader_objects"))
             m_shaderTypes |= GlslShader;
@@ -1657,6 +2043,13 @@ void QPainterVideoSurface::createPainter()
         Q_ASSERT(m_glContext);
         m_glContext->makeCurrent();
         m_painter = new QVideoSurfaceArbFpPainter(m_glContext);
+        break;
+#endif
+#ifdef HAS_EGLIMAGE
+    case EglImageShader:
+        Q_ASSERT(m_glContext);
+        m_glContext->makeCurrent();
+        m_painter = new QVideoSurfaceEglImagePainter(m_glContext);
         break;
 #endif
     case GlslShader:

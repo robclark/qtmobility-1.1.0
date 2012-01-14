@@ -136,7 +136,8 @@ public:
     {
         NoShaders = 0x00,
         FragmentProgramShader = 0x01,
-        GlslShader = 0x02
+        GlslShader = 0x02,
+        EglImageShader = 0x04
     };
 
     Q_DECLARE_FLAGS(ShaderTypes, ShaderType)

@@ -158,6 +158,9 @@ maemo5 {
     LIBS += -lXv  -lX11 -lXext
 }
 
+# probably not the right place for this, but I do not know where it should go..
+LIBS += -lEGL
+
 maemo6 {
     SOURCES += qgraphicsvideoitem_overlay.cpp
 }

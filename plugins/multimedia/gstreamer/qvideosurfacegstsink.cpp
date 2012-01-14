@@ -502,6 +502,11 @@ GstCaps *QVideoSurfaceGstSink::get_caps(GstBaseSink *base)
         }
     }
 
+#ifdef DEBUG_VIDEO_SURFACE_SINK
+    qDebug() << "get_caps:";
+    qDebug() << gst_caps_to_string(caps);  // XXX memory leak??
+#endif
+
     return caps;
 }
 

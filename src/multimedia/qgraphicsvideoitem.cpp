@@ -392,7 +392,13 @@ void QGraphicsVideoItem::paint(
             connect(widget, SIGNAL(destroyed()), d->surface, SLOT(viewportDestroyed()));
 
         d->surface->setGLContext(const_cast<QGLContext *>(QGLContext::currentContext()));
-        if (d->surface->supportedShaderTypes() & QPainterVideoSurface::GlslShader) {
+
+        /* prefer EglImageShader, if it is supported, as it will be more optimized..
+         * but then fall back to GlslShader
+         */
+        if (d->surface->supportedShaderTypes() & QPainterVideoSurface::EglImageShader) {
+            d->surface->setShaderType(QPainterVideoSurface::EglImageShader);
+        } else if (d->surface->supportedShaderTypes() & QPainterVideoSurface::GlslShader) {
             d->surface->setShaderType(QPainterVideoSurface::GlslShader);
         } else {
             d->surface->setShaderType(QPainterVideoSurface::FragmentProgramShader);
