@@ -80,6 +80,9 @@ public:
 
     GstFlowReturn render(GstBuffer *buffer);
 
+    QVideoSurfaceFormat m_format;
+    int m_bytesPerLine;
+
 private slots:
     void queuedStart();
     void queuedStop();
@@ -94,10 +97,8 @@ private:
     QMutex m_mutex;
     QWaitCondition m_setupCondition;
     QWaitCondition m_renderCondition;
-    QVideoSurfaceFormat m_format;
     QVideoFrame m_frame;
     GstFlowReturn m_renderReturn;
-    int m_bytesPerLine;
     bool m_started;
 };
 

@@ -384,7 +384,7 @@ void QVideoSurfaceGstSink::class_init(gpointer g_class, gpointer class_data)
     base_sink_class->start = QVideoSurfaceGstSink::start;
     base_sink_class->stop = QVideoSurfaceGstSink::stop;
     // base_sink_class->unlock = QVideoSurfaceGstSink::unlock; // Not implemented.
-    // base_sink_class->event = QVideoSurfaceGstSink::event; // Not implemented.
+    base_sink_class->event = QVideoSurfaceGstSink::event;
     base_sink_class->preroll = QVideoSurfaceGstSink::preroll;
     base_sink_class->render = QVideoSurfaceGstSink::render;
 
@@ -727,10 +727,43 @@ gboolean QVideoSurfaceGstSink::unlock(GstBaseSink *base)
 
 gboolean QVideoSurfaceGstSink::event(GstBaseSink *base, GstEvent *event)
 {
-    Q_UNUSED(base);
-    Q_UNUSED(event);
+    GstEventType type = GST_EVENT_TYPE (event);
+    VO_SINK(base);
 
-    return TRUE;
+#define GST_CROP_EXTENSION
+#ifdef GST_CROP_EXTENSION
+    if (type == GST_EVENT_CROP) {
+        int bytesPerLine = sink->delegate->m_bytesPerLine;
+        QVideoSurfaceFormat format = sink->delegate->m_format;
+        gint top, left, width, height;
+
+        gst_event_parse_crop (event, &top, &left, &width, &height);
+
+        format.setViewport(QRect(left, top, width, height));
+
+        if (sink->delegate->isActive()) {
+            sink->delegate->stop();
+        }
+
+#ifdef DEBUG_VIDEO_SURFACE_SINK
+        qDebug() << "Cropping video surface, format:";
+        qDebug() << format;
+#endif
+
+        if (sink->delegate->start(format, bytesPerLine))
+            return TRUE;
+        else
+            qWarning() << "Failed to start video surface";
+
+        return TRUE;
+    }
+#endif
+
+    if (GST_BASE_SINK_CLASS(sink_parent_class)->event) {
+        return GST_BASE_SINK_CLASS(sink_parent_class)->event (base, event);
+    } else {
+        return TRUE;
+    }
 }
 
 GstFlowReturn QVideoSurfaceGstSink::preroll(GstBaseSink *base, GstBuffer *buffer)
