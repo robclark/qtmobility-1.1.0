@@ -150,8 +150,6 @@ private:
 
     GstElement* m_videoOutputBin;
     GstElement* m_videoIdentity;
-    GstElement* m_colorSpace;
-    GstElement* m_videoScale;
     GstElement* m_videoSink;
     GstElement* m_pendingVideoSink;
     GstElement* m_nullVideoSink;

@@ -130,12 +130,10 @@ QGstreamerPlayerSession::QGstreamerPlayerSession(QObject *parent)
     gst_object_ref(GST_OBJECT(m_videoOutputBin));
 
     m_videoIdentity = gst_element_factory_make("identity", "identity-vo");
-    m_colorSpace = gst_element_factory_make("ffmpegcolorspace", "ffmpegcolorspace-vo");
-    m_videoScale = gst_element_factory_make("videoscale","videoscale-vo");
     m_nullVideoSink = gst_element_factory_make("fakesink", NULL);
     gst_object_ref(GST_OBJECT(m_nullVideoSink));
-    gst_bin_add_many(GST_BIN(m_videoOutputBin), m_videoIdentity, m_colorSpace, m_videoScale, m_nullVideoSink, NULL);
-    gst_element_link_many(m_videoIdentity, m_colorSpace, m_videoScale, m_nullVideoSink, NULL);
+    gst_bin_add_many(GST_BIN(m_videoOutputBin), m_videoIdentity, m_nullVideoSink, NULL);
+    gst_element_link_many(m_videoIdentity, m_nullVideoSink, NULL);
 
     //add an event probe before video output to save and repost segment events
     {
@@ -403,14 +401,14 @@ void QGstreamerPlayerSession::setVideoRenderer(QObject *videoOutput)
         m_pendingVideoSink = 0;        
         gst_element_set_state(m_videoSink, GST_STATE_NULL);
         gst_element_set_state(m_playbin, GST_STATE_NULL);
-        gst_element_unlink(m_videoScale, m_videoSink);
+        gst_element_unlink(m_videoIdentity, m_videoSink);
 
         gst_bin_remove(GST_BIN(m_videoOutputBin), m_videoSink);
 
         m_videoSink = videoSink;
 
         gst_bin_add(GST_BIN(m_videoOutputBin), m_videoSink);
-        gst_element_link(m_videoScale, m_videoSink);
+        gst_element_link(m_videoIdentity, m_videoSink);
 
         switch (m_pendingState) {
         case QMediaPlayer::PausedState:
@@ -495,11 +493,9 @@ void QGstreamerPlayerSession::finishVideoOutputChange()
         return;
     }  
 
-    gst_element_set_state(m_colorSpace, GST_STATE_NULL);
-    gst_element_set_state(m_videoScale, GST_STATE_NULL);
     gst_element_set_state(m_videoSink, GST_STATE_NULL);
 
-    gst_element_unlink(m_videoScale, m_videoSink);
+    gst_element_unlink(m_videoIdentity, m_videoSink);
 
     gst_bin_remove(GST_BIN(m_videoOutputBin), m_videoSink);
 
@@ -507,7 +503,7 @@ void QGstreamerPlayerSession::finishVideoOutputChange()
     m_pendingVideoSink = 0;
 
     gst_bin_add(GST_BIN(m_videoOutputBin), m_videoSink);
-    if (!gst_element_link(m_videoScale, m_videoSink))
+    if (!gst_element_link(m_videoIdentity, m_videoSink))
         qWarning() << "Linking video output element failed";
 
     GstState state;
@@ -524,8 +520,6 @@ void QGstreamerPlayerSession::finishVideoOutputChange()
         break;
     }
 
-    gst_element_set_state(m_colorSpace, state);
-    gst_element_set_state(m_videoScale, state);
     gst_element_set_state(m_videoSink, state);    
 
     //don't have to wait here, it will unblock eventually
