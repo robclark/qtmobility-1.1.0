@@ -213,10 +213,10 @@ qint64 QGstreamerPlayerSession::position() const
     GstFormat   format = GST_FORMAT_TIME;
     gint64      position = 0;
 
-    if ( m_playbin && gst_element_query_position(m_playbin, &format, &position))
+    if (m_playbin && gst_element_query_position(m_playbin, &format, &position))
         return position / 1000000;
     else
-        return 0;
+        return m_lastPosition;
 }
 
 qreal QGstreamerPlayerSession::playbackRate() const
@@ -626,13 +626,14 @@ bool QGstreamerPlayerSession::seek(qint64 ms)
 {
     //seek locks when the video output sink is changing and pad is blocked
     if (m_playbin && !m_pendingVideoSink && m_state != QMediaPlayer::StoppedState) {
-        gint64  position = qMax(ms,qint64(0)) * 1000000;
+        gint64  position = qMax(ms,qint64(0));
+        m_lastPosition = position;
         return gst_element_seek(m_playbin,
                                 m_playbackRate,
                                 GST_FORMAT_TIME,
                                 GstSeekFlags(GST_SEEK_FLAG_ACCURATE | GST_SEEK_FLAG_FLUSH),
                                 GST_SEEK_TYPE_SET,
-                                position,
+                                position * 1000000,
                                 GST_SEEK_TYPE_NONE,
                                 0);
     }
@@ -763,8 +764,8 @@ void QGstreamerPlayerSession::busMessage(const QGstreamerMessage &message)
         // Null message, query current position
         quint32 newPos = position();
 
-        if (newPos/1000 != m_lastPosition) {
-            m_lastPosition = newPos/1000;
+        if (newPos != m_lastPosition) {
+            m_lastPosition = newPos;
             emit positionChanged(newPos);
         }
 
