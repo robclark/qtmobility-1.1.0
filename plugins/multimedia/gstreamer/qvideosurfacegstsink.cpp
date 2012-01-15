@@ -384,7 +384,7 @@ void QVideoSurfaceGstSink::class_init(gpointer g_class, gpointer class_data)
     base_sink_class->start = QVideoSurfaceGstSink::start;
     base_sink_class->stop = QVideoSurfaceGstSink::stop;
     // base_sink_class->unlock = QVideoSurfaceGstSink::unlock; // Not implemented.
-    // base_sink_class->event = QVideoSurfaceGstSink::event; // Not implemented.
+    base_sink_class->event = QVideoSurfaceGstSink::event;
     base_sink_class->preroll = QVideoSurfaceGstSink::preroll;
     base_sink_class->render = QVideoSurfaceGstSink::render;
 
@@ -425,6 +425,9 @@ void QVideoSurfaceGstSink::instance_init(GTypeInstance *instance, gpointer g_cla
     sink->lastRequestedCaps = 0;
     sink->lastBufferCaps = 0;
     sink->lastSurfaceFormat = new QVideoSurfaceFormat;
+    sink->lastSetCaps = 0;
+
+    memset(&sink->crop, 0, sizeof(sink->crop));
 }
 
 void QVideoSurfaceGstSink::finalize(GObject *object)
@@ -445,15 +448,30 @@ void QVideoSurfaceGstSink::finalize(GObject *object)
     if (sink->lastRequestedCaps)
         gst_caps_unref(sink->lastRequestedCaps);
     sink->lastRequestedCaps = 0;
+
+    if (sink->lastSetCaps)
+        gst_caps_unref(sink->lastSetCaps);
+    sink->lastSetCaps = 0;
 }
 
 GstStateChangeReturn QVideoSurfaceGstSink::change_state(
         GstElement *element, GstStateChange transition)
 {
-    Q_UNUSED(element);
+    VO_SINK(element);
+    GstStateChangeReturn ret;
 
-    return GST_ELEMENT_CLASS(sink_parent_class)->change_state(
+    ret = GST_ELEMENT_CLASS(sink_parent_class)->change_state(
             element, transition);
+
+    switch (transition) {
+      case GST_STATE_CHANGE_READY_TO_NULL:
+          memset(&sink->crop, 0, sizeof(sink->crop));
+          break;
+      default:
+          break;
+    }
+
+    return ret;
 }
 
 GstCaps *QVideoSurfaceGstSink::get_caps(GstBaseSink *base)
@@ -525,13 +543,14 @@ gboolean QVideoSurfaceGstSink::set_caps(GstBaseSink *base, GstCaps *caps)
         return TRUE;
     } else {
         int bytesPerLine = 0;
-        QVideoSurfaceFormat format = formatForCaps(caps, &bytesPerLine);
+        QVideoSurfaceFormat format = sink->formatForCaps(caps, &bytesPerLine);
 
         if (sink->delegate->isActive()) {
             QVideoSurfaceFormat surfaceFormst = sink->delegate->surfaceFormat();
 
             if (format.pixelFormat() == surfaceFormst.pixelFormat() &&
-                format.frameSize() == surfaceFormst.frameSize())
+                format.frameSize() == surfaceFormst.frameSize() &&
+                format.viewport() == surfaceFormst.viewport())
                 return TRUE;
             else
                 sink->delegate->stop();
@@ -540,6 +559,10 @@ gboolean QVideoSurfaceGstSink::set_caps(GstBaseSink *base, GstCaps *caps)
         if (sink->lastRequestedCaps)
             gst_caps_unref(sink->lastRequestedCaps);
         sink->lastRequestedCaps = 0;
+
+        if (sink->lastSetCaps)
+            gst_caps_unref(sink->lastSetCaps);
+        sink->lastSetCaps = gst_caps_ref(caps);
 
 #ifdef DEBUG_VIDEO_SURFACE_SINK
         qDebug() << "Staring video surface, format:";
@@ -618,6 +641,9 @@ QVideoSurfaceFormat QVideoSurfaceGstSink::formatForCaps(GstCaps *caps, int *byte
         if (bytesPerLine)
             *bytesPerLine = ((size.width() * bitsPerPixel / 8) + 3) & ~3;
 
+        if (crop.top || crop.left || crop.width || crop.height)
+            format.setViewport(QRect(crop.left, crop.top, crop.width, crop.height));
+
         return format;
     }
 
@@ -657,7 +683,7 @@ GstFlowReturn QVideoSurfaceGstSink::buffer_alloc(
 
     if (sink->delegate->isActive()) {
         //if format was changed, restart the surface
-        QVideoSurfaceFormat format = formatForCaps(intersection);
+        QVideoSurfaceFormat format = sink->formatForCaps(intersection);
         QVideoSurfaceFormat surfaceFormat = sink->delegate->surfaceFormat();
 
         if (format.pixelFormat() != surfaceFormat.pixelFormat() ||
@@ -671,7 +697,7 @@ GstFlowReturn QVideoSurfaceGstSink::buffer_alloc(
 
     if (!sink->delegate->isActive()) {
         int bytesPerLine = 0;
-        QVideoSurfaceFormat format = formatForCaps(intersection, &bytesPerLine);
+        QVideoSurfaceFormat format = sink->formatForCaps(intersection, &bytesPerLine);
 
         if (!sink->delegate->start(format, bytesPerLine)) {
             qWarning() << "failed to start video surface";
@@ -727,10 +753,31 @@ gboolean QVideoSurfaceGstSink::unlock(GstBaseSink *base)
 
 gboolean QVideoSurfaceGstSink::event(GstBaseSink *base, GstEvent *event)
 {
-    Q_UNUSED(base);
-    Q_UNUSED(event);
+    GstEventType type = GST_EVENT_TYPE (event);
+    VO_SINK(base);
 
-    return TRUE;
+#define GST_CROP_EXTENSION
+#ifdef GST_CROP_EXTENSION
+    if (type == GST_EVENT_CROP) {
+        gst_event_parse_crop (event,
+                &sink->crop.top, &sink->crop.left,
+                &sink->crop.width, &sink->crop.height);
+        if (sink->lastSetCaps) {
+            /* reset and activate our updated format if caps are already set*/
+            GstCaps *caps = gst_caps_ref(sink->lastSetCaps);
+            gboolean ret = QVideoSurfaceGstSink::set_caps(base, caps);
+            gst_caps_unref(caps);
+            return ret;
+        }
+        return TRUE;
+    }
+#endif
+
+    if (GST_BASE_SINK_CLASS(sink_parent_class)->event) {
+        return GST_BASE_SINK_CLASS(sink_parent_class)->event (base, event);
+    } else {
+        return TRUE;
+    }
 }
 
 GstFlowReturn QVideoSurfaceGstSink::preroll(GstBaseSink *base, GstBuffer *buffer)

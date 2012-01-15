@@ -107,7 +107,7 @@ public:
     GstVideoSink parent;
 
     static QVideoSurfaceGstSink *createSink(QAbstractVideoSurface *surface);
-    static QVideoSurfaceFormat formatForCaps(GstCaps *caps, int *bytesPerLine = 0);
+    QVideoSurfaceFormat formatForCaps(GstCaps *caps, int *bytesPerLine = 0);
 
 private:
     static GType get_type();
@@ -141,6 +141,10 @@ private:
     QGstXvImageBufferPool *pool;
 #endif
 
+    struct {
+        gint top, left, width, height;
+    } crop;
+    GstCaps *lastSetCaps;
     GstCaps *lastRequestedCaps;
     GstCaps *lastBufferCaps;
     QVideoSurfaceFormat *lastSurfaceFormat;
